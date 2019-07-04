@@ -34,6 +34,53 @@ processor dut(
 	.serial_wren_out(serial_wren) //active-high
 );
 
+reg [4:0] write_addr;
+reg [31:0] write_data;
+reg write_enable;
+
+reg [4:0] read_addr_1;
+reg [4:0] read_addr_2;
+
+wire [31:0] read_data_1;
+wire [31:0] read_data_2;
+
+
+// increment setting each register, and reading the set and previously read register.
+always @(posedge clock) begin
+
+	if(reset) begin
+		write_addr <= 5'b00000;
+		write_data <= 5'b00000;
+		read_addr_1 <= 5'b00000;
+		read_addr_2 <= 5'b00001;
+	end
+	else begin
+		write_addr <= write_addr + 5'b00001;
+		write_data <= write_data + 5'b00001;
+		//read_addr_1 <= read_addr_1 + 5'b00001;
+		//read_addr_2 <= read_addr_2 + 5'b00001;
+	end
+	
+	//write_data <= write_addr;
+	read_addr_1 <= write_addr;
+	read_addr_2 <= write_addr - 5'b00001;
+	write_enable <= 1'b1;
+end
+
+reg_file file_test(
+	.clock(clock),
+	.reset(reset),
+	
+	.read_reg_1(read_addr_1),
+	.read_reg_2(read_addr_2),
+	
+	.read_data_1(read_data_1),
+	.read_data_2(read_data_2),
+	
+	.write_reg(write_addr),	// address of reg to write to.
+	.write_data(write_data),	// data to write
+	.write_enable(write_enable)
+	);
 
 //This will print out a message whenever the serial port is written to
 always @(posedge clock) begin
