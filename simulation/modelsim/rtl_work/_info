@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Documents/School/CSE 141L/Lab 2/simulation/modelsim
+vprocessor
+!s110 1562219833
+!i10b 1
+!s100 gg9B;WHme:LDZ8Xe?ZSZB3
+I>Hi=ffX[Li?l=h3BG3;Jz1
+V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1562218972
+8D:/Documents/School/CSE 141L/Lab 2/processor.v
+FD:/Documents/School/CSE 141L/Lab 2/processor.v
+L0 2
+OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1562219833.347000
+!s107 D:/Documents/School/CSE 141L/Lab 2/processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Documents/School/CSE 141L/Lab 2|D:/Documents/School/CSE 141L/Lab 2/processor.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+D:/Documents/School/CSE 141L/Lab 2}
