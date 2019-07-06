@@ -67,6 +67,7 @@ always @(posedge clock) begin
 	write_enable <= 1'b1;
 end
 
+// Test of Register File functionality.
 reg_file file_test(
 	.clock(clock),
 	.reset(reset),

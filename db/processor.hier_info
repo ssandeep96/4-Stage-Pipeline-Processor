@@ -11,15 +11,15 @@ serial_in[6] => ~NO_FANOUT~
 serial_in[7] => ~NO_FANOUT~
 serial_valid_in => ~NO_FANOUT~
 serial_ready_in => ~NO_FANOUT~
-serial_out[0] << <GND>
-serial_out[1] << <GND>
-serial_out[2] << <GND>
-serial_out[3] << <GND>
-serial_out[4] << <GND>
-serial_out[5] << <GND>
-serial_out[6] << <GND>
-serial_out[7] << <GND>
-serial_rden_out << <GND>
-serial_wren_out << <GND>
+serial_out[0] <= <GND>
+serial_out[1] <= <GND>
+serial_out[2] <= <GND>
+serial_out[3] <= <GND>
+serial_out[4] <= <GND>
+serial_out[5] <= <GND>
+serial_out[6] <= <GND>
+serial_out[7] <= <GND>
+serial_rden_out <= <GND>
+serial_wren_out <= <GND>
 
 
