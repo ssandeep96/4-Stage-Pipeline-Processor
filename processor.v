@@ -1,7 +1,7 @@
-`define PC_RESET 8'h00400000
-`define PC_INCREMENT 8'h00000004
-`define SIGN_EXT_POS 4'h0000
-`define SIGN_EXT_NEG 4'hFFFF
+`define PC_RESET 32'h00400000
+`define PC_INCREMENT 32'h00000004
+`define SIGN_EXT_POS 16'h0000
+`define SIGN_EXT_NEG 16'hFFFF
 
 module processor(
 	input clock,
@@ -40,7 +40,7 @@ end
 
 wire [31:0] CurrentInstruction;
 
-inst_rom #(.INIT_PROGRAM("C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh")) InstructionMemory (
+inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/blank.memh")) InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(NextPC), //input - from PC (program counter)
@@ -60,6 +60,7 @@ mux #(5) InstructMux (
 
 wire [31:0] ReadData1;
 wire [31:0] ReadData2;
+wire [31:0] DataMuxOut;
 
 reg_file RegisterFile (
 	.clock(clock),
@@ -121,28 +122,6 @@ data_memory DataMemory (
 	.serial_wren_out(serial_wren_out)
 );
 
-/*
-module data_memory(
-	input clock,
-	input reset,
-
-	input		[31:0]	addr_in,
-	input		[31:0]	writedata_in,
-	input					re_in,
-	input					we_in,
-	input		[1:0]		size_in,
-	output	reg [31:0]	readdata_out,
-	
-	//serial port connection that need to be routed out of the process
-	input		[7:0]		serial_in,
-	input					serial_ready_in,
-	input					serial_valid_in,
-	output	[7:0]		serial_out,
-	output				serial_rden_out,
-	output				serial_wren_out
-);
-*/
-wire [31:0] DataMuxOut;
 mux #(32) DataMux  (
 	.A(DataMemoryOut),
 	.B(ALUResult),
