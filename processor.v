@@ -61,9 +61,9 @@ mux #(5) InstructMux (
 wire [31:0] ReadData1;
 wire [31:0] ReadData2;
 
-module reg_file RegisterFile (
+reg_file RegisterFile (
 	.clock(clock),
-	.clock(reset),
+	.reset(reset),
 	
 	.read_reg_1(CurrentInstruction[25:21]),
 	.read_reg_2(CurrentInstruction[20:16]),
@@ -84,12 +84,12 @@ sign_extend SignExt(
 
 
 wire [31:0] ALUMuxOut;
-mux ALUMux #(32) (
+mux #(32) ALUMux  (
 	.A(NumberExt),
 	.B(ReadData2),
 	.PickA(1'b0),
 	.out(ALUMuxOut)
-)
+);
 
 wire [31:0] ALUResult;
 
@@ -103,14 +103,34 @@ alu ALU(
 
 wire [31:0] DataMemoryOut;
 data_memory DataMemory (
-	clock(clock),
-	reset(reset),
+	.clock(clock),
+	.reset(reset),
 
 	.addr_in(ALUResult),
 	.writedata_in(ReadData2),
 	.re_in(1'b0),
 	.we_in(1'b0),
 	.size_in(2'b00),
+	.readdata_out(DataMemoryOut),
+	
+	.serial_in(serial_in),
+	.serial_ready_in(serial_ready_in),
+	.serial_valid_in(serial_valid_in),
+	.serial_out(serial_out),
+	.serial_rden_out(serial_rden_out),
+	.serial_wren_out(serial_wren_out)
+);
+
+/*
+module data_memory(
+	input clock,
+	input reset,
+
+	input		[31:0]	addr_in,
+	input		[31:0]	writedata_in,
+	input					re_in,
+	input					we_in,
+	input		[1:0]		size_in,
 	output	reg [31:0]	readdata_out,
 	
 	//serial port connection that need to be routed out of the process
@@ -121,15 +141,14 @@ data_memory DataMemory (
 	output				serial_rden_out,
 	output				serial_wren_out
 );
-
-
-wire [31:0] DataMuxOut
-mux DataMux #(32) (
+*/
+wire [31:0] DataMuxOut;
+mux #(32) DataMux  (
 	.A(DataMemoryOut),
 	.B(ALUResult),
 	.PickA(1'b0),
 	.out(DataMuxOut)
-)
+);
 
 endmodule
 
@@ -145,11 +164,11 @@ assign numberExt = outReg;
 always @(*) begin
 	// if positive
  	if(number[15] == 1'b0) begin
-		outReg = {SIGN_EXT_POS, number}
+		outReg = {`SIGN_EXT_POS, number};
 	end
 	// if negative
 	else begin
-		outReg = {SIGN_EXT_NEG, number}
+		outReg = {`SIGN_EXT_NEG, number};
 	end
 end
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Mon Jul 08 17:55:31 2019
+Tue Jul 09 18:54:54 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Jul 08 17:55:31 2019          ;
+; Analysis & Synthesis Status        ; Failed - Tue Jul 09 18:54:54 2019          ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; processor                                  ;
 ; Top-level Entity Name              ; processor                                  ;
@@ -158,21 +158,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Mon Jul 08 17:55:20 2019
+    Info: Processing started: Tue Jul 09 18:54:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
     Info (12023): Found entity 1: reg_file
 Warning (10229): Verilog HDL Expression warning at processor.v(33): truncated literal to match 8 bits
-Error (10170): Verilog HDL syntax error at processor.v(64) near text "RegisterFile";  expecting ";" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 64
-Error (10170): Verilog HDL syntax error at processor.v(87) near text "#";  expecting ";" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 87
-Error (10170): Verilog HDL syntax error at processor.v(114) near text "output";  expecting ")" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 114
-Error (10170): Verilog HDL syntax error at processor.v(127) near text "mux";  expecting ";" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 127
-Error (10170): Verilog HDL syntax error at processor.v(149) near text "end";  expecting ";" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 149
-Error (10170): Verilog HDL syntax error at processor.v(153) near text "end";  expecting ";" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 153
-Error (10112): Ignored design unit "processor" at processor.v(6) due to previous errors File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 6
-Error (10112): Ignored design unit "mux" at processor.v(161) due to previous errors File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 161
-Info (12021): Found 0 design units, including 0 entities, in source file processor.v
+Warning (10229): Verilog HDL Expression warning at processor.v(171): truncated literal to match 4 bits
+Warning (12090): Entity "mux" obtained from "processor.v" instead of from Quartus II megafunction library
+Info (12021): Found 3 design units, including 3 entities, in source file processor.v
+    Info (12023): Found entity 1: processor
+    Info (12023): Found entity 2: sign_extend
+    Info (12023): Found entity 3: mux
 Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
     Info (12023): Found entity 1: testbench
 Info (12021): Found 1 design units, including 1 entities, in source file serial_buf.v
@@ -185,9 +182,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file async_m
     Info (12023): Found entity 1: async_memory
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 8 errors, 2 warnings
-    Error: Peak virtual memory: 4796 megabytes
-    Error: Processing ended: Mon Jul 08 17:55:31 2019
+Info (12127): Elaborating entity "processor" for the top level hierarchy
+Info (12128): Elaborating entity "inst_rom" for hierarchy "inst_rom:InstructionMemory"
+Error (10054): Verilog HDL File I/O error at inst_rom.v(31): can't open Verilog Design File "2'b00" File: D:/Documents/School/CSE 141L/Lab 2/inst_rom.v Line: 31
+Error (12152): Can't elaborate user hierarchy "inst_rom:InstructionMemory" File: D:/Documents/School/CSE 141L/Lab 2/processor.v Line: 48
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 4 warnings
+    Error: Peak virtual memory: 4798 megabytes
+    Error: Processing ended: Tue Jul 09 18:54:54 2019
     Error: Elapsed time: 00:00:11
     Error: Total CPU time (on all processors): 00:00:29
 
