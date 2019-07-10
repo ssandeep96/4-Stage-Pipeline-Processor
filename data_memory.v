@@ -42,10 +42,10 @@ module data_memory(
 	output				serial_wren_out
 );
 
-parameter INIT_PROGRAM0 = "";
-parameter INIT_PROGRAM1 = "";
-parameter INIT_PROGRAM2 = "";
-parameter INIT_PROGRAM3 = "";
+parameter INIT_PROGRAM0 = "C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh";
+parameter INIT_PROGRAM1 = "C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh";
+parameter INIT_PROGRAM2 = "C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh";
+parameter INIT_PROGRAM3 = "C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh";
 
 
 	wire	[31:0]	data_readdata_serial;

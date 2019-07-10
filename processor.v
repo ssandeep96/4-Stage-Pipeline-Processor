@@ -40,7 +40,7 @@ end
 
 wire [31:0] CurrentInstruction;
 
-inst_rom InstructionMemory (
+inst_rom #(.INIT_PROGRAM("C:/Users/Sandeep/Desktop/CSE141L/lab2/CSE_141L_Lab2/blank.memh")) InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(NextPC), //input - from PC (program counter)
