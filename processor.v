@@ -1,5 +1,5 @@
-`define PC_RESET 32'h00400000
-`define PC_INCREMENT 32'h00000004
+`define PC_RESET 32'h0040_0000
+`define PC_INCREMENT 32'h0000_0004
 `define SIGN_EXT_POS 16'h0000
 `define SIGN_EXT_NEG 16'hFFFF
 
@@ -21,6 +21,24 @@ module processor(
 
 reg [31:0] PC;
 reg [31:0] NextPC;
+wire [31:0] CurrentInstruction;
+wire RegDst;
+wire RegWriteEnable;
+wire ALUSrc;
+wire [31:0] ALUMuxOut;
+wire [31:0] NumberExt;
+wire [4:0] InstructMuxOut;
+wire [31:0] ReadData1;
+wire [31:0] ReadData2;
+wire [31:0] DataMuxOut;
+wire [31:0] ALUResult;
+wire ALUBranchOut;
+wire ALUJumpOut;
+wire [31:0] DataMemoryOut;
+wire [5:0] ALUFunction;
+wire MemoryRE;
+wire MemoryWE;
+wire MemoryToReg;
 
 // PC adder.
 always @(*) begin
@@ -37,8 +55,19 @@ always @(posedge clock) begin
 end
 
 
-
-wire [31:0] CurrentInstruction;
+// Controller---------------------------------------------
+control Controller(
+	.Clock(clock),
+	.Reset(reset),
+	.Instruction(CurrentInstruction),
+	.RegDst(RegDst),
+	.RegWriteEnable(RegWriteEnable),
+	.ALUSrc(ALUSrc),
+	.ALUFunction(ALUFunction),
+	.MemoryRE(MemoryRE),
+	.MemoryWE(MemoryWE),
+	.MemoryToReg(MemoryToReg)
+);
 
 inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/blank.memh")) InstructionMemory (
 	.clock(clock),
@@ -47,20 +76,13 @@ inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/blank.memh")) Instr
 	.data_out(CurrentInstruction)
 );
 
-
-wire [31:0] InstructMuxOut;
 mux #(5) InstructMux (
 	.B(CurrentInstruction[20:16]),
 	.A(CurrentInstruction[15:11]),
 	
-	.PickA(1'b0),
+	.PickA(RegDst),
 	.out(InstructMuxOut)
 );
-
-
-wire [31:0] ReadData1;
-wire [31:0] ReadData2;
-wire [31:0] DataMuxOut;
 
 reg_file RegisterFile (
 	.clock(clock),
@@ -74,44 +96,44 @@ reg_file RegisterFile (
 	
 	.write_reg(InstructMuxOut),	
 	.write_data(DataMuxOut),	
-	.write_enable(1'b0)		
+	.write_enable(RegWriteEnable)		
 );
 
-wire [31:0] NumberExt;
+
 sign_extend SignExt(
 	.number(CurrentInstruction[15:0]),
 	.numberExt(NumberExt)
 );
 
 
-wire [31:0] ALUMuxOut;
 mux #(32) ALUMux  (
 	.A(NumberExt),
 	.B(ReadData2),
-	.PickA(1'b0),
+	.PickA(ALUSrc),
 	.out(ALUMuxOut)
 );
 
-wire [31:0] ALUResult;
 
 alu ALU(
-	.Func_in(6'b000000), 
+	.Func_in(ALUFunction), 
 	.A_in(ReadData1), 
 	.B_in(ALUMuxOut),
-	.O_out(ALUResult)
+	.O_out(ALUResult),
+	.Branch_out(ALUBranchOut), 
+	.Jump_out( ALUJumpOut)
 );
 
 
-wire [31:0] DataMemoryOut;
+
 data_memory DataMemory (
 	.clock(clock),
 	.reset(reset),
 
 	.addr_in(ALUResult),
 	.writedata_in(ReadData2),
-	.re_in(1'b0),
-	.we_in(1'b0),
-	.size_in(2'b00),
+	.re_in(MemoryRE),
+	.we_in(MemoryWE),
+	.size_in(2'b11),
 	.readdata_out(DataMemoryOut),
 	
 	.serial_in(serial_in),
@@ -125,11 +147,17 @@ data_memory DataMemory (
 mux #(32) DataMux  (
 	.A(DataMemoryOut),
 	.B(ALUResult),
-	.PickA(1'b0),
+	.PickA(MemoryToReg),
 	.out(DataMuxOut)
 );
 
 endmodule
+
+
+
+
+
+
 
 
 

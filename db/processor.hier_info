@@ -1,6 +1,6 @@
 |processor
-clock => clock.IN3
-reset => reset.IN3
+clock => clock.IN4
+reset => reset.IN4
 serial_in[0] => serial_in[0].IN1
 serial_in[1] => serial_in[1].IN1
 serial_in[2] => serial_in[2].IN1
@@ -11,16 +11,65 @@ serial_in[6] => serial_in[6].IN1
 serial_in[7] => serial_in[7].IN1
 serial_valid_in => serial_valid_in.IN1
 serial_ready_in => serial_ready_in.IN1
-serial_out[0] << data_memory:DataMemory.serial_out
-serial_out[1] << data_memory:DataMemory.serial_out
-serial_out[2] << data_memory:DataMemory.serial_out
-serial_out[3] << data_memory:DataMemory.serial_out
-serial_out[4] << data_memory:DataMemory.serial_out
-serial_out[5] << data_memory:DataMemory.serial_out
-serial_out[6] << data_memory:DataMemory.serial_out
-serial_out[7] << data_memory:DataMemory.serial_out
-serial_rden_out << data_memory:DataMemory.serial_rden_out
-serial_wren_out << data_memory:DataMemory.serial_wren_out
+serial_out[0] <= data_memory:DataMemory.serial_out
+serial_out[1] <= data_memory:DataMemory.serial_out
+serial_out[2] <= data_memory:DataMemory.serial_out
+serial_out[3] <= data_memory:DataMemory.serial_out
+serial_out[4] <= data_memory:DataMemory.serial_out
+serial_out[5] <= data_memory:DataMemory.serial_out
+serial_out[6] <= data_memory:DataMemory.serial_out
+serial_out[7] <= data_memory:DataMemory.serial_out
+serial_rden_out <= data_memory:DataMemory.serial_rden_out
+serial_wren_out <= data_memory:DataMemory.serial_wren_out
+
+
+|processor|control:Controller
+Clock => ~NO_FANOUT~
+Reset => ~NO_FANOUT~
+Instruction[0] => ~NO_FANOUT~
+Instruction[1] => ~NO_FANOUT~
+Instruction[2] => ~NO_FANOUT~
+Instruction[3] => ~NO_FANOUT~
+Instruction[4] => ~NO_FANOUT~
+Instruction[5] => ~NO_FANOUT~
+Instruction[6] => ~NO_FANOUT~
+Instruction[7] => ~NO_FANOUT~
+Instruction[8] => ~NO_FANOUT~
+Instruction[9] => ~NO_FANOUT~
+Instruction[10] => ~NO_FANOUT~
+Instruction[11] => ~NO_FANOUT~
+Instruction[12] => ~NO_FANOUT~
+Instruction[13] => ~NO_FANOUT~
+Instruction[14] => ~NO_FANOUT~
+Instruction[15] => ~NO_FANOUT~
+Instruction[16] => ~NO_FANOUT~
+Instruction[17] => ~NO_FANOUT~
+Instruction[18] => ~NO_FANOUT~
+Instruction[19] => ~NO_FANOUT~
+Instruction[20] => ~NO_FANOUT~
+Instruction[21] => ~NO_FANOUT~
+Instruction[22] => ~NO_FANOUT~
+Instruction[23] => ~NO_FANOUT~
+Instruction[24] => ~NO_FANOUT~
+Instruction[25] => ~NO_FANOUT~
+Instruction[26] => ~NO_FANOUT~
+Instruction[27] => ~NO_FANOUT~
+Instruction[28] => ~NO_FANOUT~
+Instruction[29] => ~NO_FANOUT~
+Instruction[30] => ~NO_FANOUT~
+Instruction[31] => ~NO_FANOUT~
+RegDst <= <GND>
+RegWriteEnable <= <GND>
+ALUSrc <= <GND>
+ALUFunction[0] <= <GND>
+ALUFunction[1] <= <GND>
+ALUFunction[2] <= <GND>
+ALUFunction[3] <= <GND>
+ALUFunction[4] <= <GND>
+ALUFunction[5] <= <GND>
+MemoryRE <= <GND>
+MemoryWE <= <GND>
+MemoryToReg <= <GND>
 
 
 |processor|inst_rom:InstructionMemory

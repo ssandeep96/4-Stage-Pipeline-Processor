@@ -61,8 +61,10 @@ always @(posedge clock) begin
 		picker <= 1'b0;
 	end
 	else begin
-		write_addr <= write_addr + 5'b00001;
-		write_data <= write_data + 5'b00001;
+		//write_addr <= write_addr + 5'b00001;
+		//write_data <= write_data + 5'b00001;
+		write_addr <= 32'h00000000;
+		write_data <= 32'h0000_0001;
 		picker <= ~|picker;
 		//read_addr_1 <= read_addr_1 + 5'b00001;
 		//read_addr_2 <= read_addr_2 + 5'b00001;
