@@ -2,6 +2,7 @@
 
 module testbench();
 
+reg [31:0] Instr;
 reg clock;
 reg reset;
 
@@ -13,6 +14,9 @@ initial begin
 	clock <= 1'b0;
 	reset <= 1'b1;
 	forever #10 clock <= ~clock;
+	
+
+	
 end
 
 // Drop reset after 200 ns.
@@ -50,6 +54,8 @@ wire [15:0] MuxOut;
 reg [15:0] testNumber = 16'h0FFF;
 wire [31:0] testNumberExtend;
 
+
+
 // increment setting each register, and reading the set and previously read register.
 always @(posedge clock) begin
 
@@ -61,19 +67,28 @@ always @(posedge clock) begin
 		picker <= 1'b0;
 	end
 	else begin
-		//write_addr <= write_addr + 5'b00001;
-		//write_data <= write_data + 5'b00001;
+
 		write_addr <= 32'h00000000;
 		write_data <= 32'h0000_0001;
 		picker <= ~|picker;
-		//read_addr_1 <= read_addr_1 + 5'b00001;
-		//read_addr_2 <= read_addr_2 + 5'b00001;
+
 	end
 	
 	//write_data <= write_addr;
 	read_addr_1 <= write_addr;
 	read_addr_2 <= write_addr - 5'b00001;
 	write_enable <= 1'b1;
+	
+	
+	Instr = 32'b0000000_0000000_000000_000000_100000;
+	#5;
+	Instr = {6'b001000, 26'b0};
+	#5;
+	Instr = 32'b0000000_0000000_000000_000000_100010;
+	#5;
+	
+	
+	
 end
 
 // Test of Register File functionality.
@@ -115,4 +130,12 @@ always @(posedge clock) begin
 end
 
 
+
+control TestController (
+		.Clock(clk),
+		.Reset(reset),
+		.Instruction(Instr)
+);
+
 endmodule
+

@@ -1,4 +1,5 @@
 `define PC_RESET 32'h0040_0000
+//`define PC_RESET 32'h003FFFFC
 `define PC_INCREMENT 32'h0000_0004
 `define SIGN_EXT_POS 16'h0000
 `define SIGN_EXT_NEG 16'hFFFF
@@ -69,7 +70,7 @@ control Controller(
 	.MemoryToReg(MemoryToReg)
 );
 
-inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/blank.memh")) InstructionMemory (
+inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/lab3-test/lab3-test.inst_rom.memh")) InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(NextPC), //input - from PC (program counter)
@@ -94,7 +95,7 @@ reg_file RegisterFile (
 	.read_data_1(ReadData1),
 	.read_data_2(ReadData2),
 	
-	.write_reg(InstructMuxOut),	
+	.write_reg(InstructMuxOut),	 	
 	.write_data(DataMuxOut),	
 	.write_enable(RegWriteEnable)		
 );
