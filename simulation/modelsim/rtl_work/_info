@@ -9,222 +9,222 @@ z2
 cModel Technology
 Z0 dD:/Documents/School/CSE_141L/Lab_2/simulation/modelsim
 valu
-!s110 1562982834
+Z1 !s110 1563236652
 !i10b 1
 !s100 fTJU6R1UKz91S=>6GK:kk2
 IgE7^K3^@bVPA^S8][;ZcV3
-Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
 R0
-Z2 w1562218400
+Z3 w1562218400
 8D:/Documents/School/CSE_141L/Lab_2/alu.v
 FD:/Documents/School/CSE_141L/Lab_2/alu.v
 L0 12
-Z3 OV;L;10.3d;59
+Z4 OV;L;10.3d;59
 r1
 !s85 0
 31
-!s108 1562982834.547000
+!s108 1563236652.422000
 !s107 D:/Documents/School/CSE_141L/Lab_2/alu.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/alu.v|
 !i113 1
-Z4 o-work work
+Z5 o-work work
 vasync_memory
-Z5 !s110 1562982835
+R1
 !i10b 1
 !s100 N?ZkihRCACa1DAoO1UTZI2
 IC_8T;JRBLABD`oi0k8:1Y3
-R1
-R0
 R2
+R0
+R3
 8D:/Documents/School/CSE_141L/Lab_2/async_memory.v
 FD:/Documents/School/CSE_141L/Lab_2/async_memory.v
 L0 21
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982835.057000
+!s108 1563236652.511000
 !s107 D:/Documents/School/CSE_141L/Lab_2/async_memory.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/async_memory.v|
 !i113 1
-R4
-vcontrol
 R5
-!i10b 1
-!s100 WYW`;8^Fd9oGQbEPhPEXS0
-I>E=E3eFbz4:2fW0z:Xd_m3
+vcontrol
 R1
+!i10b 1
+!s100 MRD7NZf3I4oE_F3dPKMQG2
+IdL7GAi?UhXIYNz88ekDLG3
+R2
 R0
-w1562978394
+w1563236624
 8D:/Documents/School/CSE_141L/Lab_2/control.v
 FD:/Documents/School/CSE_141L/Lab_2/control.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982835.564000
+!s108 1563236652.603000
 !s107 D:/Documents/School/CSE_141L/Lab_2/control.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/control.v|
 !i113 1
-R4
+R5
 vdata_memory
-Z6 !s110 1562982836
-!i10b 1
-!s100 JN^=gQ1egYV4Pd=:A:C0J0
-I7:35bR_1X0VRP?45G=j2V1
 R1
+!i10b 1
+!s100 ;j<9mB7h?;L7>jX9LZ:S00
+I]ohFQWLYb2D[Uh=[WjbeM1
+R2
 R0
-w1562982597
+w1563235256
 8D:/Documents/School/CSE_141L/Lab_2/data_memory.v
 FD:/Documents/School/CSE_141L/Lab_2/data_memory.v
 L0 25
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982836.158000
+!s108 1563236652.694000
 !s107 D:/Documents/School/CSE_141L/Lab_2/data_memory.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/data_memory.v|
 !i113 1
-R4
+R5
 vinst_rom
-R6
+R1
 !i10b 1
 !s100 UeWn4:;WB5gA88eD^1A4l0
 InQSOERLbG2`m_81EO4:dG2
-R1
-R0
 R2
+R0
+R3
 8D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
 FD:/Documents/School/CSE_141L/Lab_2/inst_rom.v
 L0 15
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982836.683000
+!s108 1563236652.784000
 !s107 D:/Documents/School/CSE_141L/Lab_2/inst_rom.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/inst_rom.v|
 !i113 1
-R4
+R5
 vmux
-Z7 !s110 1562982837
-!i10b 1
-!s100 CfCJ]^P3^a5Dn0TRROVQ:3
-IUAeNJ?TGKTJ`U:E8[oP6?0
 R1
+!i10b 1
+!s100 XUNn@ng?GH8_ZG0kakDRP0
+INh>_5eUh5n1GPT_EBHVMD2
+R2
 R0
-Z8 w1562982504
-Z9 8D:/Documents/School/CSE_141L/Lab_2/processor.v
-Z10 FD:/Documents/School/CSE_141L/Lab_2/processor.v
-L0 187
-R3
+Z6 w1563235205
+Z7 8D:/Documents/School/CSE_141L/Lab_2/processor.v
+Z8 FD:/Documents/School/CSE_141L/Lab_2/processor.v
+L0 188
+R4
 r1
 !s85 0
 31
-Z11 !s108 1562982837.214000
-Z12 !s107 D:/Documents/School/CSE_141L/Lab_2/processor.v|
-Z13 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/processor.v|
+Z9 !s108 1563236652.876000
+Z10 !s107 D:/Documents/School/CSE_141L/Lab_2/processor.v|
+Z11 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/processor.v|
 !i113 1
-R4
+R5
 vprocessor
-R7
-!i10b 1
-!s100 G4SPJ_4Pm2>DoW;4a;]O>0
-ITbX[^VncN>1XTablOL]gL1
 R1
+!i10b 1
+!s100 3RcJ3PDLN^n?WRO:h^S3S2
+IDfJ@iGc3kagaO6ak[;=[b2
+R2
 R0
+R6
+R7
 R8
+L0 7
+R4
+r1
+!s85 0
+31
 R9
 R10
-L0 6
-R3
-r1
-!s85 0
-31
 R11
-R12
-R13
 !i113 1
-R4
+R5
 vreg_file
-Z14 !s110 1562982839
+Z12 !s110 1563236653
 !i10b 1
 !s100 @;0e602FKMSzV_1K=icf`0
 IIHW]G]:9XgE38nc=BH52?2
-R1
+R2
 R0
 w1562228515
 8D:/Documents/School/CSE_141L/Lab_2/reg_file.v
 FD:/Documents/School/CSE_141L/Lab_2/reg_file.v
 L0 4
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982839.080000
+!s108 1563236652.980000
 !s107 D:/Documents/School/CSE_141L/Lab_2/reg_file.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/reg_file.v|
 !i113 1
-R4
+R5
 vserial_buffer
-R14
+R12
 !i10b 1
 !s100 ;R58F=;cGmcBlnFG<E1>F2
 I_aTPA>ofSLU3cU72UbiAd2
-R1
-R0
 R2
+R0
+R3
 8D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
 FD:/Documents/School/CSE_141L/Lab_2/serial_buf.v
 L0 17
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982839.583000
+!s108 1563236653.074000
 !s107 D:/Documents/School/CSE_141L/Lab_2/serial_buf.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/serial_buf.v|
 !i113 1
-R4
+R5
 vsign_extend
-R7
-!i10b 1
-!s100 SHeSdlG?UbFGcc0<;aeHZ0
-I2Shakai[j>80R;3`Ah<gb3
 R1
+!i10b 1
+!s100 BE`Z_hi_1z^To^EfkU:bc0
+Iadjk^WHV4[aHY2HENnLjg2
+R2
 R0
+R6
+R7
 R8
-R9
-R10
-L0 164
-R3
+L0 165
+R4
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 1
-R4
+R5
 vtestbench
-!s110 1562982840
+R12
 !i10b 1
-!s100 [<_?NY;8fONMM4am`20112
-Iff^:D:7n>iFkG76O4:10?3
-R1
+!s100 J@fQnB^HzT:UbP`?dlN;71
+IbH7XB=cFkNGUDOYOolG<J1
+R2
 R0
-w1562981036
+w1562983610
 8D:/Documents/School/CSE_141L/Lab_2/testbench.v
 FD:/Documents/School/CSE_141L/Lab_2/testbench.v
 L0 3
-R3
+R4
 r1
 !s85 0
 31
-!s108 1562982840.103000
+!s108 1563236653.162000
 !s107 D:/Documents/School/CSE_141L/Lab_2/testbench.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/testbench.v|
 !i113 1
-R4
+R5

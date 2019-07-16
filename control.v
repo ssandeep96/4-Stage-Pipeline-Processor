@@ -14,8 +14,19 @@ module control (
 
 always @(*) begin
 	
+	// NoOp
+	if (Instruction == 32'b0) begin
+		RegDst = 1'b0;
+		RegWriteEnable = 1'b0;
+		ALUSrc = 1'b0;
+		ALUFunction = 6'b000000;
+		MemoryRE = 1'b0;
+		MemoryWE = 1'b0;
+		MemoryToReg = 1'b0;
+	end
+	
 	// Simple alu operations
-	if (Instruction[31:26] == 6'b000000) begin 
+	else if (Instruction[31:26] == 6'b000000) begin 
 		RegDst = 1'b1;
 		RegWriteEnable = 1'b1;
 		ALUSrc = 1'b0;

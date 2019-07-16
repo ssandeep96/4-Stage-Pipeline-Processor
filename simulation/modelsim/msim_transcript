@@ -14,17 +14,17 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/reg_file.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:21:55 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
 # -- Compiling module reg_file
 # 
 # Top level modules:
 # 	reg_file
-# End time: 18:21:55 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/processor.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:21:56 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/processor.v 
 # -- Compiling module processor
 # -- Compiling module sign_extend
@@ -32,122 +32,122 @@
 # 
 # Top level modules:
 # 	processor
-# End time: 18:21:56 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/serial_buf.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:21:57 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
 # -- Compiling module serial_buffer
 # 
 # Top level modules:
 # 	serial_buffer
-# End time: 18:21:57 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/inst_rom.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:21:58 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 18:21:59 on Jul 12,2019, Elapsed time: 0:00:01
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/data_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:21:59 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
-# End time: 18:21:59 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/async_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:00 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
 # -- Compiling module async_memory
 # 
 # Top level modules:
 # 	async_memory
-# End time: 18:22:00 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/alu.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:00 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 18:22:00 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/control.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:01 on Jul 12,2019
+# Start time: 17:04:51 on Jul 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 18:22:01 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:04:51 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:08 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 18:22:08 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:09 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
 # -- Compiling module async_memory
 # 
 # Top level modules:
 # 	async_memory
-# End time: 18:22:09 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:09 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 18:22:09 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:10 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
-# End time: 18:22:10 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:10 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 18:22:10 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:11 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
 # -- Compiling module processor
 # -- Compiling module sign_extend
@@ -155,41 +155,41 @@ vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor
 # 
 # Top level modules:
 # 	processor
-# End time: 18:22:11 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:11 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
 # -- Compiling module reg_file
 # 
 # Top level modules:
 # 	reg_file
-# End time: 18:22:12 on Jul 12,2019, Elapsed time: 0:00:01
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:12 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
 # -- Compiling module serial_buffer
 # 
 # Top level modules:
 # 	serial_buffer
-# End time: 18:22:12 on Jul 12,2019, Elapsed time: 0:00:00
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:22:12 on Jul 12,2019
+# Start time: 17:05:17 on Jul 15,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 18:22:13 on Jul 12,2019, Elapsed time: 0:00:01
+# End time: 17:05:17 on Jul 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.testbench
 # vsim -gui "+altera" -l msim_transcript -do "processor_run_msim_rtl_verilog.do" 
-# Start time: 18:22:18 on Jul 12,2019
+# Start time: 17:05:27 on Jul 15,2019
 # Loading work.testbench
 # Loading work.processor
 # Loading work.control
@@ -201,251 +201,143 @@ vsim work.testbench
 # Loading work.data_memory
 # Loading work.async_memory
 # Loading work.serial_buffer
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
-# 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
-# 
-add wave -position insertpoint sim:/testbench/TestController/*
 run
-run
-run
-run
-run
-run
-run
-run
-run
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:29 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 18:24:29 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:29 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
-# -- Compiling module async_memory
-# 
-# Top level modules:
-# 	async_memory
-# End time: 18:24:29 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:30 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
-# -- Compiling module control
-# 
-# Top level modules:
-# 	control
-# End time: 18:24:30 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:30 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
-# -- Compiling module data_memory
-# 
-# Top level modules:
-# 	data_memory
-# End time: 18:24:30 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:31 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
-# -- Compiling module inst_rom
-# 
-# Top level modules:
-# 	inst_rom
-# End time: 18:24:31 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:31 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
-# -- Compiling module processor
-# -- Compiling module sign_extend
-# -- Compiling module mux
-# 
-# Top level modules:
-# 	processor
-# End time: 18:24:31 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:32 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
-# -- Compiling module reg_file
-# 
-# Top level modules:
-# 	reg_file
-# End time: 18:24:32 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:32 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
-# -- Compiling module serial_buffer
-# 
-# Top level modules:
-# 	serial_buffer
-# End time: 18:24:32 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:24:33 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 18:24:33 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# [370] Serial: H
+# [410] Serial: e
+# [450] Serial: l
+# [490] Serial: l
+# [530] Serial: o
+# [570] Serial:  
+# [610] Serial: W
+# [650] Serial: o
+# [690] Serial: r
+# [730] Serial: l
+# [770] Serial: d
 restart
-# Loading work.testbench
-# Loading work.processor
-# Loading work.control
-# Loading work.inst_rom
-# Loading work.mux
-# Loading work.reg_file
-# Loading work.sign_extend
-# Loading work.alu
-# Loading work.data_memory
-# Loading work.async_memory
-# Loading work.serial_buffer
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
-# 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
-# 
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:54 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 18:53:54 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:55 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
-# -- Compiling module async_memory
-# 
-# Top level modules:
-# 	async_memory
-# End time: 18:53:55 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:55 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
-# -- Compiling module control
-# 
-# Top level modules:
-# 	control
-# End time: 18:53:55 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:56 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
-# -- Compiling module data_memory
-# 
-# Top level modules:
-# 	data_memory
-# End time: 18:53:56 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:56 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
-# -- Compiling module inst_rom
-# 
-# Top level modules:
-# 	inst_rom
-# End time: 18:53:56 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:57 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
-# -- Compiling module processor
-# -- Compiling module sign_extend
-# -- Compiling module mux
-# 
-# Top level modules:
-# 	processor
-# End time: 18:53:57 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:59 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
-# -- Compiling module reg_file
-# 
-# Top level modules:
-# 	reg_file
-# End time: 18:53:59 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:53:59 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
-# -- Compiling module serial_buffer
-# 
-# Top level modules:
-# 	serial_buffer
-# End time: 18:53:59 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 18:54:00 on Jul 12,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 18:54:00 on Jul 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 add wave -position insertpoint sim:/testbench/dut/*
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [370] Serial: H
+# [410] Serial: e
+# [450] Serial: l
+# [490] Serial: l
+# [530] Serial: o
+# [570] Serial:  
+# [610] Serial: W
+# [650] Serial: o
+# [690] Serial: r
+# [730] Serial: l
+# [770] Serial: d
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [370] Serial: H
+# [410] Serial: e
+# [450] Serial: l
+# [490] Serial: l
+# [530] Serial: o
+# [570] Serial:  
+# [610] Serial: W
+# [650] Serial: o
+# [690] Serial: r
+# [730] Serial: l
+# [770] Serial: d
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 17:20:31 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
+# -- Compiling module async_memory
+# 
+# Top level modules:
+# 	async_memory
+# End time: 17:20:31 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 17:20:31 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
+# -- Compiling module data_memory
+# 
+# Top level modules:
+# 	data_memory
+# End time: 17:20:31 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
+# -- Compiling module inst_rom
+# 
+# Top level modules:
+# 	inst_rom
+# End time: 17:20:31 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:31 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
+# -- Compiling module processor
+# -- Compiling module sign_extend
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	processor
+# End time: 17:20:32 on Jul 15,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:32 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
+# -- Compiling module reg_file
+# 
+# Top level modules:
+# 	reg_file
+# End time: 17:20:32 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:32 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
+# -- Compiling module serial_buffer
+# 
+# Top level modules:
+# 	serial_buffer
+# End time: 17:20:32 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:20:32 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 17:20:32 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 restart
 # Loading work.testbench
 # Loading work.processor
@@ -458,291 +350,151 @@ restart
 # Loading work.data_memory
 # Loading work.async_memory
 # Loading work.serial_buffer
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
+vsim work.testbench
+# vsim 
+# Start time: 17:20:41 on Jul 15,2019
+# Loading work.testbench
+# Loading work.processor
+# Loading work.control
+# Loading work.inst_rom
+# Loading work.mux
+# Loading work.reg_file
+# Loading work.sign_extend
+# Loading work.alu
+# Loading work.data_memory
+# Loading work.async_memory
+# Loading work.serial_buffer
+add wave -position insertpoint sim:/testbench/dut/*
+run
+# [370] Serial: H
+# [410] Serial: e
+# [450] Serial: l
+# [490] Serial: l
+# [530] Serial: o
+# [570] Serial:  
+# [610] Serial: W
+# [650] Serial: o
+# [690] Serial: r
+# [730] Serial: l
+# [770] Serial: d
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
+# -- Compiling module alu
 # 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
+# Top level modules:
+# 	alu
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
+# -- Compiling module async_memory
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
+# Top level modules:
+# 	async_memory
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
+# -- Compiling module control
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
+# Top level modules:
+# 	control
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
+# -- Compiling module data_memory
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
+# Top level modules:
+# 	data_memory
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
+# -- Compiling module inst_rom
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
+# Top level modules:
+# 	inst_rom
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
+# -- Compiling module processor
+# -- Compiling module sign_extend
+# -- Compiling module mux
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
+# Top level modules:
+# 	processor
+# End time: 17:24:12 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:12 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
+# -- Compiling module reg_file
 # 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
+# Top level modules:
+# 	reg_file
+# End time: 17:24:13 on Jul 15,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:13 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
+# -- Compiling module serial_buffer
 # 
+# Top level modules:
+# 	serial_buffer
+# End time: 17:24:13 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:24:13 on Jul 15,2019
+# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 17:24:13 on Jul 15,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 restart
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
-# 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
-# 
+# Loading work.testbench
+# Loading work.processor
+# Loading work.control
+# Loading work.inst_rom
+# Loading work.mux
+# Loading work.reg_file
+# Loading work.sign_extend
+# Loading work.alu
+# Loading work.data_memory
+# Loading work.async_memory
+# Loading work.serial_buffer
 run
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-run
-run
-run
-add wave -position insertpoint sim:/testbench/dut/RegisterFile/*
-add wave -position insertpoint  \
-sim:/testbench/dut/RegisterFile/registers
-restart
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
-# 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
-# 
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run -continue
-run -continue
-run -continue
-run -continue
-run -continue
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-# ** Warning: (vsim-3017) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Too few port connections. Expected 10, found 3.
-# 
-#         Region: /testbench/TestController
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegDst'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'RegWriteEnable'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUSrc'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'ALUFunction'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryRE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryWE'.
-# 
-# ** Warning: (vsim-3722) D:/Documents/School/CSE_141L/Lab_2/testbench.v(134): [TFMPC] - Missing connection for port 'MemoryToReg'.
-# 
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# End time: 19:03:34 on Jul 12,2019, Elapsed time: 0:41:16
-# Errors: 0, Warnings: 48
+# [370] Serial: H
+# [410] Serial: e
+# [450] Serial: l
+# [490] Serial: l
+# [530] Serial: o
+# [570] Serial:  
+# [610] Serial: W
+# [650] Serial: o
+# [690] Serial: r
+# [730] Serial: l
+# [770] Serial: d
+# End time: 17:34:30 on Jul 15,2019, Elapsed time: 0:13:49
+# Errors: 0, Warnings: 0
