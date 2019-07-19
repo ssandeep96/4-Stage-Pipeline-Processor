@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Mon Jul 15 17:24:05 2019
+Thu Jul 18 18:55:17 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -28,28 +28,30 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  20. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_6ii1:auto_generated
  21. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_m5d1:auto_generated
  22. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_5ii1:auto_generated
- 23. Parameter Settings for User Entity Instance: inst_rom:InstructionMemory
- 24. Parameter Settings for User Entity Instance: mux:InstructMux
- 25. Parameter Settings for User Entity Instance: mux:ALUMux
- 26. Parameter Settings for User Entity Instance: data_memory:DataMemory
- 27. Parameter Settings for User Entity Instance: data_memory:DataMemory|async_memory:data_seg
- 28. Parameter Settings for User Entity Instance: data_memory:DataMemory|async_memory:stack_seg
- 29. Parameter Settings for User Entity Instance: data_memory:DataMemory|serial_buffer:ser
- 30. Parameter Settings for User Entity Instance: mux:DataMux
- 31. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0
- 32. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem0_rtl_0
- 33. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0
- 34. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0
- 35. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0
- 36. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0
- 37. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0
- 38. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0
- 39. altsyncram Parameter Settings by Entity Instance
- 40. Port Connectivity Checks: "data_memory:DataMemory"
- 41. Port Connectivity Checks: "alu:ALU"
- 42. Post-Synthesis Netlist Statistics for Top Partition
- 43. Elapsed Time Per Partition
- 44. Analysis & Synthesis Messages
+ 23. Parameter Settings for User Entity Instance: mux:NextPCMux
+ 24. Parameter Settings for User Entity Instance: inst_rom:InstructionMemory
+ 25. Parameter Settings for User Entity Instance: mux:InstructMux
+ 26. Parameter Settings for User Entity Instance: mux:BranchOrJumpMux
+ 27. Parameter Settings for User Entity Instance: mux:ALUMux
+ 28. Parameter Settings for User Entity Instance: data_memory:DataMemory
+ 29. Parameter Settings for User Entity Instance: data_memory:DataMemory|async_memory:data_seg
+ 30. Parameter Settings for User Entity Instance: data_memory:DataMemory|async_memory:stack_seg
+ 31. Parameter Settings for User Entity Instance: data_memory:DataMemory|serial_buffer:ser
+ 32. Parameter Settings for User Entity Instance: mux:DataMux
+ 33. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0
+ 34. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem0_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0
+ 37. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0
+ 38. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0
+ 39. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0
+ 40. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0
+ 41. altsyncram Parameter Settings by Entity Instance
+ 42. Port Connectivity Checks: "data_memory:DataMemory"
+ 43. Port Connectivity Checks: "mux:BranchOrJumpMux"
+ 44. Post-Synthesis Netlist Statistics for Top Partition
+ 45. Elapsed Time Per Partition
+ 46. Analysis & Synthesis Messages
 
 
 
@@ -76,15 +78,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 15 17:24:05 2019      ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 18 18:55:17 2019      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; processor                                  ;
 ; Top-level Entity Name              ; processor                                  ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 561                                        ;
-;     Total combinational functions  ; 497                                        ;
-;     Dedicated logic registers      ; 126                                        ;
-; Total registers                    ; 126                                        ;
+; Total logic elements               ; 723                                        ;
+;     Total combinational functions  ; 659                                        ;
+;     Dedicated logic registers      ; 148                                        ;
+; Total registers                    ; 148                                        ;
 ; Total pins                         ; 22                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 65,536                                     ;
@@ -230,20 +232,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 561         ;
+; Estimated Total logic elements              ; 723         ;
 ;                                             ;             ;
-; Total combinational functions               ; 497         ;
+; Total combinational functions               ; 659         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 259         ;
-;     -- 3 input functions                    ; 199         ;
-;     -- <=2 input functions                  ; 39          ;
+;     -- 4 input functions                    ; 374         ;
+;     -- 3 input functions                    ; 218         ;
+;     -- <=2 input functions                  ; 67          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 396         ;
-;     -- arithmetic mode                      ; 101         ;
+;     -- normal mode                          ; 536         ;
+;     -- arithmetic mode                      ; 123         ;
 ;                                             ;             ;
-; Total registers                             ; 126         ;
-;     -- Dedicated logic registers            ; 126         ;
+; Total registers                             ; 148         ;
+;     -- Dedicated logic registers            ; 148         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 22          ;
@@ -252,9 +254,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 190         ;
-; Total fan-out                               ; 2939        ;
-; Average fan-out                             ; 4.02        ;
+; Maximum fan-out                             ; 212         ;
+; Total fan-out                               ; 3556        ;
+; Average fan-out                             ; 3.89        ;
 +---------------------------------------------+-------------+
 
 
@@ -263,10 +265,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 497 (16)          ; 126 (8)      ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
-;    |alu:ALU|                                 ; 222 (222)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
-;    |control:Controller|                      ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:Controller                                                                                 ; work         ;
-;    |data_memory:DataMemory|                  ; 30 (16)           ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory                                                                             ; work         ;
+; |processor                                   ; 659 (139)         ; 148 (30)     ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
+;    |alu:ALU|                                 ; 252 (252)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
+;    |control:Controller|                      ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:Controller                                                                                 ; work         ;
+;    |data_memory:DataMemory|                  ; 35 (20)           ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory                                                                             ; work         ;
 ;       |async_memory:data_seg|                ; 2 (2)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg                                                       ; work         ;
 ;          |altsyncram:mem0_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0                                 ; work         ;
 ;             |altsyncram_4ii1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_4ii1:auto_generated  ; work         ;
@@ -285,11 +287,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram_m5d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated ; work         ;
 ;          |altsyncram:mem3_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0                                ; work         ;
 ;             |altsyncram_m5d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_m5d1:auto_generated ; work         ;
-;       |serial_buffer:ser|                    ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|serial_buffer:ser                                                           ; work         ;
-;    |inst_rom:InstructionMemory|              ; 30 (30)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
+;       |serial_buffer:ser|                    ; 12 (12)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|serial_buffer:ser                                                           ; work         ;
+;    |inst_rom:InstructionMemory|              ; 33 (33)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
 ;    |mux:ALUMux|                              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ALUMux                                                                                         ; work         ;
 ;    |mux:DataMux|                             ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:DataMux                                                                                        ; work         ;
-;    |reg_file:RegisterFile|                   ; 123 (123)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
+;    |reg_file:RegisterFile|                   ; 125 (125)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -310,24 +312,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; control:Controller|MemoryWE                         ; GND                 ; yes                    ;
-; control:Controller|ALUFunction[1]                   ; VCC                 ; yes                    ;
-; control:Controller|ALUSrc                           ; GND                 ; yes                    ;
-; control:Controller|ALUFunction[5]                   ; VCC                 ; yes                    ;
-; control:Controller|ALUFunction[4]                   ; VCC                 ; yes                    ;
-; control:Controller|ALUFunction[3]                   ; VCC                 ; yes                    ;
-; control:Controller|ALUFunction[0]                   ; VCC                 ; yes                    ;
-; control:Controller|ALUFunction[2]                   ; VCC                 ; yes                    ;
-; control:Controller|MemoryToReg                      ; GND                 ; yes                    ;
-; control:Controller|RegWriteEnable                   ; GND                 ; yes                    ;
-; control:Controller|RegDst                           ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 11  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                             ;
++----------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal               ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------------------+------------------------+
+; control:Controller|ALUFunction[1]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; control:Controller|ALUFunction[5]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; control:Controller|ALUFunction[4]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; control:Controller|ALUFunction[3]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; control:Controller|ALUFunction[0]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; control:Controller|ALUFunction[2]                  ; control:Controller|ALUFunction[5] ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                                   ;                        ;
++----------------------------------------------------+-----------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -1140,8 +1137,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; reg_file:RegisterFile|registers[12][1]                      ; Lost fanout                                    ;
 ; inst_rom:InstructionMemory|out[9]                           ; Merged with inst_rom:InstructionMemory|out[11] ;
 ; inst_rom:InstructionMemory|out[23]                          ; Merged with inst_rom:InstructionMemory|out[21] ;
-; inst_rom:InstructionMemory|out[1]                           ; Merged with inst_rom:InstructionMemory|out[15] ;
 ; inst_rom:InstructionMemory|out[3,7]                         ; Merged with inst_rom:InstructionMemory|out[2]  ;
+; inst_rom:InstructionMemory|out[1]                           ; Merged with inst_rom:InstructionMemory|out[15] ;
+; PC[0,1]                                                     ; Stuck at GND due to stuck port data_in         ;
 ; reg_file:RegisterFile|registers[8][31]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[2][31]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[8][30]                      ; Lost fanout                                    ;
@@ -1270,424 +1268,422 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; reg_file:RegisterFile|registers[4][1]                       ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[16][0]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[4][0]                       ; Lost fanout                                    ;
-; PC[10..31]                                                  ; Lost fanout                                    ;
-; Total Number of Removed Registers = 970                     ;                                                ;
+; Total Number of Removed Registers = 950                     ;                                                ;
 +-------------------------------------------------------------+------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                              ;
-+------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                                                  ;
-+------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------+
-; inst_rom:InstructionMemory|out[0]  ; Stuck at GND              ; reg_file:RegisterFile|registers[27][0], reg_file:RegisterFile|registers[26][0],                         ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[25][0], reg_file:RegisterFile|registers[23][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][0], reg_file:RegisterFile|registers[21][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][0], reg_file:RegisterFile|registers[18][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][0], reg_file:RegisterFile|registers[15][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][0], reg_file:RegisterFile|registers[13][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][0], reg_file:RegisterFile|registers[9][0],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][0], reg_file:RegisterFile|registers[6][0],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][0], reg_file:RegisterFile|registers[3][0],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][0], reg_file:RegisterFile|registers[27][3],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][3], reg_file:RegisterFile|registers[25][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][3], reg_file:RegisterFile|registers[22][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][3], reg_file:RegisterFile|registers[19][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][3], reg_file:RegisterFile|registers[17][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][3], reg_file:RegisterFile|registers[14][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][3], reg_file:RegisterFile|registers[11][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][3], reg_file:RegisterFile|registers[7][3],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][3], reg_file:RegisterFile|registers[5][3],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][3], reg_file:RegisterFile|registers[1][3],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][30], reg_file:RegisterFile|registers[26][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][30], reg_file:RegisterFile|registers[23][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][30], reg_file:RegisterFile|registers[21][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][30], reg_file:RegisterFile|registers[18][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][30], reg_file:RegisterFile|registers[15][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][30], reg_file:RegisterFile|registers[13][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][30], reg_file:RegisterFile|registers[9][30],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][30], reg_file:RegisterFile|registers[6][30],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][30], reg_file:RegisterFile|registers[3][30],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][30], reg_file:RegisterFile|registers[27][29],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][29], reg_file:RegisterFile|registers[25][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][29], reg_file:RegisterFile|registers[22][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][29], reg_file:RegisterFile|registers[19][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][29], reg_file:RegisterFile|registers[17][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][29], reg_file:RegisterFile|registers[14][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][29], reg_file:RegisterFile|registers[11][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][29], reg_file:RegisterFile|registers[7][29],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][29], reg_file:RegisterFile|registers[5][29],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][29], reg_file:RegisterFile|registers[1][29],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][28], reg_file:RegisterFile|registers[26][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][28], reg_file:RegisterFile|registers[23][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][28], reg_file:RegisterFile|registers[21][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][28], reg_file:RegisterFile|registers[18][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][28], reg_file:RegisterFile|registers[15][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][28], reg_file:RegisterFile|registers[13][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][28], reg_file:RegisterFile|registers[9][28],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][28], reg_file:RegisterFile|registers[6][28],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][28], reg_file:RegisterFile|registers[3][28],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][28], reg_file:RegisterFile|registers[27][27],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][27], reg_file:RegisterFile|registers[25][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][27], reg_file:RegisterFile|registers[22][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][27], reg_file:RegisterFile|registers[19][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][27], reg_file:RegisterFile|registers[17][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][27], reg_file:RegisterFile|registers[14][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][27], reg_file:RegisterFile|registers[11][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][27], reg_file:RegisterFile|registers[7][27],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][27], reg_file:RegisterFile|registers[5][27],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][27], reg_file:RegisterFile|registers[1][27],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][26], reg_file:RegisterFile|registers[26][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][26], reg_file:RegisterFile|registers[23][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][26], reg_file:RegisterFile|registers[21][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][26], reg_file:RegisterFile|registers[18][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][26], reg_file:RegisterFile|registers[15][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][26], reg_file:RegisterFile|registers[13][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][26], reg_file:RegisterFile|registers[9][26],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][26], reg_file:RegisterFile|registers[6][26],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][26], reg_file:RegisterFile|registers[3][26],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][26], reg_file:RegisterFile|registers[27][25],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][25], reg_file:RegisterFile|registers[25][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][25], reg_file:RegisterFile|registers[22][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][25], reg_file:RegisterFile|registers[19][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][25], reg_file:RegisterFile|registers[17][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][25], reg_file:RegisterFile|registers[14][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][25], reg_file:RegisterFile|registers[11][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][25], reg_file:RegisterFile|registers[7][25],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][25], reg_file:RegisterFile|registers[5][25],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][25], reg_file:RegisterFile|registers[1][25],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][24], reg_file:RegisterFile|registers[26][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][24], reg_file:RegisterFile|registers[23][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][24], reg_file:RegisterFile|registers[21][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][24], reg_file:RegisterFile|registers[18][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][24], reg_file:RegisterFile|registers[15][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][24], reg_file:RegisterFile|registers[13][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][24], reg_file:RegisterFile|registers[9][24],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][24], reg_file:RegisterFile|registers[6][24],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][24], reg_file:RegisterFile|registers[3][24],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][24], reg_file:RegisterFile|registers[27][23],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][23], reg_file:RegisterFile|registers[25][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][23], reg_file:RegisterFile|registers[22][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][23], reg_file:RegisterFile|registers[19][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][23], reg_file:RegisterFile|registers[17][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][23], reg_file:RegisterFile|registers[14][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][23], reg_file:RegisterFile|registers[11][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][23], reg_file:RegisterFile|registers[7][23],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][23], reg_file:RegisterFile|registers[5][23],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][23], reg_file:RegisterFile|registers[1][23],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][22], reg_file:RegisterFile|registers[26][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][22], reg_file:RegisterFile|registers[23][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][22], reg_file:RegisterFile|registers[21][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][22], reg_file:RegisterFile|registers[18][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][22], reg_file:RegisterFile|registers[15][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][22], reg_file:RegisterFile|registers[13][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][22], reg_file:RegisterFile|registers[9][22],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][22], reg_file:RegisterFile|registers[6][22],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][22], reg_file:RegisterFile|registers[3][22],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][22], reg_file:RegisterFile|registers[27][21],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][21], reg_file:RegisterFile|registers[25][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][21], reg_file:RegisterFile|registers[22][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][21], reg_file:RegisterFile|registers[19][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][21], reg_file:RegisterFile|registers[17][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][21], reg_file:RegisterFile|registers[14][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][21], reg_file:RegisterFile|registers[11][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][21], reg_file:RegisterFile|registers[7][21],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][21], reg_file:RegisterFile|registers[5][21],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][21], reg_file:RegisterFile|registers[1][21],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][20], reg_file:RegisterFile|registers[26][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][20], reg_file:RegisterFile|registers[23][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][20], reg_file:RegisterFile|registers[21][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][20], reg_file:RegisterFile|registers[18][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][20], reg_file:RegisterFile|registers[15][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][20], reg_file:RegisterFile|registers[13][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][20], reg_file:RegisterFile|registers[9][20],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][20], reg_file:RegisterFile|registers[6][20],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][20], reg_file:RegisterFile|registers[3][20],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][20], reg_file:RegisterFile|registers[27][19],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][19], reg_file:RegisterFile|registers[25][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][19], reg_file:RegisterFile|registers[22][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][19], reg_file:RegisterFile|registers[19][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][19], reg_file:RegisterFile|registers[17][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][19], reg_file:RegisterFile|registers[14][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][19], reg_file:RegisterFile|registers[11][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][19], reg_file:RegisterFile|registers[7][19],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][19], reg_file:RegisterFile|registers[5][19],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][19], reg_file:RegisterFile|registers[1][19],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][18], reg_file:RegisterFile|registers[26][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][18], reg_file:RegisterFile|registers[23][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][18], reg_file:RegisterFile|registers[21][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][18], reg_file:RegisterFile|registers[18][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][18], reg_file:RegisterFile|registers[15][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][18], reg_file:RegisterFile|registers[13][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][18], reg_file:RegisterFile|registers[9][18],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][18], reg_file:RegisterFile|registers[6][18],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][18], reg_file:RegisterFile|registers[3][18],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][18], reg_file:RegisterFile|registers[27][17],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][17], reg_file:RegisterFile|registers[25][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][17], reg_file:RegisterFile|registers[22][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][17], reg_file:RegisterFile|registers[19][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][17], reg_file:RegisterFile|registers[17][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][17], reg_file:RegisterFile|registers[14][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][17], reg_file:RegisterFile|registers[11][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][17], reg_file:RegisterFile|registers[7][17],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][17], reg_file:RegisterFile|registers[5][17],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][17], reg_file:RegisterFile|registers[1][17],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][16], reg_file:RegisterFile|registers[26][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][16], reg_file:RegisterFile|registers[23][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][16], reg_file:RegisterFile|registers[21][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][16], reg_file:RegisterFile|registers[18][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][16], reg_file:RegisterFile|registers[15][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][16], reg_file:RegisterFile|registers[13][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][16], reg_file:RegisterFile|registers[9][16],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][16], reg_file:RegisterFile|registers[6][16],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][16], reg_file:RegisterFile|registers[3][16],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][16], reg_file:RegisterFile|registers[27][15],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][15], reg_file:RegisterFile|registers[25][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][15], reg_file:RegisterFile|registers[22][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][15], reg_file:RegisterFile|registers[19][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][15], reg_file:RegisterFile|registers[17][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][15], reg_file:RegisterFile|registers[14][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][15], reg_file:RegisterFile|registers[11][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][15], reg_file:RegisterFile|registers[7][15],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][15], reg_file:RegisterFile|registers[5][15],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][15], reg_file:RegisterFile|registers[1][15],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][14], reg_file:RegisterFile|registers[26][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][14], reg_file:RegisterFile|registers[23][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][14], reg_file:RegisterFile|registers[21][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][14], reg_file:RegisterFile|registers[18][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][14], reg_file:RegisterFile|registers[15][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][14], reg_file:RegisterFile|registers[13][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][14], reg_file:RegisterFile|registers[9][14],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][14], reg_file:RegisterFile|registers[6][14],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][14], reg_file:RegisterFile|registers[3][14],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][14], reg_file:RegisterFile|registers[27][13],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][13], reg_file:RegisterFile|registers[25][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][13], reg_file:RegisterFile|registers[22][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][13], reg_file:RegisterFile|registers[19][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][13], reg_file:RegisterFile|registers[17][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][13], reg_file:RegisterFile|registers[14][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][13], reg_file:RegisterFile|registers[11][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][13], reg_file:RegisterFile|registers[7][13],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][13], reg_file:RegisterFile|registers[5][13],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][13], reg_file:RegisterFile|registers[1][13],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][12], reg_file:RegisterFile|registers[26][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][12], reg_file:RegisterFile|registers[23][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][12], reg_file:RegisterFile|registers[21][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][12], reg_file:RegisterFile|registers[18][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][12], reg_file:RegisterFile|registers[15][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][12], reg_file:RegisterFile|registers[13][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][12], reg_file:RegisterFile|registers[9][12],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][12], reg_file:RegisterFile|registers[6][12],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][12], reg_file:RegisterFile|registers[3][12],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][12], reg_file:RegisterFile|registers[27][11],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][11], reg_file:RegisterFile|registers[25][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][11], reg_file:RegisterFile|registers[22][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][11], reg_file:RegisterFile|registers[19][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][11], reg_file:RegisterFile|registers[17][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][11], reg_file:RegisterFile|registers[14][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][11], reg_file:RegisterFile|registers[11][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][11], reg_file:RegisterFile|registers[7][11],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][11], reg_file:RegisterFile|registers[5][11],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][11], reg_file:RegisterFile|registers[1][11],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][10], reg_file:RegisterFile|registers[26][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][10], reg_file:RegisterFile|registers[23][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][10], reg_file:RegisterFile|registers[21][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][10], reg_file:RegisterFile|registers[18][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][10], reg_file:RegisterFile|registers[15][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][10], reg_file:RegisterFile|registers[13][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][10], reg_file:RegisterFile|registers[9][10],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][10], reg_file:RegisterFile|registers[6][10],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][10], reg_file:RegisterFile|registers[3][10],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][10], reg_file:RegisterFile|registers[27][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][9], reg_file:RegisterFile|registers[25][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][9], reg_file:RegisterFile|registers[22][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][9], reg_file:RegisterFile|registers[19][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][9], reg_file:RegisterFile|registers[17][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][9], reg_file:RegisterFile|registers[14][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][9], reg_file:RegisterFile|registers[11][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][9], reg_file:RegisterFile|registers[7][9],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][9], reg_file:RegisterFile|registers[5][9],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][9], reg_file:RegisterFile|registers[1][9],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][8], reg_file:RegisterFile|registers[26][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][8], reg_file:RegisterFile|registers[23][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][8], reg_file:RegisterFile|registers[21][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][8], reg_file:RegisterFile|registers[18][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][8], reg_file:RegisterFile|registers[15][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][8], reg_file:RegisterFile|registers[13][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][8], reg_file:RegisterFile|registers[9][8],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][8], reg_file:RegisterFile|registers[6][8],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][8], reg_file:RegisterFile|registers[3][8],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][8], reg_file:RegisterFile|registers[27][7],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][7], reg_file:RegisterFile|registers[25][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][7], reg_file:RegisterFile|registers[22][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][7], reg_file:RegisterFile|registers[19][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][7], reg_file:RegisterFile|registers[17][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][7], reg_file:RegisterFile|registers[14][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][7], reg_file:RegisterFile|registers[11][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][7], reg_file:RegisterFile|registers[7][7],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][7], reg_file:RegisterFile|registers[5][7],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][7], reg_file:RegisterFile|registers[1][7],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][6], reg_file:RegisterFile|registers[26][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][6], reg_file:RegisterFile|registers[23][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][6], reg_file:RegisterFile|registers[21][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][6], reg_file:RegisterFile|registers[18][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][6], reg_file:RegisterFile|registers[15][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][6], reg_file:RegisterFile|registers[13][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][6], reg_file:RegisterFile|registers[9][6],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][6], reg_file:RegisterFile|registers[6][6],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][6], reg_file:RegisterFile|registers[3][6],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][6], reg_file:RegisterFile|registers[27][5],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][5], reg_file:RegisterFile|registers[25][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][5], reg_file:RegisterFile|registers[22][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][5], reg_file:RegisterFile|registers[19][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][5], reg_file:RegisterFile|registers[17][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][5], reg_file:RegisterFile|registers[14][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][5], reg_file:RegisterFile|registers[11][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][5], reg_file:RegisterFile|registers[7][5],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][5], reg_file:RegisterFile|registers[5][5],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][5], reg_file:RegisterFile|registers[1][5],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][4], reg_file:RegisterFile|registers[26][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][4], reg_file:RegisterFile|registers[23][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][4], reg_file:RegisterFile|registers[21][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][4], reg_file:RegisterFile|registers[18][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][4], reg_file:RegisterFile|registers[15][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][4], reg_file:RegisterFile|registers[13][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][4], reg_file:RegisterFile|registers[9][4],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][4], reg_file:RegisterFile|registers[6][4],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][4], reg_file:RegisterFile|registers[3][4],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][4], reg_file:RegisterFile|registers[27][2],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[26][2], reg_file:RegisterFile|registers[25][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[23][2], reg_file:RegisterFile|registers[22][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[21][2], reg_file:RegisterFile|registers[19][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[18][2], reg_file:RegisterFile|registers[17][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[15][2], reg_file:RegisterFile|registers[14][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[13][2], reg_file:RegisterFile|registers[11][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][2], reg_file:RegisterFile|registers[7][2],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][2], reg_file:RegisterFile|registers[5][2],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][2], reg_file:RegisterFile|registers[1][2],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[27][1], reg_file:RegisterFile|registers[26][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[25][1], reg_file:RegisterFile|registers[23][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][1], reg_file:RegisterFile|registers[21][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][1], reg_file:RegisterFile|registers[18][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][1], reg_file:RegisterFile|registers[15][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][1], reg_file:RegisterFile|registers[13][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][1], reg_file:RegisterFile|registers[9][1],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][1], reg_file:RegisterFile|registers[6][1],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][1], reg_file:RegisterFile|registers[3][1],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][1], reg_file:RegisterFile|registers[28][3],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][31], reg_file:RegisterFile|registers[24][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[12][31], reg_file:RegisterFile|registers[28][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][23], reg_file:RegisterFile|registers[28][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][21], reg_file:RegisterFile|registers[28][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][19], reg_file:RegisterFile|registers[28][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][17], reg_file:RegisterFile|registers[28][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][15], reg_file:RegisterFile|registers[28][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][13], reg_file:RegisterFile|registers[28][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][11], reg_file:RegisterFile|registers[28][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][9], reg_file:RegisterFile|registers[28][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][7], reg_file:RegisterFile|registers[28][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][5], reg_file:RegisterFile|registers[28][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][2], reg_file:RegisterFile|registers[28][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][31], reg_file:RegisterFile|registers[2][31],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][31], reg_file:RegisterFile|registers[4][31]                         ;
-; inst_rom:InstructionMemory|out[12] ; Stuck at GND              ; reg_file:RegisterFile|registers[31][0], reg_file:RegisterFile|registers[30][0],                         ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[29][0], reg_file:RegisterFile|registers[31][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][3], reg_file:RegisterFile|registers[29][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][31], reg_file:RegisterFile|registers[30][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][31], reg_file:RegisterFile|registers[31][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][30], reg_file:RegisterFile|registers[29][30],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][29], reg_file:RegisterFile|registers[30][29],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][29], reg_file:RegisterFile|registers[31][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][28], reg_file:RegisterFile|registers[29][28],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][27], reg_file:RegisterFile|registers[30][27],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][27], reg_file:RegisterFile|registers[31][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][26], reg_file:RegisterFile|registers[29][26],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][25], reg_file:RegisterFile|registers[30][25],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][25], reg_file:RegisterFile|registers[31][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][24], reg_file:RegisterFile|registers[29][24],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][23], reg_file:RegisterFile|registers[30][23],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][23], reg_file:RegisterFile|registers[31][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][22], reg_file:RegisterFile|registers[29][22],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][21], reg_file:RegisterFile|registers[30][21],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][21], reg_file:RegisterFile|registers[31][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][20], reg_file:RegisterFile|registers[29][20],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][19], reg_file:RegisterFile|registers[30][19],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][19], reg_file:RegisterFile|registers[31][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][18], reg_file:RegisterFile|registers[29][18],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][17], reg_file:RegisterFile|registers[30][17],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][17], reg_file:RegisterFile|registers[31][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][16], reg_file:RegisterFile|registers[29][16],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][15], reg_file:RegisterFile|registers[30][15],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][15], reg_file:RegisterFile|registers[31][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][14], reg_file:RegisterFile|registers[29][14],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][13], reg_file:RegisterFile|registers[30][13],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][13], reg_file:RegisterFile|registers[31][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][12], reg_file:RegisterFile|registers[29][12],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][11], reg_file:RegisterFile|registers[30][11],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][11], reg_file:RegisterFile|registers[31][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][10], reg_file:RegisterFile|registers[29][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][9], reg_file:RegisterFile|registers[30][9],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][9], reg_file:RegisterFile|registers[31][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][8], reg_file:RegisterFile|registers[29][8],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][7], reg_file:RegisterFile|registers[30][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][7], reg_file:RegisterFile|registers[31][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][6], reg_file:RegisterFile|registers[29][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][5], reg_file:RegisterFile|registers[30][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][5], reg_file:RegisterFile|registers[31][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][4], reg_file:RegisterFile|registers[29][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[31][2], reg_file:RegisterFile|registers[30][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[29][2], reg_file:RegisterFile|registers[31][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][1], reg_file:RegisterFile|registers[29][1]                          ;
-; inst_rom:InstructionMemory|out[18] ; Stuck at GND              ; reg_file:RegisterFile|registers[27][31], reg_file:RegisterFile|registers[26][31],                       ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[25][31], reg_file:RegisterFile|registers[23][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][31], reg_file:RegisterFile|registers[21][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][31], reg_file:RegisterFile|registers[18][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][31], reg_file:RegisterFile|registers[15][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][31], reg_file:RegisterFile|registers[13][31],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[11][31], reg_file:RegisterFile|registers[9][31],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[7][31], reg_file:RegisterFile|registers[6][31],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[5][31], reg_file:RegisterFile|registers[3][31],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[1][31], reg_file:RegisterFile|registers[28][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][0], reg_file:RegisterFile|registers[12][0],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][3], reg_file:RegisterFile|registers[12][3],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][10], reg_file:RegisterFile|registers[12][10],                       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][7], reg_file:RegisterFile|registers[12][7],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][6], reg_file:RegisterFile|registers[12][6],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][5], reg_file:RegisterFile|registers[12][5],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][4], reg_file:RegisterFile|registers[12][4],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][2], reg_file:RegisterFile|registers[12][2],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][1], reg_file:RegisterFile|registers[12][1],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][10], reg_file:RegisterFile|registers[2][10],                         ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][7], reg_file:RegisterFile|registers[2][7],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][6], reg_file:RegisterFile|registers[2][6],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][5], reg_file:RegisterFile|registers[2][5],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][4], reg_file:RegisterFile|registers[2][4],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][3], reg_file:RegisterFile|registers[2][3],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][2], reg_file:RegisterFile|registers[2][2],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][1], reg_file:RegisterFile|registers[2][1],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][0], reg_file:RegisterFile|registers[2][0],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][10], reg_file:RegisterFile|registers[4][10],                        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][7], reg_file:RegisterFile|registers[4][7],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][6], reg_file:RegisterFile|registers[4][6],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][5], reg_file:RegisterFile|registers[4][5],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][4], reg_file:RegisterFile|registers[4][4],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][3], reg_file:RegisterFile|registers[4][3],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][2], reg_file:RegisterFile|registers[4][2],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][1], reg_file:RegisterFile|registers[4][1],                          ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][0], reg_file:RegisterFile|registers[4][0]                           ;
-; PC[31]                             ; Lost Fanouts              ; PC[30], PC[29], PC[28], PC[27], PC[26], PC[25], PC[24], PC[23], PC[22], PC[21], PC[20], PC[19], PC[18], ;
-;                                    ;                           ; PC[17], PC[16], PC[15], PC[14], PC[13], PC[12], PC[11], PC[10]                                          ;
-; inst_rom:InstructionMemory|out[17] ; Stuck at GND              ; reg_file:RegisterFile|registers[24][9], reg_file:RegisterFile|registers[12][9],                         ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][9], reg_file:RegisterFile|registers[2][9],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][9], reg_file:RegisterFile|registers[4][9]                           ;
-; inst_rom:InstructionMemory|out[16] ; Stuck at GND              ; reg_file:RegisterFile|registers[24][8], reg_file:RegisterFile|registers[12][8],                         ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][8], reg_file:RegisterFile|registers[2][8],                           ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][8], reg_file:RegisterFile|registers[4][8]                           ;
-; inst_rom:InstructionMemory|out[20] ; Stuck at GND              ; reg_file:RegisterFile|registers[8][12]                                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                                         ;
-; inst_rom:InstructionMemory|out[19] ; Stuck at GND              ; reg_file:RegisterFile|registers[8][11]                                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                                         ;
-+------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; inst_rom:InstructionMemory|out[0]  ; Stuck at GND              ; reg_file:RegisterFile|registers[27][0], reg_file:RegisterFile|registers[26][0],   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[25][0], reg_file:RegisterFile|registers[23][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][0], reg_file:RegisterFile|registers[21][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][0], reg_file:RegisterFile|registers[18][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][0], reg_file:RegisterFile|registers[15][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][0], reg_file:RegisterFile|registers[13][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][0], reg_file:RegisterFile|registers[9][0],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][0], reg_file:RegisterFile|registers[6][0],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][0], reg_file:RegisterFile|registers[3][0],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][0], reg_file:RegisterFile|registers[27][3],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][3], reg_file:RegisterFile|registers[25][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][3], reg_file:RegisterFile|registers[22][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][3], reg_file:RegisterFile|registers[19][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][3], reg_file:RegisterFile|registers[17][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][3], reg_file:RegisterFile|registers[14][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][3], reg_file:RegisterFile|registers[11][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][3], reg_file:RegisterFile|registers[7][3],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][3], reg_file:RegisterFile|registers[5][3],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][3], reg_file:RegisterFile|registers[1][3],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][30], reg_file:RegisterFile|registers[26][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][30], reg_file:RegisterFile|registers[23][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][30], reg_file:RegisterFile|registers[21][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][30], reg_file:RegisterFile|registers[18][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][30], reg_file:RegisterFile|registers[15][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][30], reg_file:RegisterFile|registers[13][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][30], reg_file:RegisterFile|registers[9][30],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][30], reg_file:RegisterFile|registers[6][30],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][30], reg_file:RegisterFile|registers[3][30],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][30], reg_file:RegisterFile|registers[27][29],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][29], reg_file:RegisterFile|registers[25][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][29], reg_file:RegisterFile|registers[22][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][29], reg_file:RegisterFile|registers[19][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][29], reg_file:RegisterFile|registers[17][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][29], reg_file:RegisterFile|registers[14][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][29], reg_file:RegisterFile|registers[11][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][29], reg_file:RegisterFile|registers[7][29],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][29], reg_file:RegisterFile|registers[5][29],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][29], reg_file:RegisterFile|registers[1][29],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][28], reg_file:RegisterFile|registers[26][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][28], reg_file:RegisterFile|registers[23][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][28], reg_file:RegisterFile|registers[21][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][28], reg_file:RegisterFile|registers[18][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][28], reg_file:RegisterFile|registers[15][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][28], reg_file:RegisterFile|registers[13][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][28], reg_file:RegisterFile|registers[9][28],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][28], reg_file:RegisterFile|registers[6][28],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][28], reg_file:RegisterFile|registers[3][28],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][28], reg_file:RegisterFile|registers[27][27],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][27], reg_file:RegisterFile|registers[25][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][27], reg_file:RegisterFile|registers[22][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][27], reg_file:RegisterFile|registers[19][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][27], reg_file:RegisterFile|registers[17][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][27], reg_file:RegisterFile|registers[14][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][27], reg_file:RegisterFile|registers[11][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][27], reg_file:RegisterFile|registers[7][27],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][27], reg_file:RegisterFile|registers[5][27],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][27], reg_file:RegisterFile|registers[1][27],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][26], reg_file:RegisterFile|registers[26][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][26], reg_file:RegisterFile|registers[23][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][26], reg_file:RegisterFile|registers[21][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][26], reg_file:RegisterFile|registers[18][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][26], reg_file:RegisterFile|registers[15][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][26], reg_file:RegisterFile|registers[13][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][26], reg_file:RegisterFile|registers[9][26],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][26], reg_file:RegisterFile|registers[6][26],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][26], reg_file:RegisterFile|registers[3][26],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][26], reg_file:RegisterFile|registers[27][25],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][25], reg_file:RegisterFile|registers[25][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][25], reg_file:RegisterFile|registers[22][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][25], reg_file:RegisterFile|registers[19][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][25], reg_file:RegisterFile|registers[17][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][25], reg_file:RegisterFile|registers[14][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][25], reg_file:RegisterFile|registers[11][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][25], reg_file:RegisterFile|registers[7][25],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][25], reg_file:RegisterFile|registers[5][25],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][25], reg_file:RegisterFile|registers[1][25],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][24], reg_file:RegisterFile|registers[26][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][24], reg_file:RegisterFile|registers[23][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][24], reg_file:RegisterFile|registers[21][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][24], reg_file:RegisterFile|registers[18][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][24], reg_file:RegisterFile|registers[15][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][24], reg_file:RegisterFile|registers[13][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][24], reg_file:RegisterFile|registers[9][24],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][24], reg_file:RegisterFile|registers[6][24],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][24], reg_file:RegisterFile|registers[3][24],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][24], reg_file:RegisterFile|registers[27][23],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][23], reg_file:RegisterFile|registers[25][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][23], reg_file:RegisterFile|registers[22][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][23], reg_file:RegisterFile|registers[19][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][23], reg_file:RegisterFile|registers[17][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][23], reg_file:RegisterFile|registers[14][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][23], reg_file:RegisterFile|registers[11][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][23], reg_file:RegisterFile|registers[7][23],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][23], reg_file:RegisterFile|registers[5][23],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][23], reg_file:RegisterFile|registers[1][23],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][22], reg_file:RegisterFile|registers[26][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][22], reg_file:RegisterFile|registers[23][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][22], reg_file:RegisterFile|registers[21][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][22], reg_file:RegisterFile|registers[18][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][22], reg_file:RegisterFile|registers[15][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][22], reg_file:RegisterFile|registers[13][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][22], reg_file:RegisterFile|registers[9][22],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][22], reg_file:RegisterFile|registers[6][22],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][22], reg_file:RegisterFile|registers[3][22],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][22], reg_file:RegisterFile|registers[27][21],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][21], reg_file:RegisterFile|registers[25][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][21], reg_file:RegisterFile|registers[22][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][21], reg_file:RegisterFile|registers[19][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][21], reg_file:RegisterFile|registers[17][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][21], reg_file:RegisterFile|registers[14][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][21], reg_file:RegisterFile|registers[11][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][21], reg_file:RegisterFile|registers[7][21],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][21], reg_file:RegisterFile|registers[5][21],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][21], reg_file:RegisterFile|registers[1][21],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][20], reg_file:RegisterFile|registers[26][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][20], reg_file:RegisterFile|registers[23][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][20], reg_file:RegisterFile|registers[21][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][20], reg_file:RegisterFile|registers[18][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][20], reg_file:RegisterFile|registers[15][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][20], reg_file:RegisterFile|registers[13][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][20], reg_file:RegisterFile|registers[9][20],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][20], reg_file:RegisterFile|registers[6][20],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][20], reg_file:RegisterFile|registers[3][20],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][20], reg_file:RegisterFile|registers[27][19],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][19], reg_file:RegisterFile|registers[25][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][19], reg_file:RegisterFile|registers[22][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][19], reg_file:RegisterFile|registers[19][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][19], reg_file:RegisterFile|registers[17][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][19], reg_file:RegisterFile|registers[14][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][19], reg_file:RegisterFile|registers[11][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][19], reg_file:RegisterFile|registers[7][19],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][19], reg_file:RegisterFile|registers[5][19],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][19], reg_file:RegisterFile|registers[1][19],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][18], reg_file:RegisterFile|registers[26][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][18], reg_file:RegisterFile|registers[23][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][18], reg_file:RegisterFile|registers[21][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][18], reg_file:RegisterFile|registers[18][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][18], reg_file:RegisterFile|registers[15][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][18], reg_file:RegisterFile|registers[13][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][18], reg_file:RegisterFile|registers[9][18],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][18], reg_file:RegisterFile|registers[6][18],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][18], reg_file:RegisterFile|registers[3][18],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][18], reg_file:RegisterFile|registers[27][17],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][17], reg_file:RegisterFile|registers[25][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][17], reg_file:RegisterFile|registers[22][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][17], reg_file:RegisterFile|registers[19][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][17], reg_file:RegisterFile|registers[17][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][17], reg_file:RegisterFile|registers[14][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][17], reg_file:RegisterFile|registers[11][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][17], reg_file:RegisterFile|registers[7][17],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][17], reg_file:RegisterFile|registers[5][17],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][17], reg_file:RegisterFile|registers[1][17],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][16], reg_file:RegisterFile|registers[26][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][16], reg_file:RegisterFile|registers[23][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][16], reg_file:RegisterFile|registers[21][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][16], reg_file:RegisterFile|registers[18][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][16], reg_file:RegisterFile|registers[15][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][16], reg_file:RegisterFile|registers[13][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][16], reg_file:RegisterFile|registers[9][16],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][16], reg_file:RegisterFile|registers[6][16],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][16], reg_file:RegisterFile|registers[3][16],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][16], reg_file:RegisterFile|registers[27][15],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][15], reg_file:RegisterFile|registers[25][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][15], reg_file:RegisterFile|registers[22][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][15], reg_file:RegisterFile|registers[19][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][15], reg_file:RegisterFile|registers[17][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][15], reg_file:RegisterFile|registers[14][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][15], reg_file:RegisterFile|registers[11][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][15], reg_file:RegisterFile|registers[7][15],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][15], reg_file:RegisterFile|registers[5][15],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][15], reg_file:RegisterFile|registers[1][15],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][14], reg_file:RegisterFile|registers[26][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][14], reg_file:RegisterFile|registers[23][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][14], reg_file:RegisterFile|registers[21][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][14], reg_file:RegisterFile|registers[18][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][14], reg_file:RegisterFile|registers[15][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][14], reg_file:RegisterFile|registers[13][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][14], reg_file:RegisterFile|registers[9][14],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][14], reg_file:RegisterFile|registers[6][14],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][14], reg_file:RegisterFile|registers[3][14],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][14], reg_file:RegisterFile|registers[27][13],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][13], reg_file:RegisterFile|registers[25][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][13], reg_file:RegisterFile|registers[22][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][13], reg_file:RegisterFile|registers[19][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][13], reg_file:RegisterFile|registers[17][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][13], reg_file:RegisterFile|registers[14][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][13], reg_file:RegisterFile|registers[11][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][13], reg_file:RegisterFile|registers[7][13],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][13], reg_file:RegisterFile|registers[5][13],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][13], reg_file:RegisterFile|registers[1][13],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][12], reg_file:RegisterFile|registers[26][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][12], reg_file:RegisterFile|registers[23][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][12], reg_file:RegisterFile|registers[21][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][12], reg_file:RegisterFile|registers[18][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][12], reg_file:RegisterFile|registers[15][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][12], reg_file:RegisterFile|registers[13][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][12], reg_file:RegisterFile|registers[9][12],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][12], reg_file:RegisterFile|registers[6][12],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][12], reg_file:RegisterFile|registers[3][12],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][12], reg_file:RegisterFile|registers[27][11],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][11], reg_file:RegisterFile|registers[25][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][11], reg_file:RegisterFile|registers[22][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][11], reg_file:RegisterFile|registers[19][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][11], reg_file:RegisterFile|registers[17][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][11], reg_file:RegisterFile|registers[14][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][11], reg_file:RegisterFile|registers[11][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][11], reg_file:RegisterFile|registers[7][11],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][11], reg_file:RegisterFile|registers[5][11],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][11], reg_file:RegisterFile|registers[1][11],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][10], reg_file:RegisterFile|registers[26][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][10], reg_file:RegisterFile|registers[23][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][10], reg_file:RegisterFile|registers[21][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][10], reg_file:RegisterFile|registers[18][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][10], reg_file:RegisterFile|registers[15][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][10], reg_file:RegisterFile|registers[13][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][10], reg_file:RegisterFile|registers[9][10],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][10], reg_file:RegisterFile|registers[6][10],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][10], reg_file:RegisterFile|registers[3][10],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][10], reg_file:RegisterFile|registers[27][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][9], reg_file:RegisterFile|registers[25][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][9], reg_file:RegisterFile|registers[22][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][9], reg_file:RegisterFile|registers[19][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][9], reg_file:RegisterFile|registers[17][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][9], reg_file:RegisterFile|registers[14][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][9], reg_file:RegisterFile|registers[11][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][9], reg_file:RegisterFile|registers[7][9],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][9], reg_file:RegisterFile|registers[5][9],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][9], reg_file:RegisterFile|registers[1][9],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][8], reg_file:RegisterFile|registers[26][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][8], reg_file:RegisterFile|registers[23][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][8], reg_file:RegisterFile|registers[21][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][8], reg_file:RegisterFile|registers[18][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][8], reg_file:RegisterFile|registers[15][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][8], reg_file:RegisterFile|registers[13][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][8], reg_file:RegisterFile|registers[9][8],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][8], reg_file:RegisterFile|registers[6][8],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][8], reg_file:RegisterFile|registers[3][8],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][8], reg_file:RegisterFile|registers[27][7],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][7], reg_file:RegisterFile|registers[25][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][7], reg_file:RegisterFile|registers[22][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][7], reg_file:RegisterFile|registers[19][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][7], reg_file:RegisterFile|registers[17][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][7], reg_file:RegisterFile|registers[14][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][7], reg_file:RegisterFile|registers[11][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][7], reg_file:RegisterFile|registers[7][7],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][7], reg_file:RegisterFile|registers[5][7],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][7], reg_file:RegisterFile|registers[1][7],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][6], reg_file:RegisterFile|registers[26][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][6], reg_file:RegisterFile|registers[23][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][6], reg_file:RegisterFile|registers[21][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][6], reg_file:RegisterFile|registers[18][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][6], reg_file:RegisterFile|registers[15][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][6], reg_file:RegisterFile|registers[13][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][6], reg_file:RegisterFile|registers[9][6],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][6], reg_file:RegisterFile|registers[6][6],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][6], reg_file:RegisterFile|registers[3][6],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][6], reg_file:RegisterFile|registers[27][5],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][5], reg_file:RegisterFile|registers[25][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][5], reg_file:RegisterFile|registers[22][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][5], reg_file:RegisterFile|registers[19][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][5], reg_file:RegisterFile|registers[17][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][5], reg_file:RegisterFile|registers[14][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][5], reg_file:RegisterFile|registers[11][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][5], reg_file:RegisterFile|registers[7][5],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][5], reg_file:RegisterFile|registers[5][5],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][5], reg_file:RegisterFile|registers[1][5],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][4], reg_file:RegisterFile|registers[26][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][4], reg_file:RegisterFile|registers[23][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][4], reg_file:RegisterFile|registers[21][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][4], reg_file:RegisterFile|registers[18][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][4], reg_file:RegisterFile|registers[15][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][4], reg_file:RegisterFile|registers[13][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][4], reg_file:RegisterFile|registers[9][4],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][4], reg_file:RegisterFile|registers[6][4],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][4], reg_file:RegisterFile|registers[3][4],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][4], reg_file:RegisterFile|registers[27][2],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[26][2], reg_file:RegisterFile|registers[25][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[23][2], reg_file:RegisterFile|registers[22][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[21][2], reg_file:RegisterFile|registers[19][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[18][2], reg_file:RegisterFile|registers[17][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[15][2], reg_file:RegisterFile|registers[14][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[13][2], reg_file:RegisterFile|registers[11][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[9][2], reg_file:RegisterFile|registers[7][2],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[6][2], reg_file:RegisterFile|registers[5][2],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[3][2], reg_file:RegisterFile|registers[1][2],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[27][1], reg_file:RegisterFile|registers[26][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[25][1], reg_file:RegisterFile|registers[23][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][1], reg_file:RegisterFile|registers[21][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][1], reg_file:RegisterFile|registers[18][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][1], reg_file:RegisterFile|registers[15][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][1], reg_file:RegisterFile|registers[13][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][1], reg_file:RegisterFile|registers[9][1],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][1], reg_file:RegisterFile|registers[6][1],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][1], reg_file:RegisterFile|registers[3][1],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][1], reg_file:RegisterFile|registers[28][3],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][31], reg_file:RegisterFile|registers[24][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[12][31], reg_file:RegisterFile|registers[28][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][23], reg_file:RegisterFile|registers[28][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][21], reg_file:RegisterFile|registers[28][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][19], reg_file:RegisterFile|registers[28][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][17], reg_file:RegisterFile|registers[28][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][15], reg_file:RegisterFile|registers[28][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][13], reg_file:RegisterFile|registers[28][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][11], reg_file:RegisterFile|registers[28][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][9], reg_file:RegisterFile|registers[28][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][7], reg_file:RegisterFile|registers[28][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][5], reg_file:RegisterFile|registers[28][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][2], reg_file:RegisterFile|registers[28][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][31], reg_file:RegisterFile|registers[2][31],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][31], reg_file:RegisterFile|registers[4][31]   ;
+; inst_rom:InstructionMemory|out[12] ; Stuck at GND              ; reg_file:RegisterFile|registers[31][0], reg_file:RegisterFile|registers[30][0],   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[29][0], reg_file:RegisterFile|registers[31][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][3], reg_file:RegisterFile|registers[29][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][31], reg_file:RegisterFile|registers[30][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][31], reg_file:RegisterFile|registers[31][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][30], reg_file:RegisterFile|registers[29][30], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][29], reg_file:RegisterFile|registers[30][29], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][29], reg_file:RegisterFile|registers[31][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][28], reg_file:RegisterFile|registers[29][28], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][27], reg_file:RegisterFile|registers[30][27], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][27], reg_file:RegisterFile|registers[31][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][26], reg_file:RegisterFile|registers[29][26], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][25], reg_file:RegisterFile|registers[30][25], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][25], reg_file:RegisterFile|registers[31][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][24], reg_file:RegisterFile|registers[29][24], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][23], reg_file:RegisterFile|registers[30][23], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][23], reg_file:RegisterFile|registers[31][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][22], reg_file:RegisterFile|registers[29][22], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][21], reg_file:RegisterFile|registers[30][21], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][21], reg_file:RegisterFile|registers[31][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][20], reg_file:RegisterFile|registers[29][20], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][19], reg_file:RegisterFile|registers[30][19], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][19], reg_file:RegisterFile|registers[31][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][18], reg_file:RegisterFile|registers[29][18], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][17], reg_file:RegisterFile|registers[30][17], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][17], reg_file:RegisterFile|registers[31][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][16], reg_file:RegisterFile|registers[29][16], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][15], reg_file:RegisterFile|registers[30][15], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][15], reg_file:RegisterFile|registers[31][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][14], reg_file:RegisterFile|registers[29][14], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][13], reg_file:RegisterFile|registers[30][13], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][13], reg_file:RegisterFile|registers[31][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][12], reg_file:RegisterFile|registers[29][12], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][11], reg_file:RegisterFile|registers[30][11], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][11], reg_file:RegisterFile|registers[31][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][10], reg_file:RegisterFile|registers[29][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][9], reg_file:RegisterFile|registers[30][9],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][9], reg_file:RegisterFile|registers[31][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][8], reg_file:RegisterFile|registers[29][8],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][7], reg_file:RegisterFile|registers[30][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][7], reg_file:RegisterFile|registers[31][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][6], reg_file:RegisterFile|registers[29][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][5], reg_file:RegisterFile|registers[30][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][5], reg_file:RegisterFile|registers[31][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][4], reg_file:RegisterFile|registers[29][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[31][2], reg_file:RegisterFile|registers[30][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[29][2], reg_file:RegisterFile|registers[31][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][1], reg_file:RegisterFile|registers[29][1],   ;
+;                                    ;                           ; PC[1], PC[0]                                                                      ;
+; inst_rom:InstructionMemory|out[18] ; Stuck at GND              ; reg_file:RegisterFile|registers[27][31], reg_file:RegisterFile|registers[26][31], ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[25][31], reg_file:RegisterFile|registers[23][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[22][31], reg_file:RegisterFile|registers[21][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[19][31], reg_file:RegisterFile|registers[18][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[17][31], reg_file:RegisterFile|registers[15][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[14][31], reg_file:RegisterFile|registers[13][31], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[11][31], reg_file:RegisterFile|registers[9][31],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[7][31], reg_file:RegisterFile|registers[6][31],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[5][31], reg_file:RegisterFile|registers[3][31],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[1][31], reg_file:RegisterFile|registers[28][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][0], reg_file:RegisterFile|registers[12][0],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][3], reg_file:RegisterFile|registers[12][3],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][10], reg_file:RegisterFile|registers[12][10], ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][7], reg_file:RegisterFile|registers[12][7],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][6], reg_file:RegisterFile|registers[12][6],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][5], reg_file:RegisterFile|registers[12][5],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][4], reg_file:RegisterFile|registers[12][4],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][2], reg_file:RegisterFile|registers[12][2],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[24][1], reg_file:RegisterFile|registers[12][1],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][10], reg_file:RegisterFile|registers[2][10],   ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][7], reg_file:RegisterFile|registers[2][7],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][6], reg_file:RegisterFile|registers[2][6],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][5], reg_file:RegisterFile|registers[2][5],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][4], reg_file:RegisterFile|registers[2][4],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][3], reg_file:RegisterFile|registers[2][3],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][2], reg_file:RegisterFile|registers[2][2],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][1], reg_file:RegisterFile|registers[2][1],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[8][0], reg_file:RegisterFile|registers[2][0],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][10], reg_file:RegisterFile|registers[4][10],  ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][7], reg_file:RegisterFile|registers[4][7],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][6], reg_file:RegisterFile|registers[4][6],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][5], reg_file:RegisterFile|registers[4][5],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][4], reg_file:RegisterFile|registers[4][4],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][3], reg_file:RegisterFile|registers[4][3],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][2], reg_file:RegisterFile|registers[4][2],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][1], reg_file:RegisterFile|registers[4][1],    ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][0], reg_file:RegisterFile|registers[4][0]     ;
+; inst_rom:InstructionMemory|out[17] ; Stuck at GND              ; reg_file:RegisterFile|registers[24][9], reg_file:RegisterFile|registers[12][9],   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][9], reg_file:RegisterFile|registers[2][9],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][9], reg_file:RegisterFile|registers[4][9]     ;
+; inst_rom:InstructionMemory|out[16] ; Stuck at GND              ; reg_file:RegisterFile|registers[24][8], reg_file:RegisterFile|registers[12][8],   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][8], reg_file:RegisterFile|registers[2][8],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][8], reg_file:RegisterFile|registers[4][8]     ;
+; inst_rom:InstructionMemory|out[20] ; Stuck at GND              ; reg_file:RegisterFile|registers[8][12]                                            ;
+;                                    ; due to stuck port data_in ;                                                                                   ;
+; inst_rom:InstructionMemory|out[19] ; Stuck at GND              ; reg_file:RegisterFile|registers[8][11]                                            ;
+;                                    ; due to stuck port data_in ;                                                                                   ;
++------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1695,7 +1691,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 126   ;
+; Total registers                              ; 148   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -1726,21 +1722,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[0] ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[0][9]             ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[8][30]            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[2][27]            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[10][15]           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[16][10]           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[4][17]            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[20][13]           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |processor|reg_file:RegisterFile|Mux43                       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |processor|reg_file:RegisterFile|Mux8                        ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |processor|control:Controller|MemoryRE                       ;
-; 7:1                ; 27 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[19]                                 ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |processor|reg_file:RegisterFile|Decoder0                    ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |processor|mux:DataMux|out[15]                               ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |processor|mux:DataMux|out[1]                                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[6] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |processor|PC[0]                                             ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |processor|PC[9]                                             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |processor|PC[30]                                            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[0][23]            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[8][7]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[2][7]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[10][16]           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[16][15]           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[4][31]            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[20][0]            ;
+; 6:1                ; 14 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |processor|PC[20]                                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |processor|reg_file:RegisterFile|Mux53                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |processor|reg_file:RegisterFile|Mux1                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|control:Controller|MemoryRE                       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |processor|control:Controller|ALUSrc                         ;
+; 7:1                ; 27 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[20]                                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |processor|control:Controller|ALUFunction[2]                 ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |processor|mux:DataMux|out[12]                               ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |processor|mux:DataMux|out[6]                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
@@ -1816,12 +1817,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+------------------------------------------------------------+
 
 
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux:NextPCMux ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; W              ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: inst_rom:InstructionMemory                                      ;
 +----------------+----------------------------------------------------------------------------+----------------+
 ; Parameter Name ; Value                                                                      ; Type           ;
 +----------------+----------------------------------------------------------------------------+----------------+
-; ADDR_WIDTH     ; 8                                                                          ; Signed Integer ;
+; ADDR_WIDTH     ; 10                                                                         ; Signed Integer ;
 ; INIT_PROGRAM   ; D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh ; String         ;
 +----------------+----------------------------------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -1834,6 +1845,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------+
 ; W              ; 5     ; Signed Integer                      ;
 +----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux:BranchOrJumpMux ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; W              ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2504,14 +2525,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+-----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ALU"                                                                                  ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Branch_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; Jump_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "mux:BranchOrJumpMux" ;
++-----------+-------+----------+------------------+
+; Port      ; Type  ; Severity ; Details          ;
++-----------+-------+----------+------------------+
+; A[31..30] ; Input ; Info     ; Stuck at GND     ;
+; A[1..0]   ; Input ; Info     ; Stuck at GND     ;
++-----------+-------+----------+------------------+
 
 
 +-----------------------------------------------------+
@@ -2520,23 +2541,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 126                         ;
+; cycloneiii_ff         ; 148                         ;
 ;     ENA               ; 104                         ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 498                         ;
-;     arith             ; 101                         ;
-;         2 data inputs ; 8                           ;
+;     plain             ; 34                          ;
+; cycloneiii_lcell_comb ; 660                         ;
+;     arith             ; 123                         ;
+;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 93                          ;
-;     normal            ; 397                         ;
+;     normal            ; 537                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 106                         ;
-;         4 data inputs ; 259                         ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 125                         ;
+;         4 data inputs ; 374                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.90                       ;
+; Max LUT depth         ; 14.00                       ;
 ; Average LUT depth     ; 10.08                       ;
 +-----------------------+-----------------------------+
 
@@ -2546,7 +2567,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -2556,7 +2577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Mon Jul 15 17:23:47 2019
+    Info: Processing started: Thu Jul 18 18:55:02 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
@@ -2581,35 +2602,37 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
 Info (12021): Found 1 design units, including 1 entities, in source file control.v
     Info (12023): Found entity 1: control
 Info (12127): Elaborating entity "processor" for the top level hierarchy
+Info (12128): Elaborating entity "mux" for hierarchy "mux:NextPCMux"
 Info (12128): Elaborating entity "control" for hierarchy "control:Controller"
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "RegWriteEnable", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "ALUSrc", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "ALUFunction", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "MemoryRE", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "MemoryWE", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at control.v(18): inferring latch(es) for variable "MemoryToReg", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "MemoryToReg" at control.v(29)
-Info (10041): Inferred latch for "MemoryWE" at control.v(29)
-Info (10041): Inferred latch for "MemoryRE" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[0]" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[1]" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[2]" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[3]" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[4]" at control.v(29)
-Info (10041): Inferred latch for "ALUFunction[5]" at control.v(29)
-Info (10041): Inferred latch for "ALUSrc" at control.v(29)
-Info (10041): Inferred latch for "RegWriteEnable" at control.v(29)
-Info (10041): Inferred latch for "RegDst" at control.v(29)
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "RegWriteEnable", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "ALUSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "ALUFunction", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "MemoryRE", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "MemoryWE", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "MemoryToReg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at control.v(21): inferring latch(es) for variable "Jump", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Jump" at control.v(33)
+Info (10041): Inferred latch for "MemoryToReg" at control.v(33)
+Info (10041): Inferred latch for "MemoryWE" at control.v(33)
+Info (10041): Inferred latch for "MemoryRE" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[0]" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[1]" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[2]" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[3]" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[4]" at control.v(33)
+Info (10041): Inferred latch for "ALUFunction[5]" at control.v(33)
+Info (10041): Inferred latch for "ALUSrc" at control.v(33)
+Info (10041): Inferred latch for "RegWriteEnable" at control.v(33)
+Info (10041): Inferred latch for "RegDst" at control.v(33)
 Info (12128): Elaborating entity "inst_rom" for hierarchy "inst_rom:InstructionMemory"
-Warning (10850): Verilog HDL warning at inst_rom.v(31): number of words (28) in memory file does not match the number of elements in the address range [0:255]
+Warning (10850): Verilog HDL warning at inst_rom.v(31): number of words (28) in memory file does not match the number of elements in the address range [0:1023]
 Warning (10030): Net "rom.data_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.waddr_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.we_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "mux" for hierarchy "mux:InstructMux"
 Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegisterFile"
 Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:SignExt"
-Info (12128): Elaborating entity "mux" for hierarchy "mux:ALUMux"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU"
 Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:DataMemory"
 Info (12128): Elaborating entity "async_memory" for hierarchy "data_memory:DataMemory|async_memory:data_seg"
@@ -2629,7 +2652,7 @@ Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_mem
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem1_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "inst_rom:InstructionMemory|rom" is uninferred due to asynchronous read logic
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Documents/School/CSE_141L/Lab_2/db/processor.ram0_inst_rom_1c8814c5.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Documents/School/CSE_141L/Lab_2/db/processor.ram0_inst_rom_49f24b3d.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (19000): Inferred 8 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:data_seg|mem0_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -2849,21 +2872,39 @@ Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:dat
     Info (12134): Parameter "INIT_FILE" = "db/processor.ram1_async_memory_3ca116a3.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5ii1.tdf
     Info (12023): Found entity 1: altsyncram_5ii1
+Warning (13012): Latch control:Controller|ALUFunction[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+Warning (13012): Latch control:Controller|ALUFunction[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+Warning (13012): Latch control:Controller|ALUFunction[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+Warning (13012): Latch control:Controller|ALUFunction[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+Warning (13012): Latch control:Controller|ALUFunction[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+Warning (13012): Latch control:Controller|ALUFunction[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal inst_rom:InstructionMemory|out[2]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "serial_rden_out" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 246 registers lost all their fanouts during netlist optimizations.
+Info (17049): 224 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 680 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 842 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 594 logic cells
+    Info (21061): Implemented 756 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Mon Jul 15 17:24:05 2019
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Thu Jul 18 18:55:17 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
 
 

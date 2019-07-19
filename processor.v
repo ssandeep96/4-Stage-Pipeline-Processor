@@ -40,6 +40,11 @@ wire [5:0] ALUFunction;
 wire MemoryRE;
 wire MemoryWE;
 wire MemoryToReg;
+wire [31:0] BranchAddress;
+wire [31:0] BranchOrJumpOut;
+wire [31:0] JumpAddress;
+wire Jump;
+wire [31:0] NextPCMuxOut;
 
 // PC adder.
 always @(*) begin
@@ -51,10 +56,16 @@ always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
 	else begin
-		PC <= NextPC;
+		PC <= NextPCMuxOut;
 	end
 end
 
+mux #(32) NextPCMux (
+	.A(BranchOrJumpOut),
+	.B(NextPC),
+	.PickA(ALUBranchOut || ALUJumpOut),
+	.out(NextPCMuxOut)
+);
 
 // Controller---------------------------------------------
 control Controller(
@@ -67,10 +78,14 @@ control Controller(
 	.ALUFunction(ALUFunction),
 	.MemoryRE(MemoryRE),
 	.MemoryWE(MemoryWE),
-	.MemoryToReg(MemoryToReg)
+	.MemoryToReg(MemoryToReg),
+	.Jump(Jump)
 );
 
-inst_rom #(.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) InstructionMemory (
+inst_rom #(
+	.ADDR_WIDTH(10),
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(NextPC), //input - from PC (program counter)
@@ -106,6 +121,17 @@ sign_extend SignExt(
 	.numberExt(NumberExt)
 );
 
+assign BranchAddress = NumberExt << 2 + NextPC;
+assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
+
+mux #(32) BranchOrJumpMux (
+	.A(JumpAddress),
+	.B(BranchAddress),
+	.PickA(Jump),
+	.out(BranchOrJumpOut)
+);
+
+
 
 mux #(32) ALUMux  (
 	.A(NumberExt),
@@ -121,7 +147,7 @@ alu ALU(
 	.B_in(ALUMuxOut),
 	.O_out(ALUResult),
 	.Branch_out(ALUBranchOut), 
-	.Jump_out( ALUJumpOut)
+	.Jump_out(ALUJumpOut)
 );
 
 
