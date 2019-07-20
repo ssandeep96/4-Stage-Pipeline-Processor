@@ -45,6 +45,12 @@ wire [31:0] BranchOrJumpOut;
 wire [31:0] JumpAddress;
 wire Jump;
 wire [31:0] NextPCMuxOut;
+wire PCFromReg;
+wire PCFromRegisterMuxOut;
+wire WriteRegFromPC;
+wire [31:0] RegFileWriteMuxOut;
+wire [31:0] ForceWriteToR31;
+wire [1:0] SizeIn;
 
 // PC adder.
 always @(*) begin
@@ -56,7 +62,7 @@ always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
 	else begin
-		PC <= NextPCMuxOut;
+		PC <= PCFromRegisterMuxOut;
 	end
 end
 
@@ -67,6 +73,12 @@ mux #(32) NextPCMux (
 	.out(NextPCMuxOut)
 );
 
+mux #(32) PCFromRegisterMux (
+	.A(DataMuxOut),
+	.B(NextPCMuxOut),
+	.PickA(PCFromReg),
+	.out(PCFromRegisterMuxOut)
+);
 // Controller---------------------------------------------
 control Controller(
 	.Clock(clock),
@@ -79,7 +91,10 @@ control Controller(
 	.MemoryRE(MemoryRE),
 	.MemoryWE(MemoryWE),
 	.MemoryToReg(MemoryToReg),
-	.Jump(Jump)
+	.Jump(Jump),
+	.PCFromReg(PCFromReg),
+	.WriteRegFromPC(WriteRegFromPC),
+	.ForceWriteToR31(ForceWriteToR31)
 );
 
 inst_rom #(
@@ -100,6 +115,20 @@ mux #(5) InstructMux (
 	.out(InstructMuxOut)
 );
 
+mux #(32) RegFileWriteMux(
+	.A(NextPC + 4), // PC + 8, so we are over the branch delay instruction after the banch
+	.B(DataMuxOut),
+	.PickA(WriteRegFromPC),
+	.out(RegFileWriteMuxOut)
+);
+
+mux #(32) ForceWriteToR31Mux (
+	.A(5'h1F),
+	.B(InstructMuxOut),
+	.PickA(ForceWriteToR31),
+	.out(ForceWriteToR31Out)
+);
+
 reg_file RegisterFile (
 	.clock(clock),
 	.reset(reset),
@@ -110,8 +139,8 @@ reg_file RegisterFile (
 	.read_data_1(ReadData1),
 	.read_data_2(ReadData2),
 	
-	.write_reg(InstructMuxOut),	 	
-	.write_data(DataMuxOut),	
+	.write_reg(ForceWriteToR31Out),	 	
+	.write_data(RegFileWriteMuxOut),	
 	.write_enable(RegWriteEnable)		
 );
 
@@ -160,7 +189,7 @@ data_memory DataMemory (
 	.writedata_in(ReadData2),
 	.re_in(MemoryRE),
 	.we_in(MemoryWE),
-	.size_in(2'b11),
+	.size_in(SizeIn),
 	.readdata_out(DataMemoryOut),
 	
 	.serial_in(serial_in),
