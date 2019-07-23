@@ -46,11 +46,15 @@ wire [31:0] JumpAddress;
 wire Jump;
 wire [31:0] NextPCMuxOut;
 wire PCFromReg;
-wire PCFromRegisterMuxOut;
+wire [31:0] PCFromRegisterMuxOut;
 wire WriteRegFromPC;
 wire [31:0] RegFileWriteMuxOut;
-wire [31:0] ForceWriteToR31;
+wire ForceWriteToR31;
+wire [4:0] ForceWriteToR31MuxOut;
 wire [1:0] SizeIn;
+wire Unsigned;
+wire [31:0] MemoryShifterOut;
+
 
 // PC adder.
 always @(*) begin
@@ -94,7 +98,9 @@ control Controller(
 	.Jump(Jump),
 	.PCFromReg(PCFromReg),
 	.WriteRegFromPC(WriteRegFromPC),
-	.ForceWriteToR31(ForceWriteToR31)
+	.ForceWriteToR31(ForceWriteToR31),
+	.SizeOut(SizeIn),
+	.Unsigned(Unsigned)
 );
 
 inst_rom #(
@@ -122,11 +128,11 @@ mux #(32) RegFileWriteMux(
 	.out(RegFileWriteMuxOut)
 );
 
-mux #(32) ForceWriteToR31Mux (
+mux #(5) ForceWriteToR31Mux (
 	.A(5'h1F),
 	.B(InstructMuxOut),
 	.PickA(ForceWriteToR31),
-	.out(ForceWriteToR31Out)
+	.out(ForceWriteToR31MuxOut)
 );
 
 reg_file RegisterFile (
@@ -139,7 +145,7 @@ reg_file RegisterFile (
 	.read_data_1(ReadData1),
 	.read_data_2(ReadData2),
 	
-	.write_reg(ForceWriteToR31Out),	 	
+	.write_reg(ForceWriteToR31MuxOut),	 	
 	.write_data(RegFileWriteMuxOut),	
 	.write_enable(RegWriteEnable)		
 );
@@ -200,8 +206,17 @@ data_memory DataMemory (
 	.serial_wren_out(serial_wren_out)
 );
 
+DataShifter MemoryShifter (
+	.SizeIn(SizeIn),
+	.Data(DataMemoryOut),
+	.BytePicker(ALUResult[1:0]),
+	.Unsigned(Unsigned),
+	.MemoryShifterOut(MemoryShifterOut)
+);
+
+
 mux #(32) DataMux  (
-	.A(DataMemoryOut),
+	.A(MemoryShifterOut),
 	.B(ALUResult),
 	.PickA(MemoryToReg),
 	.out(DataMuxOut)
@@ -213,7 +228,75 @@ endmodule
 
 
 
+module DataShifter (
+	input [1:0] SizeIn,
+	input [31:0] Data,
+	input [1:0] BytePicker,
+	input Unsigned,
+	output reg [31:0] MemoryShifterOut
+);
 
+always @(*) begin
+	
+	MemoryShifterOut = Data;
+	
+	// NORMAL
+	if (SizeIn == 2'b11 || SizeIn == 2'b10) begin
+		MemoryShifterOut = Data;
+	end
+	// BTYE
+	else if (SizeIn == 2'b00) begin
+		// Signed
+		if (Unsigned == 1'b0) begin
+			if (BytePicker == 2'b00) begin
+				MemoryShifterOut = Data;
+			end
+			else if (BytePicker == 2'b01) 
+				MemoryShifterOut = Data >>> 8;
+			else if (BytePicker == 2'b10) 
+				MemoryShifterOut = Data >>> 16;
+			else if (BytePicker == 2'b11) 
+				MemoryShifterOut = Data >>> 24;
+		end
+			
+		// Unsigned
+		else if (Unsigned == 1'b1) begin
+			if (BytePicker == 2'b00) begin
+				MemoryShifterOut = Data;
+			end
+			else if (BytePicker == 2'b01) 
+				MemoryShifterOut = Data >> 8;
+			else if (BytePicker == 2'b10) 
+				MemoryShifterOut = Data >> 16;
+			else if (BytePicker == 2'b11) 
+				MemoryShifterOut = Data >> 24;
+		end
+	end
+	
+	// HALF
+	else if (SizeIn == 2'b01) begin
+	
+		if (BytePicker == 2'b00) begin
+			MemoryShifterOut = Data;
+		end
+		// signed
+		if (Unsigned == 1'b0) begin
+			if (BytePicker == 2'b01) begin
+				MemoryShifterOut = Data >>> 16;
+			end
+		end
+		// unsigned
+		else if (Unsigned == 1'b1) begin
+			if (BytePicker == 2'b01) begin
+				MemoryShifterOut = Data >> 16;
+			end
+		end
+		
+	end
+
+
+end
+endmodule
 
 
 

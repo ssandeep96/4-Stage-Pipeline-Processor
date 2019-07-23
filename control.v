@@ -14,10 +14,26 @@ module control (
 	output reg PCFromReg,
 	output reg WriteRegFromPC,
 	output reg ForceWriteToR31,
-	output reg [1:0] SizeOut;
+	output reg [1:0] SizeOut,
+	output reg Unsigned
 );
 
 always @(*) begin
+	
+		RegDst = 1'b0;
+		RegWriteEnable = 1'b0;
+		ALUSrc = 1'b0;
+		ALUFunction = 6'b000000;
+		MemoryRE = 1'b0;
+		MemoryWE = 1'b0;
+		MemoryToReg = 1'b0;
+		Jump = 1'b0;
+		
+		PCFromReg = 1'b0;
+		WriteRegFromPC = 1'b0;
+		ForceWriteToR31 = 1'b0;
+		SizeOut = 2'b11;
+		Unsigned = 1'b0;
 	
 	// NoOp
 	if (Instruction == 32'b0) begin
@@ -111,6 +127,18 @@ always @(*) begin
 		PCFromReg = 1'b0;
 		WriteRegFromPC = 1'b0;
 		ForceWriteToR31 = 1'b0;
+		Unsigned = Instruction[28];
+		
+		// LB/LBU
+		if (Instruction[27:26] == 2'b00) begin
+			SizeOut = 2'b00;
+		end
+		
+		// LH/LHU
+		else if (Instruction[27:26] == 2'b01) begin 
+			SizeOut = 2'b01;
+		end
+		
 		
 	end
 	
@@ -125,7 +153,7 @@ always @(*) begin
 		MemoryToReg = 1'b0;
 		
 		// SB save byte
-		else if (Instruction[28:26] == 3'b000) begin
+		if (Instruction[28:26] == 3'b000) begin
 			SizeOut = 2'b00;
 		end
 		
@@ -210,6 +238,7 @@ always @(*) begin
 		WriteRegFromPC = 1'b0;
 		ForceWriteToR31 = 1'b0;
 		SizeOut = 2'b11;
+		Unsigned = 1'b0;
 	end
 
 	
