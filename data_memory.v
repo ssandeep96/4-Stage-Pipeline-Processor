@@ -42,11 +42,17 @@ module data_memory(
 	output				serial_wren_out
 );
 
+/*
 parameter INIT_PROGRAM0 = "D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.data_ram0.memh";
 parameter INIT_PROGRAM1 = "D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.data_ram1.memh";
 parameter INIT_PROGRAM2 = "D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.data_ram2.memh";
 parameter INIT_PROGRAM3 = "D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.data_ram3.memh";
+*/
 
+parameter INIT_PROGRAM0 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram0.memh";
+parameter INIT_PROGRAM1 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram1.memh";
+parameter INIT_PROGRAM2 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram2.memh";
+parameter INIT_PROGRAM3 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram3.memh";
 
 	wire	[31:0]	data_readdata_serial;
 	wire	[31:0]	data_readdata_data;

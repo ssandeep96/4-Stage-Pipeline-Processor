@@ -15,7 +15,9 @@ module control (
 	output reg WriteRegFromPC,
 	output reg ForceWriteToR31,
 	output reg [1:0] SizeOut,
-	output reg Unsigned
+	output reg Unsigned,
+	output reg ImmediateFunction,
+	output reg UseLUI
 );
 
 always @(*) begin
@@ -34,6 +36,8 @@ always @(*) begin
 		ForceWriteToR31 = 1'b0;
 		SizeOut = 2'b11;
 		Unsigned = 1'b0;
+		ImmediateFunction = 1'b0; // default sign exten
+		UseLUI = 1'b0;
 	
 	// NoOp
 	if (Instruction == 32'b0) begin
@@ -109,6 +113,36 @@ always @(*) begin
 		// addi
 		if(Instruction[28:26] == 3'b000) begin
 			ALUFunction = 6'b100000;
+		end
+		
+		// addiu
+		if(Instruction[28:26] == 3'b001) begin
+			ALUFunction = 6'b100000;
+			
+		end
+		
+		// andi
+		if(Instruction[28:26] == 3'b100) begin
+			ALUFunction = 6'b100100;
+			ImmediateFunction = 1'b1;
+		end
+		
+		// ori
+		if(Instruction[28:26] == 3'b101) begin
+			ALUFunction = 6'b100101;
+			ImmediateFunction = 1'b1;
+		end
+		
+		// xori
+		if(Instruction[28:26] == 3'b110) begin
+			ALUFunction = 6'b100110;
+			ImmediateFunction = 1'b1;
+		end
+		
+		// lui
+		if(Instruction[28:26] == 3'b111) begin
+			ALUFunction = 6'b100100; // AND
+			UseLUI = 1'b1;
 		end
 		
 	end

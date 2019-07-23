@@ -54,7 +54,14 @@ wire [4:0] ForceWriteToR31MuxOut;
 wire [1:0] SizeIn;
 wire Unsigned;
 wire [31:0] MemoryShifterOut;
+wire [31:0] ZeroExtendedNumber;
+reg  [31:0] LUIShift;
+wire ImmediateFunction;
+wire [31:0] ImmediateFunctionTypeMuxOut;
+wire UseLUI;
+wire [31:0] ALUorLUIMuxOut;
 
+ 
 
 // PC adder.
 always @(*) begin
@@ -100,16 +107,19 @@ control Controller(
 	.WriteRegFromPC(WriteRegFromPC),
 	.ForceWriteToR31(ForceWriteToR31),
 	.SizeOut(SizeIn),
-	.Unsigned(Unsigned)
+	.Unsigned(Unsigned),
+	.ImmediateFunction(ImmediateFunction),
+	.UseLUI(UseLUI)
 );
 
 inst_rom #(
 	.ADDR_WIDTH(10),
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
-	.addr_in(NextPC), //input - from PC (program counter)
+	.addr_in(PCFromRegisterMuxOut), //input - from PC (program counter)
 	.data_out(CurrentInstruction)
 );
 
@@ -156,7 +166,42 @@ sign_extend SignExt(
 	.numberExt(NumberExt)
 );
 
-assign BranchAddress = NumberExt << 2 + NextPC;
+zero_extend ZeroExt(
+	.number(CurrentInstruction[15:0]),
+	.numberExt(ZeroExtendedNumber)
+);
+
+// LUIShift
+always @(*) begin
+	LUIShift = {CurrentInstruction[15:0], 16'h0000};
+end
+
+mux #(32) ImmediateFunctionTypeMux (
+	.A(ZeroExtendedNumber),
+	.B(NumberExt),
+	.PickA(ImmediateFunction),
+	.out(ImmediateFunctionTypeMuxOut)
+);
+
+mux #(32) ALUorLUIMux (
+	.A(LUIShift),
+	.B(ALUResult),
+	.PickA(UseLUI),
+	.out(ALUorLUIMuxOut)
+);
+
+/*
+mux4 #(32) ImmediateFunctionTypeMux (
+	.Zero(ZeroExtendedNumber),
+	.One(NumberExt),
+	.Two(LUIShift),
+	.Three(32'b0),
+	.Picker(ImmediateFunction),
+	.Out(ImmediateFunctionTypeMuxOut)
+);
+*/
+
+assign BranchAddress = (NumberExt << 2) + NextPC;
 assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
 
 mux #(32) BranchOrJumpMux (
@@ -169,7 +214,7 @@ mux #(32) BranchOrJumpMux (
 
 
 mux #(32) ALUMux  (
-	.A(NumberExt),
+	.A(ImmediateFunctionTypeMuxOut),
 	.B(ReadData2),
 	.PickA(ALUSrc),
 	.out(ALUMuxOut)
@@ -217,7 +262,7 @@ DataShifter MemoryShifter (
 
 mux #(32) DataMux  (
 	.A(MemoryShifterOut),
-	.B(ALUResult),
+	.B(ALUorLUIMuxOut),
 	.PickA(MemoryToReg),
 	.out(DataMuxOut)
 );
@@ -300,6 +345,20 @@ endmodule
 
 
 
+module zero_extend(
+		input [15:0] number,
+	output reg [31:0] numberExt
+);
+
+always @(*) begin
+	numberExt = {16'h0000,number};
+end
+
+endmodule
+
+
+
+
 module sign_extend(
 	input [15:0] number,
 	output [31:0] numberExt
@@ -331,5 +390,27 @@ module mux #(parameter W = 1) (
 );
 	
 	assign out = PickA ? A : B;
+
+endmodule
+
+module mux4 #(parameter W = 1) (
+	input [W-1:0] Zero,
+	input [W-1:0] One,
+	input [W-1:0] Two,
+	input [W-1:0] Three,
+	input [1:0] Picker,
+	output reg [W-1:0] Out
+);
+	
+	always @(*) begin
+		if(Picker == 2'b00)
+			Out = Zero;
+		else if (Picker == 2'b01)
+			Out = One;
+		else if (Picker == 2'b10)
+			Out = Two;
+		else if (Picker == 2'b11)
+			Out = Three;
+	end
 
 endmodule
