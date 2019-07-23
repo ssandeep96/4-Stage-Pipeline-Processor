@@ -11,7 +11,7 @@ module control (
 	output reg MemoryWE,
 	output reg MemoryToReg,
 	output reg Jump,
-	output reg PCFromReg,
+	output reg PCFromReg, // When 1: write from register to PC.
 	output reg WriteRegFromPC,
 	output reg ForceWriteToR31,
 	output reg [1:0] SizeOut,
@@ -50,7 +50,7 @@ always @(*) begin
 		MemoryToReg = 1'b0;
 		Jump = 1'b0;
 		
-		PCFromReg = 1'b0;
+		PCFromReg = 1'b0; 
 		WriteRegFromPC = 1'b0;
 		ForceWriteToR31 = 1'b0;
 	end
@@ -118,7 +118,6 @@ always @(*) begin
 		// addiu
 		if(Instruction[28:26] == 3'b001) begin
 			ALUFunction = 6'b100000;
-			
 		end
 		
 		// andi

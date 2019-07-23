@@ -114,8 +114,8 @@ control Controller(
 
 inst_rom #(
 	.ADDR_WIDTH(10),
-	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
@@ -297,11 +297,11 @@ always @(*) begin
 				MemoryShifterOut = Data;
 			end
 			else if (BytePicker == 2'b01) 
-				MemoryShifterOut = Data >>> 8;
+				MemoryShifterOut = $signed(Data) >>> 8;
 			else if (BytePicker == 2'b10) 
-				MemoryShifterOut = Data >>> 16;
+				MemoryShifterOut = $signed(Data) >>> 16;
 			else if (BytePicker == 2'b11) 
-				MemoryShifterOut = Data >>> 24;
+				MemoryShifterOut = $signed(Data) >>> 24;
 		end
 			
 		// Unsigned
@@ -327,7 +327,7 @@ always @(*) begin
 		// signed
 		if (Unsigned == 1'b0) begin
 			if (BytePicker == 2'b01) begin
-				MemoryShifterOut = Data >>> 16;
+				MemoryShifterOut = $signed(Data) >>> 16;
 			end
 		end
 		// unsigned
