@@ -7,6 +7,7 @@
 module processor(
 	input clock,
 	input reset,
+	//input [31:0] InputInstruction,
 
 	//these ports are used for serial IO and 
 	//must be wired up to the data_memory module
@@ -74,6 +75,7 @@ always @(posedge clock) begin
 		PC <= `PC_RESET;
 	else begin
 		PC <= PCFromRegisterMuxOut;
+		//PC <= 32'b0;
 	end
 end
 
@@ -114,14 +116,17 @@ control Controller(
 
 inst_rom #(
 	.ADDR_WIDTH(10),
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
-	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(PCFromRegisterMuxOut), //input - from PC (program counter)
 	.data_out(CurrentInstruction)
 );
+
+
+//assign CurrentInstruction = InputInstruction;
 
 mux #(5) InstructMux (
 	.B(CurrentInstruction[20:16]),
@@ -190,16 +195,6 @@ mux #(32) ALUorLUIMux (
 	.out(ALUorLUIMuxOut)
 );
 
-/*
-mux4 #(32) ImmediateFunctionTypeMux (
-	.Zero(ZeroExtendedNumber),
-	.One(NumberExt),
-	.Two(LUIShift),
-	.Three(32'b0),
-	.Picker(ImmediateFunction),
-	.Out(ImmediateFunctionTypeMuxOut)
-);
-*/
 
 assign BranchAddress = (NumberExt << 2) + NextPC;
 assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
@@ -291,21 +286,7 @@ always @(*) begin
 	end
 	// BTYE
 	else if (SizeIn == 2'b00) begin
-		// Signed
-		if (Unsigned == 1'b0) begin
-			if (BytePicker == 2'b00) begin
-				MemoryShifterOut = Data;
-			end
-			else if (BytePicker == 2'b01) 
-				MemoryShifterOut = $signed(Data) >>> 8;
-			else if (BytePicker == 2'b10) 
-				MemoryShifterOut = $signed(Data) >>> 16;
-			else if (BytePicker == 2'b11) 
-				MemoryShifterOut = $signed(Data) >>> 24;
-		end
-			
-		// Unsigned
-		else if (Unsigned == 1'b1) begin
+	
 			if (BytePicker == 2'b00) begin
 				MemoryShifterOut = Data;
 			end
@@ -315,7 +296,16 @@ always @(*) begin
 				MemoryShifterOut = Data >> 16;
 			else if (BytePicker == 2'b11) 
 				MemoryShifterOut = Data >> 24;
-		end
+			
+			if (Unsigned) begin
+				MemoryShifterOut = {24'b0,MemoryShifterOut[7:0]};
+			end
+			else begin
+				if(MemoryShifterOut[7] == 1'b0)
+					MemoryShifterOut = {24'b0,MemoryShifterOut[7:0]};
+				else
+					MemoryShifterOut = {24'b1111_1111_1111_1111_1111_1111,MemoryShifterOut[7:0]};
+			end
 	end
 	
 	// HALF
@@ -324,22 +314,20 @@ always @(*) begin
 		if (BytePicker == 2'b00) begin
 			MemoryShifterOut = Data;
 		end
-		// signed
-		if (Unsigned == 1'b0) begin
-			if (BytePicker == 2'b01) begin
-				MemoryShifterOut = $signed(Data) >>> 16;
-			end
-		end
-		// unsigned
-		else if (Unsigned == 1'b1) begin
-			if (BytePicker == 2'b01) begin
-				MemoryShifterOut = Data >> 16;
-			end
+		if (BytePicker == 2'b01) begin
+			MemoryShifterOut = Data >> 16;
 		end
 		
+		if (Unsigned) begin
+			MemoryShifterOut = {16'b0,MemoryShifterOut[15:0]};
+		end
+		else begin
+			if (MemoryShifterOut[15] == 1'b0)
+				MemoryShifterOut = {16'b0,MemoryShifterOut[15:0]};
+			else
+				MemoryShifterOut = {16'hffff,MemoryShifterOut[15:0]};
+		end	
 	end
-
-
 end
 endmodule
 

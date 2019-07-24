@@ -43,6 +43,9 @@ always @(posedge clock) begin
 				$display("[%0d] Serial: %c",$time,serial_out);
 		end
 	end
+	
+	
+	
 end
 
 
