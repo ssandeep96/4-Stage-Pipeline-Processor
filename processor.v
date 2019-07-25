@@ -31,8 +31,17 @@ wire [31:0] CurrentInstruction;
 reg [31:0] CurrentInstructionID;
 
 wire RegDst;
+
 wire RegWriteEnable;
+reg RegWriteEnableEM;
+reg RegWriteEnableWB;
+
 wire ALUSrc;
+reg ALUSrcEM;
+
+wire [5:0] ALUFunction;
+reg [5:0] ALUFunctionEM;
+
 wire [31:0] ALUMuxOut;
 wire [31:0] NumberExt;
 wire [4:0] InstructMuxOut;
@@ -43,18 +52,35 @@ wire [31:0] ALUResult;
 wire ALUBranchOut;
 wire ALUJumpOut;
 wire [31:0] DataMemoryOut;
-wire [5:0] ALUFunction;
+
 wire MemoryRE;
+reg MemoryRE_EM;
 wire MemoryWE;
+reg MemoryWE_EM;
+
 wire MemoryToReg;
+reg MemoryToRegEM;
+reg MemoryToRegWB;
+
 wire [31:0] BranchAddress;
 wire [31:0] BranchOrJumpOut;
 wire [31:0] JumpAddress;
-wire Jump;
+
+wire Jump;	// created in the ID
+reg JumpEM;
+
 wire [31:0] NextPCMuxOut;
+
 wire PCFromReg;
+reg PCFromRegEM;
+reg PCFromRegWB;
+
 wire [31:0] PCFromRegisterMuxOut;
+
 wire WriteRegFromPC;
+reg WriteRegFromPC_EM;
+reg WriteRegFromPC_WB;
+
 wire [31:0] RegFileWriteMuxOut;
 wire ForceWriteToR31;
 wire [4:0] ForceWriteToR31MuxOut;
@@ -97,7 +123,7 @@ assign JumpAddress = {NextPCID[31:28], CurrentInstructionID[25:0] << 2};
 mux #(32) BranchOrJumpMux (
 	.A(JumpAddress),
 	.B(BranchAddress),
-	.PickA(Jump),
+	.PickA(JumpEM),
 	.out(BranchOrJumpOut)
 );
 
@@ -113,7 +139,7 @@ mux #(32) NextPCMux (
 mux #(32) PCFromRegisterMux (
 	.A(ALUResult),
 	.B(NextPCMuxOut),
-	.PickA(PCFromReg),
+	.PickA(PCFromRegWB),
 	.out(PCFromRegisterMuxOut)
 );
 
@@ -136,17 +162,17 @@ control Controller(
 	.Reset(reset),
 	
 	.Instruction(CurrentInstructionID),	// DONE
-	.RegDst(RegDst),
-	.RegWriteEnable(RegWriteEnable),
-	.ALUSrc(ALUSrc),
-	.ALUFunction(ALUFunction),
-	.MemoryRE(MemoryRE),
-	.MemoryWE(MemoryWE),
-	.MemoryToReg(MemoryToReg),
-	.Jump(Jump),
-	.PCFromReg(PCFromReg),
-	.WriteRegFromPC(WriteRegFromPC),
-	.ForceWriteToR31(ForceWriteToR31),
+	.RegDst(RegDst),	// ID
+	.RegWriteEnable(RegWriteEnable),  // used in WB
+	.ALUSrc(ALUSrc), // EM  
+	.ALUFunction(ALUFunction), // EM DONE
+	.MemoryRE(MemoryRE),	// EM DONE
+	.MemoryWE(MemoryWE), // EM DONE
+	.MemoryToReg(MemoryToReg), // WB DONE  
+	.Jump(Jump), // EM DONE
+	.PCFromReg(PCFromReg), // WB DONE determines if PC uses reg instead of branch and jump.
+	.WriteRegFromPC(WriteRegFromPC), // WB DONE
+	.ForceWriteToR31(ForceWriteToR31), // ID
 	.SizeOut(SizeIn),
 	.Unsigned(Unsigned),
 	.ImmediateFunction(ImmediateFunction),
@@ -170,20 +196,21 @@ mux #(5) ForceWriteToR31Mux (
 );
 //-------------------------------------------
 
-// ID
+// ID for Reading, but the write part is used in WB
 reg_file RegisterFile (
 	.clock(clock),
 	.reset(reset),
 	
+	// ID
 	.read_reg_1(CurrentInstructionID[25:21]),
 	.read_reg_2(CurrentInstructionID[20:16]),
-	
 	.read_data_1(ReadData1),
 	.read_data_2(ReadData2),
 	
+	// WB
 	.write_reg(ForceWriteToR31MuxOut),	 	
 	.write_data(RegFileWriteMuxOut),	
-	.write_enable(RegWriteEnable)		
+	.write_enable(RegWriteEnableWB)		
 );
 
 // ID
@@ -216,13 +243,13 @@ end
 mux #(32) ALUMux  (
 	.A(ImmediateFunctionTypeMuxOut),
 	.B(ReadData2),
-	.PickA(ALUSrc),
+	.PickA(ALUSrcEM),
 	.out(ALUMuxOut)
 );
 
 // EM
 alu ALU(
-	.Func_in(ALUFunction), 
+	.Func_in(ALUFunctionEM), 
 	.A_in(ReadData1), 
 	.B_in(ALUMuxOut),
 	.O_out(ALUResult),
@@ -237,8 +264,8 @@ data_memory DataMemory (
 
 	.addr_in(ALUResult),
 	.writedata_in(ReadData2),
-	.re_in(MemoryRE),
-	.we_in(MemoryWE),
+	.re_in(MemoryRE_EM),
+	.we_in(MemoryWE_EM),
 	.size_in(SizeIn),
 	.readdata_out(DataMemoryOut),
 	
@@ -270,18 +297,18 @@ mux #(32) ALUorLUIMux (
 mux #(32) DataMux  (
 	.A(MemoryShifterOut),
 	.B(ALUorLUIMuxOut),
-	.PickA(MemoryToReg),
+	.PickA(MemoryToRegWB),
 	.out(DataMuxOut)
 );
 mux #(32) RegFileWriteMux(
 	.A(NextPCWB + 4), // PC + 8, so we are over the branch delay instruction after the banch
 	.B(DataMuxOut),
-	.PickA(WriteRegFromPC),
-	.out(RegFileWriteMuxOut)
+	.PickA(WriteRegFromPC_WB),
+	.out(RegFileWriteMuxOut) // input into the RegisterFile's write step. Writting done durring WB.
 );
 //-------------------------------------------------------------------------------------
 
-// IF -> ID
+// IF -> ID DONE
 always @(posedge clock) begin
 	CurrentInstructionID <= CurrentInstruction;
 	NextPCID <= NextPC;
@@ -290,11 +317,28 @@ end
 // ID -> EM
 always @(*) begin
 	NextPCEM = NextPCID;
+	
+	// Control signals.
+	RegWriteEnableEM = RegWriteEnable;
+	ALUSrcEM = ALUSrc;
+	ALUFunctionEM = ALUFunction;
+	MemoryRE_EM = MemoryRE;
+	MemoryWE_EM = MemoryWE;
+	MemoryToRegEM = MemoryToReg;
+	JumpEM = Jump;
+	PCFromRegEM = PCFromReg;
+	WriteRegFromPC_EM = WriteRegFromPC;
+	ForceWriteToR31_EM = ForceWriteToR31;
 end
 
 // EM -> WB
 always @(*) begin
 	NextPCWB = NextPCEM;
+	RegWriteEnableWB = RegWriteEnableEM;
+	MemoryToRegWB = MemoryToReg;
+	PCFromRegWB = PCFromRegEM;
+	WriteRegFromPC_WB = WriteRegFromPC_EM;
+	ForceWriteToR31_WB = ForceWriteToR31_EM;
 end
 
 endmodule
