@@ -65,11 +65,13 @@ wire [31:0] ALUorLUIMuxOut;
  
 
 // PC adder.
+// IF
 always @(*) begin
 	NextPC = PC + `PC_INCREMENT;
 end
 
 // Update the PC value.
+// IF
 always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
@@ -79,6 +81,21 @@ always @(posedge clock) begin
 	end
 end
 
+// EM
+assign BranchAddress = (NumberExt << 2) + NextPC;
+
+// ID
+assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
+
+// EM
+mux #(32) BranchOrJumpMux (
+	.A(JumpAddress),
+	.B(BranchAddress),
+	.PickA(Jump),
+	.out(BranchOrJumpOut)
+);
+
+// WB
 mux #(32) NextPCMux (
 	.A(BranchOrJumpOut),
 	.B(NextPC),
@@ -86,16 +103,32 @@ mux #(32) NextPCMux (
 	.out(NextPCMuxOut)
 );
 
+// WB
 mux #(32) PCFromRegisterMux (
-	.A(DataMuxOut),
+	.A(ALUResult),
 	.B(NextPCMuxOut),
 	.PickA(PCFromReg),
 	.out(PCFromRegisterMuxOut)
 );
+
+// IF
+inst_rom #(
+	.ADDR_WIDTH(10),
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	InstructionMemory (
+	.clock(clock),
+	.reset(reset),
+	.addr_in(PCFromRegisterMuxOut), //input - from PC (program counter)
+	.data_out(CurrentInstruction)
+);
+
 // Controller---------------------------------------------
+// ID
 control Controller(
 	.Clock(clock),
 	.Reset(reset),
+	
 	.Instruction(CurrentInstruction),
 	.RegDst(RegDst),
 	.RegWriteEnable(RegWriteEnable),
@@ -114,20 +147,8 @@ control Controller(
 	.UseLUI(UseLUI)
 );
 
-inst_rom #(
-	.ADDR_WIDTH(10),
-	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
-	InstructionMemory (
-	.clock(clock),
-	.reset(reset),
-	.addr_in(PCFromRegisterMuxOut), //input - from PC (program counter)
-	.data_out(CurrentInstruction)
-);
-
-
-//assign CurrentInstruction = InputInstruction;
-
+// ID output piped to WB
+// FOLD into one mux 
 mux #(5) InstructMux (
 	.B(CurrentInstruction[20:16]),
 	.A(CurrentInstruction[15:11]),
@@ -135,21 +156,15 @@ mux #(5) InstructMux (
 	.PickA(RegDst),
 	.out(InstructMuxOut)
 );
-
-mux #(32) RegFileWriteMux(
-	.A(NextPC + 4), // PC + 8, so we are over the branch delay instruction after the banch
-	.B(DataMuxOut),
-	.PickA(WriteRegFromPC),
-	.out(RegFileWriteMuxOut)
-);
-
 mux #(5) ForceWriteToR31Mux (
 	.A(5'h1F),
 	.B(InstructMuxOut),
 	.PickA(ForceWriteToR31),
 	.out(ForceWriteToR31MuxOut)
 );
+//-------------------------------------------
 
+// ID
 reg_file RegisterFile (
 	.clock(clock),
 	.reset(reset),
@@ -165,22 +180,19 @@ reg_file RegisterFile (
 	.write_enable(RegWriteEnable)		
 );
 
-
+// ID
 sign_extend SignExt(
 	.number(CurrentInstruction[15:0]),
 	.numberExt(NumberExt)
 );
 
+// ID
 zero_extend ZeroExt(
 	.number(CurrentInstruction[15:0]),
 	.numberExt(ZeroExtendedNumber)
 );
 
-// LUIShift
-always @(*) begin
-	LUIShift = {CurrentInstruction[15:0], 16'h0000};
-end
-
+// ID RESULT PIPED TO EM
 mux #(32) ImmediateFunctionTypeMux (
 	.A(ZeroExtendedNumber),
 	.B(NumberExt),
@@ -188,26 +200,13 @@ mux #(32) ImmediateFunctionTypeMux (
 	.out(ImmediateFunctionTypeMuxOut)
 );
 
-mux #(32) ALUorLUIMux (
-	.A(LUIShift),
-	.B(ALUResult),
-	.PickA(UseLUI),
-	.out(ALUorLUIMuxOut)
-);
+// ID
+// LUIShift
+always @(*) begin
+	LUIShift = {CurrentInstruction[15:0], 16'h0000};
+end
 
-
-assign BranchAddress = (NumberExt << 2) + NextPC;
-assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
-
-mux #(32) BranchOrJumpMux (
-	.A(JumpAddress),
-	.B(BranchAddress),
-	.PickA(Jump),
-	.out(BranchOrJumpOut)
-);
-
-
-
+// EM
 mux #(32) ALUMux  (
 	.A(ImmediateFunctionTypeMuxOut),
 	.B(ReadData2),
@@ -215,7 +214,7 @@ mux #(32) ALUMux  (
 	.out(ALUMuxOut)
 );
 
-
+// EM
 alu ALU(
 	.Func_in(ALUFunction), 
 	.A_in(ReadData1), 
@@ -225,8 +224,7 @@ alu ALU(
 	.Jump_out(ALUJumpOut)
 );
 
-
-
+// EM
 data_memory DataMemory (
 	.clock(clock),
 	.reset(reset),
@@ -246,6 +244,7 @@ data_memory DataMemory (
 	.serial_wren_out(serial_wren_out)
 );
 
+// EM
 DataShifter MemoryShifter (
 	.SizeIn(SizeIn),
 	.Data(DataMemoryOut),
@@ -254,13 +253,28 @@ DataShifter MemoryShifter (
 	.MemoryShifterOut(MemoryShifterOut)
 );
 
-
+// Fold Into One Mux
+mux #(32) ALUorLUIMux (
+	.A(LUIShift),
+	.B(ALUResult),
+	.PickA(UseLUI),
+	.out(ALUorLUIMuxOut)
+);
 mux #(32) DataMux  (
 	.A(MemoryShifterOut),
 	.B(ALUorLUIMuxOut),
 	.PickA(MemoryToReg),
 	.out(DataMuxOut)
 );
+mux #(32) RegFileWriteMux(
+	.A(NextPC + 4), // PC + 8, so we are over the branch delay instruction after the banch
+	.B(DataMuxOut),
+	.PickA(WriteRegFromPC),
+	.out(RegFileWriteMuxOut)
+);
+//-------------------------------------------------------------------------------------
+
+
 
 endmodule
 

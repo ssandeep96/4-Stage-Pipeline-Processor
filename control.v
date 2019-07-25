@@ -256,25 +256,7 @@ always @(*) begin
 			ALUFunction = 6'b111111;
 		end
 	end
-	
-	else  begin
-		RegDst = 1'b0;
-		RegWriteEnable = 1'b0;
-		ALUSrc = 1'b0;
-		ALUFunction = 6'b000000;
-		MemoryRE = 1'b0;
-		MemoryWE = 1'b0;
-		MemoryToReg = 1'b0;
-		Jump = 1'b0;
 		
-		PCFromReg = 1'b0;
-		WriteRegFromPC = 1'b0;
-		ForceWriteToR31 = 1'b0;
-		SizeOut = 2'b11;
-		Unsigned = 1'b0;
-	end
-
-	
 end
 
 endmodule
