@@ -23,7 +23,13 @@ module processor(
 
 reg [31:0] PC;
 reg [31:0] NextPC;
+reg [31:0] NextPCID;
+reg [31:0] NextPCEM;
+reg [31:0] NextPCWB;
+
 wire [31:0] CurrentInstruction;
+reg [31:0] CurrentInstructionID;
+
 wire RegDst;
 wire RegWriteEnable;
 wire ALUSrc;
@@ -82,10 +88,10 @@ always @(posedge clock) begin
 end
 
 // EM
-assign BranchAddress = (NumberExt << 2) + NextPC;
+assign BranchAddress = (NumberExt << 2) + NextPCEM;
 
 // ID
-assign JumpAddress = {NextPC[31:28],CurrentInstruction[25:0] << 2};
+assign JumpAddress = {NextPCID[31:28], CurrentInstructionID[25:0] << 2};
 
 // EM
 mux #(32) BranchOrJumpMux (
@@ -98,7 +104,7 @@ mux #(32) BranchOrJumpMux (
 // WB
 mux #(32) NextPCMux (
 	.A(BranchOrJumpOut),
-	.B(NextPC),
+	.B(NextPC), // THIS remains un-pipelined.
 	.PickA(ALUBranchOut || ALUJumpOut),
 	.out(NextPCMuxOut)
 );
@@ -114,8 +120,8 @@ mux #(32) PCFromRegisterMux (
 // IF
 inst_rom #(
 	.ADDR_WIDTH(10),
-	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
@@ -129,7 +135,7 @@ control Controller(
 	.Clock(clock),
 	.Reset(reset),
 	
-	.Instruction(CurrentInstruction),
+	.Instruction(CurrentInstructionID),	// DONE
 	.RegDst(RegDst),
 	.RegWriteEnable(RegWriteEnable),
 	.ALUSrc(ALUSrc),
@@ -148,10 +154,10 @@ control Controller(
 );
 
 // ID output piped to WB
-// FOLD into one mux 
+// think of as one mux
 mux #(5) InstructMux (
-	.B(CurrentInstruction[20:16]),
-	.A(CurrentInstruction[15:11]),
+	.B(CurrentInstructionID[20:16]),
+	.A(CurrentInstructionID[15:11]),
 	
 	.PickA(RegDst),
 	.out(InstructMuxOut)
@@ -169,8 +175,8 @@ reg_file RegisterFile (
 	.clock(clock),
 	.reset(reset),
 	
-	.read_reg_1(CurrentInstruction[25:21]),
-	.read_reg_2(CurrentInstruction[20:16]),
+	.read_reg_1(CurrentInstructionID[25:21]),
+	.read_reg_2(CurrentInstructionID[20:16]),
 	
 	.read_data_1(ReadData1),
 	.read_data_2(ReadData2),
@@ -182,13 +188,13 @@ reg_file RegisterFile (
 
 // ID
 sign_extend SignExt(
-	.number(CurrentInstruction[15:0]),
+	.number(CurrentInstructionID[15:0]),
 	.numberExt(NumberExt)
 );
 
 // ID
 zero_extend ZeroExt(
-	.number(CurrentInstruction[15:0]),
+	.number(CurrentInstructionID[15:0]),
 	.numberExt(ZeroExtendedNumber)
 );
 
@@ -203,7 +209,7 @@ mux #(32) ImmediateFunctionTypeMux (
 // ID
 // LUIShift
 always @(*) begin
-	LUIShift = {CurrentInstruction[15:0], 16'h0000};
+	LUIShift = {CurrentInstructionID[15:0], 16'h0000};
 end
 
 // EM
@@ -244,7 +250,7 @@ data_memory DataMemory (
 	.serial_wren_out(serial_wren_out)
 );
 
-// EM
+// EM  OUTPUT PIPIED TO WB
 DataShifter MemoryShifter (
 	.SizeIn(SizeIn),
 	.Data(DataMemoryOut),
@@ -253,7 +259,8 @@ DataShifter MemoryShifter (
 	.MemoryShifterOut(MemoryShifterOut)
 );
 
-// Fold Into One Mux
+// WB
+// Fold Into One Mux 
 mux #(32) ALUorLUIMux (
 	.A(LUIShift),
 	.B(ALUResult),
@@ -267,14 +274,28 @@ mux #(32) DataMux  (
 	.out(DataMuxOut)
 );
 mux #(32) RegFileWriteMux(
-	.A(NextPC + 4), // PC + 8, so we are over the branch delay instruction after the banch
+	.A(NextPCWB + 4), // PC + 8, so we are over the branch delay instruction after the banch
 	.B(DataMuxOut),
 	.PickA(WriteRegFromPC),
 	.out(RegFileWriteMuxOut)
 );
 //-------------------------------------------------------------------------------------
 
+// IF -> ID
+always @(posedge clock) begin
+	CurrentInstructionID <= CurrentInstruction;
+	NextPCID <= NextPC;
+end
 
+// ID -> EM
+always @(*) begin
+	NextPCEM = NextPCID;
+end
+
+// EM -> WB
+always @(*) begin
+	NextPCWB = NextPCEM;
+end
 
 endmodule
 

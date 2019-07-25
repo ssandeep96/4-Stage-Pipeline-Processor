@@ -81,9 +81,9 @@ always @(posedge clock) begin
 end
 
 // Data out is handled here.
-always @(*) begin
-	reg_1_out = registers[read_reg_1];
-	reg_2_out = registers[read_reg_2];
+always @(negedge clock) begin
+	reg_1_out <= registers[read_reg_1];
+	reg_2_out <= registers[read_reg_2];
 end	
 	
 endmodule
