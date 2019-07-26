@@ -14,17 +14,17 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/reg_file.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:56 on Jul 25,2019
+# Start time: 20:20:10 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
 # -- Compiling module reg_file
 # 
 # Top level modules:
 # 	reg_file
-# End time: 19:37:56 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:10 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/processor.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:57 on Jul 25,2019
+# Start time: 20:20:11 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/processor.v 
 # -- Compiling module processor
 # -- Compiling module DataShifter
@@ -36,122 +36,122 @@
 # Top level modules:
 # 	processor
 # 	mux4
-# End time: 19:37:57 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:11 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/serial_buf.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:57 on Jul 25,2019
+# Start time: 20:20:11 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
 # -- Compiling module serial_buffer
 # 
 # Top level modules:
 # 	serial_buffer
-# End time: 19:37:57 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:11 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/inst_rom.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:58 on Jul 25,2019
+# Start time: 20:20:12 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 19:37:58 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:12 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/data_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:58 on Jul 25,2019
+# Start time: 20:20:12 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
-# End time: 19:37:58 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:12 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/async_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:59 on Jul 25,2019
+# Start time: 20:20:13 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
 # -- Compiling module async_memory
 # 
 # Top level modules:
 # 	async_memory
-# End time: 19:37:59 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:13 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/alu.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:37:59 on Jul 25,2019
+# Start time: 20:20:13 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:37:59 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:13 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/Documents/School/CSE_141L/Lab_2 {D:/Documents/School/CSE_141L/Lab_2/control.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:00 on Jul 25,2019
+# Start time: 20:20:13 on Jul 25,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Documents/School/CSE_141L/Lab_2" D:/Documents/School/CSE_141L/Lab_2/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 19:38:00 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:13 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:34 on Jul 25,2019
+# Start time: 20:20:44 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:38:34 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:44 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:34 on Jul 25,2019
+# Start time: 20:20:44 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
 # -- Compiling module async_memory
 # 
 # Top level modules:
 # 	async_memory
-# End time: 19:38:34 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:44 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:34 on Jul 25,2019
+# Start time: 20:20:45 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 19:38:34 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:45 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:35 on Jul 25,2019
+# Start time: 20:20:45 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
-# End time: 19:38:35 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:45 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:35 on Jul 25,2019
+# Start time: 20:20:46 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 19:38:35 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:46 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:36 on Jul 25,2019
+# Start time: 20:20:46 on Jul 25,2019
 # vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
 # -- Compiling module processor
 # -- Compiling module DataShifter
@@ -163,251 +163,41 @@ vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor
 # Top level modules:
 # 	processor
 # 	mux4
-# End time: 19:38:36 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:46 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:36 on Jul 25,2019
+# Start time: 20:20:47 on Jul 25,2019
 # vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
 # -- Compiling module reg_file
 # 
 # Top level modules:
 # 	reg_file
-# End time: 19:38:36 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:47 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:37 on Jul 25,2019
+# Start time: 20:20:47 on Jul 25,2019
 # vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
 # -- Compiling module serial_buffer
 # 
 # Top level modules:
 # 	serial_buffer
-# End time: 19:38:37 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:47 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:38:37 on Jul 25,2019
+# Start time: 20:20:48 on Jul 25,2019
 # vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 19:38:37 on Jul 25,2019, Elapsed time: 0:00:00
+# End time: 20:20:48 on Jul 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.testbench
 # vsim -gui "+altera" -l msim_transcript -do "processor_run_msim_rtl_verilog.do" 
-# Start time: 19:39:37 on Jul 25,2019
-# Loading work.testbench
-# Loading work.processor
-# Loading work.mux
-# Loading work.inst_rom
-# Loading work.control
-# Loading work.reg_file
-# Loading work.sign_extend
-# Loading work.zero_extend
-# Loading work.alu
-# Loading work.data_memory
-# Loading work.async_memory
-# Loading work.serial_buffer
-# Loading work.DataShifter
-run
-run -all
-# [410] Serial: 
-# [450] Serial: H
-# [490] Serial: e
-# [530] Serial: l
-# [570] Serial: l
-# [610] Serial: o
-# [650] Serial:  
-# [690] Serial: W
-# [730] Serial: o
-# [770] Serial: r
-# [810] Serial: l
-# [20890] Serial: 
-# [20930] Serial: H
-# [20970] Serial: e
-# [21010] Serial: l
-# [21050] Serial: l
-# [21090] Serial: o
-# [21130] Serial:  
-# [21170] Serial: W
-# [21210] Serial: o
-# [21250] Serial: r
-# [21290] Serial: l
-add wave -position insertpoint sim:/testbench/dut/*
-restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# [410] Serial: 
-# [450] Serial: H
-# [490] Serial: e
-# [530] Serial: l
-# [570] Serial: l
-# [610] Serial: o
-# [650] Serial:  
-# [690] Serial: W
-# [730] Serial: o
-# [770] Serial: r
-# [810] Serial: l
-run
-run
-run
-run
-run
-run
-run
-restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# [410] Serial: 
-# [450] Serial: H
-# [490] Serial: e
-# [530] Serial: l
-# [570] Serial: l
-# [610] Serial: o
-# [650] Serial:  
-# [690] Serial: W
-# [730] Serial: o
-# [770] Serial: r
-# [810] Serial: l
-run
-add wave -position insertpoint  \
-sim:/testbench/dut/RegisterFile/registers
-restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# [410] Serial: 
-# [450] Serial: H
-# [490] Serial: e
-# [530] Serial: l
-# [570] Serial: l
-# [610] Serial: o
-# [650] Serial:  
-# [690] Serial: W
-# [730] Serial: o
-# [770] Serial: r
-# [810] Serial: l
-add wave -position insertpoint sim:/testbench/dut/DataMemory/*
-restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# [410] Serial: 
-# [450] Serial: H
-# [490] Serial: e
-# [530] Serial: l
-# [570] Serial: l
-# [610] Serial: o
-# [650] Serial:  
-# [690] Serial: W
-# [730] Serial: o
-# [770] Serial: r
-# [810] Serial: l
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:26 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/alu.v 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 19:59:26 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:26 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/async_memory.v 
-# -- Compiling module async_memory
-# 
-# Top level modules:
-# 	async_memory
-# End time: 19:59:26 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:27 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/control.v 
-# -- Compiling module control
-# 
-# Top level modules:
-# 	control
-# End time: 19:59:27 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:27 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/data_memory.v 
-# -- Compiling module data_memory
-# 
-# Top level modules:
-# 	data_memory
-# End time: 19:59:27 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:28 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/inst_rom.v 
-# -- Compiling module inst_rom
-# 
-# Top level modules:
-# 	inst_rom
-# End time: 19:59:28 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:28 on Jul 25,2019
-# vlog -reportprogress 300 -work work D:/Documents/School/CSE_141L/Lab_2/processor.v 
-# -- Compiling module processor
-# -- Compiling module DataShifter
-# -- Compiling module zero_extend
-# -- Compiling module sign_extend
-# -- Compiling module mux
-# -- Compiling module mux4
-# 
-# Top level modules:
-# 	processor
-# 	mux4
-# End time: 19:59:28 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:29 on Jul 25,2019
-# vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/reg_file.v 
-# -- Compiling module reg_file
-# 
-# Top level modules:
-# 	reg_file
-# End time: 19:59:29 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:29 on Jul 25,2019
-# vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/serial_buf.v 
-# -- Compiling module serial_buffer
-# 
-# Top level modules:
-# 	serial_buffer
-# End time: 19:59:29 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:59:30 on Jul 25,2019
-# vlog -reportprogress 30 -work work D:/Documents/School/CSE_141L/Lab_2/testbench.v 
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 19:59:30 on Jul 25,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-restart
+# Start time: 20:20:52 on Jul 25,2019
 # Loading work.testbench
 # Loading work.processor
 # Loading work.mux
@@ -422,9 +212,6 @@ restart
 # Loading work.serial_buffer
 # Loading work.DataShifter
 run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 # [410] Serial: 
 # [450] Serial: H
 # [490] Serial: e
@@ -437,15 +224,5 @@ run -all
 # [770] Serial: r
 # [810] Serial: l
 # [20890] Serial: 
-# [20930] Serial: H
-# [20970] Serial: e
-# [21010] Serial: l
-# [21050] Serial: l
-# [21090] Serial: o
-# [21130] Serial:  
-# [21170] Serial: W
-# [21210] Serial: o
-# [21250] Serial: r
-# [21290] Serial: l
-# End time: 19:59:57 on Jul 25,2019, Elapsed time: 0:20:20
+# End time: 21:22:15 on Jul 25,2019, Elapsed time: 1:01:23
 # Errors: 0, Warnings: 0

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/Documents/School/CSE_141L/Lab_2/simulation/modelsim
 valu
-Z1 !s110 1564109966
+Z1 !s110 1564111244
 !i10b 1
 !s100 fTJU6R1UKz91S=>6GK:kk2
 IgE7^K3^@bVPA^S8][;ZcV3
@@ -23,7 +23,7 @@ Z4 OV;L;10.3d;59
 r1
 !s85 0
 31
-!s108 1564109966.240000
+!s108 1564111244.453000
 !s107 D:/Documents/School/CSE_141L/Lab_2/alu.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/alu.v|
 !i113 1
@@ -43,13 +43,13 @@ R4
 r1
 !s85 0
 31
-!s108 1564109966.681000
+!s108 1564111244.870000
 !s107 D:/Documents/School/CSE_141L/Lab_2/async_memory.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/async_memory.v|
 !i113 1
 R5
 vcontrol
-Z6 !s110 1564109967
+Z6 !s110 1564111245
 !i10b 1
 !s100 O^XMP654>AV@:1]F[e;B`2
 Iok8707_E2fgh3fhOeXCb[3
@@ -63,7 +63,7 @@ R4
 r1
 !s85 0
 31
-!s108 1564109967.175000
+!s108 1564111245.289000
 !s107 D:/Documents/School/CSE_141L/Lab_2/control.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/control.v|
 !i113 1
@@ -83,27 +83,27 @@ R4
 r1
 !s85 0
 31
-!s108 1564109967.649000
+!s108 1564111245.714000
 !s107 D:/Documents/School/CSE_141L/Lab_2/data_memory.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/data_memory.v|
 !i113 1
 R5
 vDataShifter
-Z7 !s110 1564109968
+Z7 !s110 1564111246
 !i10b 1
-!s100 B123NG>bc@nZJCXBoKHH^0
-I;bW]<^K[FzC5U^BQYfVko3
+!s100 Sd_9W2djg=Ic`ZcZoD>XW3
+IF9M>8O2DOOA@8Pf;2RfOL1
 R2
 R0
-Z8 w1564109857
+Z8 w1564111130
 Z9 8D:/Documents/School/CSE_141L/Lab_2/processor.v
 Z10 FD:/Documents/School/CSE_141L/Lab_2/processor.v
-L0 381
+L0 403
 R4
 r1
 !s85 0
 31
-Z11 !s108 1564109968.521000
+Z11 !s108 1564111246.547000
 Z12 !s107 D:/Documents/School/CSE_141L/Lab_2/processor.v|
 Z13 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/processor.v|
 !i113 1
@@ -124,7 +124,7 @@ R4
 r1
 !s85 0
 31
-!s108 1564109968.083000
+!s108 1564111246.134000
 !s107 D:/Documents/School/CSE_141L/Lab_2/inst_rom.v|
 !s90 -reportprogress|300|-work|work|D:/Documents/School/CSE_141L/Lab_2/inst_rom.v|
 !i113 1
@@ -132,14 +132,14 @@ R5
 vmux
 R7
 !i10b 1
-!s100 CGJ;gchBbIB@A<Ig74gHd2
-IK91^V0KPNfA^RRM0g=JnX3
+!s100 `:cH6`Ei=TP@Y>;KB`k5V1
+I>c8fFFAgoXc_<MRYc<?>M1
 R2
 R0
 R8
 R9
 R10
-L0 483
+L0 505
 R4
 r1
 !s85 0
@@ -152,14 +152,14 @@ R5
 vmux4
 R7
 !i10b 1
-!s100 84L>KnDH9dO`YA0[BSKJQ0
-IzazSh1o=aF>HPne07_HeN0
+!s100 9__?:@B^B7A3NYA4I_dLK1
+ITjTCPllhl20^f5ilW<?=43
 R2
 R0
 R8
 R9
 R10
-L0 494
+L0 516
 R4
 r1
 !s85 0
@@ -172,8 +172,8 @@ R5
 vprocessor
 R7
 !i10b 1
-!s100 7eRbIe_Rj@XJoZJcJQzzb3
-I1DGFzJ`KECXN[36?V<D0;2
+!s100 RQBG9d:F]Pl^gLN9k74K<2
+ICEom3EF=gzJP>B3gCNiV>1
 R2
 R0
 R8
@@ -190,7 +190,7 @@ R13
 !i113 1
 R5
 vreg_file
-Z14 !s110 1564109969
+Z14 !s110 1564111247
 !i10b 1
 !s100 Z<S=FCK=]RSIRl[z@i]5;2
 IOg9Zba4VRfWF7_ihAMM@g2
@@ -204,7 +204,7 @@ R4
 r1
 !s85 0
 31
-!s108 1564109969.049000
+!s108 1564111247.037000
 !s107 D:/Documents/School/CSE_141L/Lab_2/reg_file.v|
 !s90 -reportprogress|30|-work|work|D:/Documents/School/CSE_141L/Lab_2/reg_file.v|
 !i113 1
@@ -224,7 +224,7 @@ R4
 r1
 !s85 0
 31
-!s108 1564109969.561000
+!s108 1564111247.490000
 !s107 D:/Documents/School/CSE_141L/Lab_2/serial_buf.v|
 !s90 -reportprogress|30|-work|work|D:/Documents/School/CSE_141L/Lab_2/serial_buf.v|
 !i113 1
@@ -232,14 +232,14 @@ R5
 vsign_extend
 R7
 !i10b 1
-!s100 M;AU2;?cV]_lQJ0oZTgEk2
-InbjUc0fjbI@HPWLH0UXOk1
+!s100 Nm6`M6lHza<TgGUNZGU2o2
+I0aaI=g:AELm_Kz^lYcndL3
 R2
 R0
 R8
 R9
 R10
-L0 460
+L0 482
 R4
 r1
 !s85 0
@@ -250,7 +250,7 @@ R13
 !i113 1
 R5
 vtestbench
-!s110 1564109970
+!s110 1564111248
 !i10b 1
 !s100 Pn0h`<c25U<=cCLPPOKBH2
 I9484n=LbIkk3Sd]52FEf02
@@ -264,7 +264,7 @@ R4
 r1
 !s85 0
 31
-!s108 1564109970.105000
+!s108 1564111248.140000
 !s107 D:/Documents/School/CSE_141L/Lab_2/testbench.v|
 !s90 -reportprogress|30|-work|work|D:/Documents/School/CSE_141L/Lab_2/testbench.v|
 !i113 1
@@ -272,14 +272,14 @@ R5
 vzero_extend
 R7
 !i10b 1
-!s100 `ChjaPIQ4a;oUUb[aRjKo0
-IGzY070M6OBWHiKz:]MKcV1
+!s100 g_4^VQ8jP4Sk<@GgbJCC_3
+IBLh<1;VMY=H>Eiio@18fE0
 R2
 R0
 R8
 R9
 R10
-L0 446
+L0 468
 R4
 r1
 !s85 0

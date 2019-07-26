@@ -42,14 +42,15 @@ reg ALUSrcEM;
 wire [5:0] ALUFunction;
 reg [5:0] ALUFunctionEM;
 
-wire [31:0] ALUMuxOut;
+wire [31:0] ALUMuxOut; // EM DONE
 wire [31:0] NumberExt;
 wire [4:0] InstructMuxOut;
 
 wire [31:0] DataMuxOut;
-wire [31:0] ALUResult;
-wire ALUBranchOut;
-wire ALUJumpOut;
+
+
+
+
 wire [31:0] DataMemoryOut;
 
 // Control Signals
@@ -109,11 +110,23 @@ reg  [31:0] LUIShift; // WB DONE
 reg  [31:0] LUIShiftEM;
 reg  [31:0] LUIShiftWB;
 
-wire [31:0] BranchOrJumpOut;
+wire [31:0] BranchOrJumpOut;  // WB DONE
+reg  [31:0] BranchOrJumpOutWB;
+
+wire [31:0] ALUResult; // EM and WB DONE
+reg  [31:0] ALUResultWB;
+
+wire ALUBranchOut; // WB DONE
+reg  ALUBranchOutWB;
+wire ALUJumpOut;  // WB DONE
+reg  ALUJumpOutWB;
+
+wire [31:0] MemoryShifterOut;		// WB DONE
+reg  [31:0] MemoryShifterOutWB;
+
 wire [31:0] NextPCMuxOut;
 wire [31:0] PCFromRegisterMuxOut;
 wire [31:0] RegFileWriteMuxOut;
-wire [31:0] MemoryShifterOut;
 wire [31:0] ZeroExtendedNumber;
 wire [31:0] ALUorLUIMuxOut;
 
@@ -150,21 +163,21 @@ mux #(32) BranchOrJumpMux (
 
 // WB
 mux #(32) NextPCMux (
-	.A(BranchOrJumpOut),
+	.A(BranchOrJumpOutWB),
 	.B(NextPC), // THIS remains un-pipelined.
-	.PickA(ALUBranchOut || ALUJumpOut),
+	.PickA(ALUBranchOutWB || ALUJumpOutWB),
 	.out(NextPCMuxOut)
 );
 
 // WB
 mux #(32) PCFromRegisterMux (
-	.A(ALUResult),
+	.A(ALUResultWB),
 	.B(NextPCMuxOut),
 	.PickA(PCFromRegWB),
 	.out(PCFromRegisterMuxOut)
 );
 
-// IF
+// IF DONE
 inst_rom #(
 	.ADDR_WIDTH(10),
 	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
@@ -256,7 +269,7 @@ mux #(32) ImmediateFunctionTypeMux (
 );
 //-----------------------------------------
 
-// EM
+// EM DONE!
 mux #(32) ALUMux  (
 	.A(ImmediateFunctionTypeMuxOutEM), // done
 	.B(ReadData2EM),
@@ -264,17 +277,18 @@ mux #(32) ALUMux  (
 	.out(ALUMuxOut)
 );
 
-// EM
+// EM DONE
 alu ALU(
 	.Func_in(ALUFunctionEM), 
 	.A_in(ReadData1EM), 
 	.B_in(ALUMuxOut),
-	.O_out(ALUResult),
-	.Branch_out(ALUBranchOut), 
-	.Jump_out(ALUJumpOut)
+	
+	.O_out(ALUResult), // DONE
+	.Branch_out(ALUBranchOut), // DONE
+	.Jump_out(ALUJumpOut) // DONE
 );
 
-// EM
+// EM DONE
 data_memory DataMemory (
 	.clock(clock),
 	.reset(reset),
@@ -284,7 +298,8 @@ data_memory DataMemory (
 	.re_in(MemoryRE_EM),
 	.we_in(MemoryWE_EM),
 	.size_in(SizeInEM),
-	.readdata_out(DataMemoryOut),
+	
+	.readdata_out(DataMemoryOut), // DONE
 	
 	.serial_in(serial_in),
 	.serial_ready_in(serial_ready_in),
@@ -294,7 +309,7 @@ data_memory DataMemory (
 	.serial_wren_out(serial_wren_out)
 );
 
-// EM  OUTPUT PIPIED TO WB
+// EM DONE OUTPUT PIPIED TO WB
 DataShifter MemoryShifter (
 	.SizeIn(SizeInEM),
 	.Data(DataMemoryOut),
@@ -313,12 +328,12 @@ end
 // Fold Into One Mux ------
 mux #(32) ALUorLUIMux (
 	.A(LUIShiftWB),
-	.B(ALUResult),
+	.B(ALUResultWB),
 	.PickA(UseLUI_WB),
 	.out(ALUorLUIMuxOut)
 );
 mux #(32) DataMux  (
-	.A(MemoryShifterOut),
+	.A(MemoryShifterOutWB),
 	.B(ALUorLUIMuxOut),
 	.PickA(MemoryToRegWB),
 	.out(DataMuxOut)
@@ -331,13 +346,14 @@ mux #(32) RegFileWriteMux(
 );
 //-------------------------------------------------------------------------------------
 
+//---PIPELINE---
 // IF -> ID DONE
 always @(posedge clock) begin
 	CurrentInstructionID <= CurrentInstruction;
 	NextPCID <= NextPC;
 end
 
-// ID -> EM
+// ID -> EM DONE
 always @(posedge clock) begin
 	NextPCEM <= NextPCID;
 	
@@ -365,17 +381,49 @@ always @(posedge clock) begin
 end
 
 // EM -> WB
-always @(*) begin
-	NextPCWB = NextPCEM;
-	RegWriteEnableWB = RegWriteEnableEM;
-	MemoryToRegWB = MemoryToReg;
-	PCFromRegWB = PCFromRegEM;
-	WriteRegFromPC_WB = WriteRegFromPC_EM;
-	UseLUI_WB = UseLUI_EM;
-	ForceWriteToR31MuxOutWB = ForceWriteToR31MuxOutEM;
-	LUIShiftWB = LUIShiftEM;
+always @(posedge clock) begin
+	NextPCWB <= NextPCEM;
+	RegWriteEnableWB <= RegWriteEnableEM;
+	MemoryToRegWB <= MemoryToReg;
+	PCFromRegWB <= PCFromRegEM;
+	WriteRegFromPC_WB <= WriteRegFromPC_EM;
+	UseLUI_WB <= UseLUI_EM;
+	ForceWriteToR31MuxOutWB <= ForceWriteToR31MuxOutEM;
+	LUIShiftWB <= LUIShiftEM;
+	BranchOrJumpOutWB <= BranchOrJumpOut;
+	ALUResultWB <= ALUResult;
+	ALUBranchOutWB <= ALUBranchOut;
+	ALUJumpOutWB <= ALUJumpOut;
+	MemoryShifterOutWB <= MemoryShifterOut;
 end
 
+endmodule
+
+
+
+
+
+
+
+
+
+
+// ----- MODULES-------------------------------------------------------------
+
+module ForwardingUnit (
+	input RegWriteEnableInst1, // From controler.
+	input [4:0] DestinationRegInst1, // FROM MUX
+	input [31:0] Instruction2,
+	output ForwardA, // Controls muxA
+	output ForwardB // Controls muxB
+	);
+
+	// Determine the parameters of #2 instruction.
+	
+	// Check if destination of #1 is equal to the paramter of #2.
+	
+	// Forward data appropriately.
+	
 endmodule
 
 module DataShifter (
@@ -454,9 +502,6 @@ end
 
 endmodule
 
-
-
-
 module sign_extend(
 	input [15:0] number,
 	output [31:0] numberExt
@@ -475,10 +520,7 @@ always @(*) begin
 	end
 end
 
-
 endmodule
-
-
 
 module mux #(parameter W = 1) (
 	input [W-1:0] A,

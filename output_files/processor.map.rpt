@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Thu Jul 25 19:58:06 2019
+Thu Jul 25 20:19:24 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -21,10 +21,10 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_4ii1:auto_generated
  15. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem0_rtl_0|altsyncram_m5d1:auto_generated
- 16. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated
- 17. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_6ii1:auto_generated
- 18. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_m5d1:auto_generated
- 19. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_5ii1:auto_generated
+ 16. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_m5d1:auto_generated
+ 17. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_5ii1:auto_generated
+ 18. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated
+ 19. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_6ii1:auto_generated
  20. Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_m5d1:auto_generated
  21. Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0|altsyncram_7ii1:auto_generated
  22. Parameter Settings for User Entity Instance: mux:BranchOrJumpMux
@@ -44,10 +44,10 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  36. Parameter Settings for User Entity Instance: mux:RegFileWriteMux
  37. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0
  38. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem0_rtl_0
- 39. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0
- 40. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0
- 41. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0
- 42. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0
+ 39. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0
+ 40. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0
+ 41. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0
+ 42. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0
  43. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0
  44. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0
  45. altsyncram Parameter Settings by Entity Instance
@@ -81,15 +81,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 25 19:58:06 2019      ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 25 20:19:24 2019      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; processor                                  ;
 ; Top-level Entity Name              ; processor                                  ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 880                                        ;
-;     Total combinational functions  ; 728                                        ;
-;     Dedicated logic registers      ; 346                                        ;
-; Total registers                    ; 346                                        ;
+; Total logic elements               ; 916                                        ;
+;     Total combinational functions  ; 723                                        ;
+;     Dedicated logic registers      ; 485                                        ;
+; Total registers                    ; 485                                        ;
 ; Total pins                         ; 22                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 65,536                                     ;
@@ -221,10 +221,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/altsyncram_4ii1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_4ii1.tdf                          ;         ;
 ; db/processor.ram0_async_memory_3ca116a3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/School/CSE_141L/Lab_2/db/processor.ram0_async_memory_3ca116a3.hdl.mif ;         ;
 ; db/altsyncram_m5d1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_m5d1.tdf                          ;         ;
-; db/altsyncram_6ii1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_6ii1.tdf                          ;         ;
-; db/processor.ram2_async_memory_3ca116a3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/School/CSE_141L/Lab_2/db/processor.ram2_async_memory_3ca116a3.hdl.mif ;         ;
 ; db/altsyncram_5ii1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_5ii1.tdf                          ;         ;
 ; db/processor.ram1_async_memory_3ca116a3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/School/CSE_141L/Lab_2/db/processor.ram1_async_memory_3ca116a3.hdl.mif ;         ;
+; db/altsyncram_6ii1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_6ii1.tdf                          ;         ;
+; db/processor.ram2_async_memory_3ca116a3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/School/CSE_141L/Lab_2/db/processor.ram2_async_memory_3ca116a3.hdl.mif ;         ;
 ; db/altsyncram_7ii1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; D:/Documents/School/CSE_141L/Lab_2/db/altsyncram_7ii1.tdf                          ;         ;
 ; db/processor.ram3_async_memory_3ca116a3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Documents/School/CSE_141L/Lab_2/db/processor.ram3_async_memory_3ca116a3.hdl.mif ;         ;
 +-------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------+---------+
@@ -235,20 +235,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 880         ;
+; Estimated Total logic elements              ; 916         ;
 ;                                             ;             ;
-; Total combinational functions               ; 728         ;
+; Total combinational functions               ; 723         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 336         ;
-;     -- 3 input functions                    ; 224         ;
-;     -- <=2 input functions                  ; 168         ;
+;     -- 4 input functions                    ; 335         ;
+;     -- 3 input functions                    ; 221         ;
+;     -- <=2 input functions                  ; 167         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 547         ;
+;     -- normal mode                          ; 542         ;
 ;     -- arithmetic mode                      ; 181         ;
 ;                                             ;             ;
-; Total registers                             ; 346         ;
-;     -- Dedicated logic registers            ; 346         ;
+; Total registers                             ; 485         ;
+;     -- Dedicated logic registers            ; 485         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 22          ;
@@ -257,9 +257,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 410         ;
-; Total fan-out                               ; 4014        ;
-; Average fan-out                             ; 3.40        ;
+; Maximum fan-out                             ; 549         ;
+; Total fan-out                               ; 4352        ;
+; Average fan-out                             ; 3.31        ;
 +---------------------------------------------+-------------+
 
 
@@ -268,10 +268,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 728 (230)         ; 346 (196)    ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
-;    |alu:ALU|                                 ; 262 (262)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
+; |processor                                   ; 723 (198)         ; 485 (335)    ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
+;    |DataShifter:MemoryShifter|               ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|DataShifter:MemoryShifter                                                                          ; work         ;
+;    |alu:ALU|                                 ; 268 (268)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
 ;    |control:Controller|                      ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:Controller                                                                                 ; work         ;
-;    |data_memory:DataMemory|                  ; 39 (26)           ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory                                                                             ; work         ;
+;    |data_memory:DataMemory|                  ; 62 (48)           ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory                                                                             ; work         ;
 ;       |async_memory:data_seg|                ; 2 (2)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg                                                       ; work         ;
 ;          |altsyncram:mem0_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0                                 ; work         ;
 ;             |altsyncram_4ii1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_4ii1:auto_generated  ; work         ;
@@ -290,14 +291,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram_m5d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated ; work         ;
 ;          |altsyncram:mem3_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0                                ; work         ;
 ;             |altsyncram_m5d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_m5d1:auto_generated ; work         ;
-;       |serial_buffer:ser|                    ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|serial_buffer:ser                                                           ; work         ;
-;    |inst_rom:InstructionMemory|              ; 32 (32)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
+;       |serial_buffer:ser|                    ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|serial_buffer:ser                                                           ; work         ;
+;    |inst_rom:InstructionMemory|              ; 31 (31)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
 ;    |mux:ALUMux|                              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ALUMux                                                                                         ; work         ;
+;    |mux:BranchOrJumpMux|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:BranchOrJumpMux                                                                                ; work         ;
 ;    |mux:ForceWriteToR31Mux|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ForceWriteToR31Mux                                                                             ; work         ;
 ;    |mux:InstructMux|                         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:InstructMux                                                                                    ; work         ;
-;    |mux:PCFromRegisterMux|                   ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:PCFromRegisterMux                                                                              ; work         ;
-;    |mux:RegFileWriteMux|                     ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:RegFileWriteMux                                                                                ; work         ;
-;    |reg_file:RegisterFile|                   ; 76 (76)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
+;    |mux:PCFromRegisterMux|                   ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:PCFromRegisterMux                                                                              ; work         ;
+;    |reg_file:RegisterFile|                   ; 72 (72)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -323,9 +324,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+------------------------------------------------+
 ; Register name                                               ; Reason for Removal                             ;
 +-------------------------------------------------------------+------------------------------------------------+
-; LUIShiftEM[0..15]                                           ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftEM[0]                                               ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftWB[0]                                               ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftEM[1..15]                                           ; Stuck at GND due to stuck port data_in         ;
 ; JumpAddressEM[0,1,30,31]                                    ; Stuck at GND due to stuck port data_in         ;
 ; data_memory:DataMemory|serial_buffer:ser|read_en            ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftWB[1..15]                                           ; Stuck at GND due to stuck port data_in         ;
 ; JumpAddressEM[2]                                            ; Merged with LUIShiftEM[16]                     ;
 ; ImmediateFunctionTypeMuxOutEM[0]                            ; Merged with LUIShiftEM[16]                     ;
 ; JumpAddressEM[3]                                            ; Merged with LUIShiftEM[17]                     ;
@@ -367,8 +371,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CurrentInstructionID[7..12,16,18,20..22,24,28,30]           ; Stuck at GND due to stuck port data_in         ;
 ; JumpAddressEM[18,20,22..24]                                 ; Stuck at GND due to stuck port data_in         ;
 ; LUIShiftEM[23..28]                                          ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftWB[23..28]                                          ; Stuck at GND due to stuck port data_in         ;
 ; UseLUI_EM                                                   ; Stuck at GND due to stuck port data_in         ;
 ; UnsignedEM                                                  ; Stuck at GND due to stuck port data_in         ;
+; UseLUI_WB                                                   ; Stuck at GND due to stuck port data_in         ;
+; LUIShiftWB[16..22,29..31]                                   ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[31][0]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[30][0]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[29][0]                      ; Lost fanout                                    ;
@@ -1210,9 +1217,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; inst_rom:InstructionMemory|out[23]                          ; Merged with inst_rom:InstructionMemory|out[21] ;
 ; inst_rom:InstructionMemory|out[9]                           ; Merged with inst_rom:InstructionMemory|out[11] ;
 ; inst_rom:InstructionMemory|out[1]                           ; Merged with inst_rom:InstructionMemory|out[15] ;
+; ForceWriteToR31MuxOutWB[4]                                  ; Merged with ForceWriteToR31MuxOutWB[2]         ;
 ; ForceWriteToR31MuxOutEM[4]                                  ; Merged with ForceWriteToR31MuxOutEM[2]         ;
 ; JumpAddressEM[21]                                           ; Merged with JumpAddressEM[19]                  ;
 ; ForceWriteToR31MuxOutEM[0]                                  ; Stuck at GND due to stuck port data_in         ;
+; ForceWriteToR31MuxOutWB[0]                                  ; Stuck at GND due to stuck port data_in         ;
 ; SizeInEM[0]                                                 ; Stuck at VCC due to stuck port data_in         ;
 ; reg_file:RegisterFile|registers[8][31]                      ; Lost fanout                                    ;
 ; reg_file:RegisterFile|registers[2][31]                      ; Lost fanout                                    ;
@@ -1344,236 +1353,194 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; reg_file:RegisterFile|registers[4][0]                       ; Lost fanout                                    ;
 ; SizeInEM[1]                                                 ; Stuck at VCC due to stuck port data_in         ;
 ; PCFromRegEM                                                 ; Merged with JumpEM                             ;
-; JumpAddressEM[19,25]                                        ; Lost fanout                                    ;
-; Total Number of Removed Registers = 1093                    ;                                                ;
+; Total Number of Removed Registers = 1126                    ;                                                ;
 +-------------------------------------------------------------+------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                           ;
-+------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                               ;
-+------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
-; inst_rom:InstructionMemory|out[8]  ; Stuck at GND              ; CurrentInstructionID[16], JumpAddressEM[18], reg_file:RegisterFile|registers[31][0], ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[30][0], reg_file:RegisterFile|registers[29][0],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][0], reg_file:RegisterFile|registers[31][3],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][3], reg_file:RegisterFile|registers[29][3],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][3], reg_file:RegisterFile|registers[31][31],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][31], reg_file:RegisterFile|registers[29][31],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][31], reg_file:RegisterFile|registers[31][30],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][30], reg_file:RegisterFile|registers[29][30],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][30], reg_file:RegisterFile|registers[31][29],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][29], reg_file:RegisterFile|registers[29][29],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][29], reg_file:RegisterFile|registers[31][28],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][28], reg_file:RegisterFile|registers[29][28],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][28], reg_file:RegisterFile|registers[31][27],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][27], reg_file:RegisterFile|registers[29][27],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][27], reg_file:RegisterFile|registers[31][26],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][26], reg_file:RegisterFile|registers[29][26],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][26], reg_file:RegisterFile|registers[31][25],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][25], reg_file:RegisterFile|registers[29][25],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][25], reg_file:RegisterFile|registers[31][24],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][24], reg_file:RegisterFile|registers[29][24],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][24], reg_file:RegisterFile|registers[31][23],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][23], reg_file:RegisterFile|registers[29][23],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][23], reg_file:RegisterFile|registers[31][22],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][22], reg_file:RegisterFile|registers[29][22],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][22], reg_file:RegisterFile|registers[31][21],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][21], reg_file:RegisterFile|registers[29][21],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][21], reg_file:RegisterFile|registers[31][20],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][20], reg_file:RegisterFile|registers[29][20],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][20], reg_file:RegisterFile|registers[31][19],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][19], reg_file:RegisterFile|registers[29][19],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][19], reg_file:RegisterFile|registers[31][18],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][18], reg_file:RegisterFile|registers[29][18],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][18], reg_file:RegisterFile|registers[31][17],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][17], reg_file:RegisterFile|registers[29][17],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][17], reg_file:RegisterFile|registers[31][16],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][16], reg_file:RegisterFile|registers[29][16],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][16], reg_file:RegisterFile|registers[31][15],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][15], reg_file:RegisterFile|registers[29][15],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][15], reg_file:RegisterFile|registers[31][14],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][14], reg_file:RegisterFile|registers[29][14],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][14], reg_file:RegisterFile|registers[31][13],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][13], reg_file:RegisterFile|registers[29][13],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][13], reg_file:RegisterFile|registers[31][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][12], reg_file:RegisterFile|registers[29][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][12], reg_file:RegisterFile|registers[31][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][11], reg_file:RegisterFile|registers[29][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][11], reg_file:RegisterFile|registers[31][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][10], reg_file:RegisterFile|registers[29][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][10], reg_file:RegisterFile|registers[31][9],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][9], reg_file:RegisterFile|registers[29][9],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][9], reg_file:RegisterFile|registers[31][8],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][8], reg_file:RegisterFile|registers[29][8],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][8], reg_file:RegisterFile|registers[31][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][7], reg_file:RegisterFile|registers[29][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][7], reg_file:RegisterFile|registers[31][6],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][6], reg_file:RegisterFile|registers[29][6],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][6], reg_file:RegisterFile|registers[31][5],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][5], reg_file:RegisterFile|registers[29][5],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][5], reg_file:RegisterFile|registers[31][4],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][4], reg_file:RegisterFile|registers[29][4],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][4], reg_file:RegisterFile|registers[31][2],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][2], reg_file:RegisterFile|registers[29][2],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][2], reg_file:RegisterFile|registers[31][1],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[30][1], reg_file:RegisterFile|registers[29][1],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[28][1]                                               ;
-; inst_rom:InstructionMemory|out[6]  ; Stuck at GND              ; CurrentInstructionID[30], UnsignedEM, reg_file:RegisterFile|registers[0][31],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][30], reg_file:RegisterFile|registers[0][29],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][28], reg_file:RegisterFile|registers[0][27],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][26], reg_file:RegisterFile|registers[0][25],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][24], reg_file:RegisterFile|registers[0][23],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][22], reg_file:RegisterFile|registers[0][21],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][20], reg_file:RegisterFile|registers[0][19],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][18], reg_file:RegisterFile|registers[0][17],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[0][16], ForceWriteToR31MuxOutEM[0],                  ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][31], reg_file:RegisterFile|registers[2][31],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][30], reg_file:RegisterFile|registers[2][30],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][29], reg_file:RegisterFile|registers[2][29],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][28], reg_file:RegisterFile|registers[2][28],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][27], reg_file:RegisterFile|registers[2][27],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][26], reg_file:RegisterFile|registers[2][26],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][25], reg_file:RegisterFile|registers[2][25],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][24], reg_file:RegisterFile|registers[2][24],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][23], reg_file:RegisterFile|registers[2][23],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][22], reg_file:RegisterFile|registers[2][22],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][21], reg_file:RegisterFile|registers[2][21],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][20], reg_file:RegisterFile|registers[2][20],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][19], reg_file:RegisterFile|registers[2][19],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][18], reg_file:RegisterFile|registers[2][18],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][17], reg_file:RegisterFile|registers[2][17],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][16], reg_file:RegisterFile|registers[2][16],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][31], reg_file:RegisterFile|registers[4][31],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][30], reg_file:RegisterFile|registers[4][30],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][29], reg_file:RegisterFile|registers[4][29],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][28], reg_file:RegisterFile|registers[4][28],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][27], reg_file:RegisterFile|registers[4][27],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][26], reg_file:RegisterFile|registers[4][26],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][25], reg_file:RegisterFile|registers[4][25],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][24], reg_file:RegisterFile|registers[4][24],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][23], reg_file:RegisterFile|registers[4][23],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][22], reg_file:RegisterFile|registers[4][22],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][21], reg_file:RegisterFile|registers[4][21],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][20], reg_file:RegisterFile|registers[4][20],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][19], reg_file:RegisterFile|registers[4][19],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][18], reg_file:RegisterFile|registers[4][18],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][17], reg_file:RegisterFile|registers[4][17],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][16], reg_file:RegisterFile|registers[4][16]      ;
-; inst_rom:InstructionMemory|out[31] ; Stuck at GND              ; CurrentInstructionID[7], LUIShiftEM[23], reg_file:RegisterFile|registers[27][7],     ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[26][7], reg_file:RegisterFile|registers[25][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][7], reg_file:RegisterFile|registers[23][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][7], reg_file:RegisterFile|registers[21][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][7], reg_file:RegisterFile|registers[18][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][7], reg_file:RegisterFile|registers[15][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][7], reg_file:RegisterFile|registers[13][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[12][7], reg_file:RegisterFile|registers[11][7],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][7], reg_file:RegisterFile|registers[7][7],        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][7], reg_file:RegisterFile|registers[5][7],        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][7], reg_file:RegisterFile|registers[1][7],        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][7], reg_file:RegisterFile|registers[2][7],        ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][7], reg_file:RegisterFile|registers[4][7],       ;
-;                                    ;                           ; JumpAddressEM[25]                                                                    ;
-; inst_rom:InstructionMemory|out[18] ; Stuck at GND              ; CurrentInstructionID[10], LUIShiftEM[26], reg_file:RegisterFile|registers[27][10],   ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[26][10], reg_file:RegisterFile|registers[25][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][10], reg_file:RegisterFile|registers[23][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][10], reg_file:RegisterFile|registers[21][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][10], reg_file:RegisterFile|registers[18][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][10], reg_file:RegisterFile|registers[15][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][10], reg_file:RegisterFile|registers[13][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[12][10], reg_file:RegisterFile|registers[11][10],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][10], reg_file:RegisterFile|registers[7][10],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][10], reg_file:RegisterFile|registers[5][10],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][10], reg_file:RegisterFile|registers[1][10],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][10], reg_file:RegisterFile|registers[2][10],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][10], reg_file:RegisterFile|registers[4][10]      ;
-; inst_rom:InstructionMemory|out[19] ; Stuck at GND              ; CurrentInstructionID[11], LUIShiftEM[27], reg_file:RegisterFile|registers[27][11],   ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[26][11], reg_file:RegisterFile|registers[25][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][11], reg_file:RegisterFile|registers[23][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][11], reg_file:RegisterFile|registers[21][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][11], reg_file:RegisterFile|registers[18][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][11], reg_file:RegisterFile|registers[15][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][11], reg_file:RegisterFile|registers[13][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[12][11], reg_file:RegisterFile|registers[11][11],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][11], reg_file:RegisterFile|registers[7][11],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][11], reg_file:RegisterFile|registers[5][11],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][11], reg_file:RegisterFile|registers[1][11],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][11], reg_file:RegisterFile|registers[2][11],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][11], reg_file:RegisterFile|registers[4][11]      ;
-; inst_rom:InstructionMemory|out[20] ; Stuck at GND              ; CurrentInstructionID[12], LUIShiftEM[28], reg_file:RegisterFile|registers[27][12],   ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[26][12], reg_file:RegisterFile|registers[25][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[24][12], reg_file:RegisterFile|registers[23][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[22][12], reg_file:RegisterFile|registers[21][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[19][12], reg_file:RegisterFile|registers[18][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[17][12], reg_file:RegisterFile|registers[15][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[14][12], reg_file:RegisterFile|registers[13][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[12][12], reg_file:RegisterFile|registers[11][12],    ;
-;                                    ;                           ; reg_file:RegisterFile|registers[9][12], reg_file:RegisterFile|registers[7][12],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[6][12], reg_file:RegisterFile|registers[5][12],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[3][12], reg_file:RegisterFile|registers[1][12],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[8][12], reg_file:RegisterFile|registers[2][12],      ;
-;                                    ;                           ; reg_file:RegisterFile|registers[16][12], reg_file:RegisterFile|registers[4][12]      ;
-; LUIShiftEM[1]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][1], reg_file:RegisterFile|registers[8][1],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][1], reg_file:RegisterFile|registers[16][1],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][1]                                                ;
-; LUIShiftEM[0]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][0], reg_file:RegisterFile|registers[8][0],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][0], reg_file:RegisterFile|registers[16][0],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][0]                                                ;
-; LUIShiftEM[2]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][2], reg_file:RegisterFile|registers[8][2],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][2], reg_file:RegisterFile|registers[16][2],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][2]                                                ;
-; LUIShiftEM[3]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][3], reg_file:RegisterFile|registers[8][3],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][3], reg_file:RegisterFile|registers[16][3],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][3]                                                ;
-; LUIShiftEM[4]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][4], reg_file:RegisterFile|registers[8][4],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][4], reg_file:RegisterFile|registers[16][4],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][4]                                                ;
-; LUIShiftEM[5]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][5], reg_file:RegisterFile|registers[8][5],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][5], reg_file:RegisterFile|registers[16][5],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][5]                                                ;
-; LUIShiftEM[6]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][6], reg_file:RegisterFile|registers[8][6],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][6], reg_file:RegisterFile|registers[16][6],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][6]                                                ;
-; LUIShiftEM[8]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][8], reg_file:RegisterFile|registers[8][8],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][8], reg_file:RegisterFile|registers[16][8],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][8]                                                ;
-; LUIShiftEM[9]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][9], reg_file:RegisterFile|registers[8][9],        ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][9], reg_file:RegisterFile|registers[16][9],       ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][9]                                                ;
-; LUIShiftEM[13]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][13], reg_file:RegisterFile|registers[8][13],      ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][13], reg_file:RegisterFile|registers[16][13],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][13]                                               ;
-; LUIShiftEM[14]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][14], reg_file:RegisterFile|registers[8][14],      ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][14], reg_file:RegisterFile|registers[16][14],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][14]                                               ;
-; LUIShiftEM[15]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][15], reg_file:RegisterFile|registers[8][15],      ;
-;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[2][15], reg_file:RegisterFile|registers[16][15],     ;
-;                                    ;                           ; reg_file:RegisterFile|registers[4][15]                                               ;
-; inst_rom:InstructionMemory|out[16] ; Stuck at GND              ; CurrentInstructionID[8], LUIShiftEM[24]                                              ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[17] ; Stuck at GND              ; CurrentInstructionID[9], LUIShiftEM[25]                                              ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[10] ; Stuck at GND              ; CurrentInstructionID[18], JumpAddressEM[20]                                          ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[12] ; Stuck at GND              ; CurrentInstructionID[20], JumpAddressEM[22]                                          ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[13] ; Stuck at GND              ; CurrentInstructionID[21], JumpAddressEM[23]                                          ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[14] ; Stuck at GND              ; CurrentInstructionID[22], JumpAddressEM[24]                                          ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; LUIShiftEM[7]                      ; Stuck at GND              ; reg_file:RegisterFile|registers[0][7]                                                ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; LUIShiftEM[10]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][10]                                               ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; LUIShiftEM[11]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][11]                                               ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; LUIShiftEM[12]                     ; Stuck at GND              ; reg_file:RegisterFile|registers[0][12]                                               ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[4]  ; Stuck at GND              ; CurrentInstructionID[28]                                                             ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-; inst_rom:InstructionMemory|out[0]  ; Stuck at GND              ; CurrentInstructionID[24]                                                             ;
-;                                    ; due to stuck port data_in ;                                                                                      ;
-+------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                  ;
++------------------------------------+---------------------------+---------------------------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                                      ;
++------------------------------------+---------------------------+---------------------------------------------------------------------------------------------+
+; inst_rom:InstructionMemory|out[8]  ; Stuck at GND              ; CurrentInstructionID[16], JumpAddressEM[18], reg_file:RegisterFile|registers[31][0],        ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[30][0], reg_file:RegisterFile|registers[29][0],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][0], reg_file:RegisterFile|registers[31][3],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][3], reg_file:RegisterFile|registers[29][3],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][3], reg_file:RegisterFile|registers[31][31],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][31], reg_file:RegisterFile|registers[29][31],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][31], reg_file:RegisterFile|registers[31][30],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][30], reg_file:RegisterFile|registers[29][30],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][30], reg_file:RegisterFile|registers[31][29],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][29], reg_file:RegisterFile|registers[29][29],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][29], reg_file:RegisterFile|registers[31][28],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][28], reg_file:RegisterFile|registers[29][28],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][28], reg_file:RegisterFile|registers[31][27],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][27], reg_file:RegisterFile|registers[29][27],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][27], reg_file:RegisterFile|registers[31][26],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][26], reg_file:RegisterFile|registers[29][26],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][26], reg_file:RegisterFile|registers[31][25],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][25], reg_file:RegisterFile|registers[29][25],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][25], reg_file:RegisterFile|registers[31][24],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][24], reg_file:RegisterFile|registers[29][24],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][24], reg_file:RegisterFile|registers[31][23],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][23], reg_file:RegisterFile|registers[29][23],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][23], reg_file:RegisterFile|registers[31][22],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][22], reg_file:RegisterFile|registers[29][22],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][22], reg_file:RegisterFile|registers[31][21],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][21], reg_file:RegisterFile|registers[29][21],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][21], reg_file:RegisterFile|registers[31][20],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][20], reg_file:RegisterFile|registers[29][20],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][20], reg_file:RegisterFile|registers[31][19],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][19], reg_file:RegisterFile|registers[29][19],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][19], reg_file:RegisterFile|registers[31][18],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][18], reg_file:RegisterFile|registers[29][18],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][18], reg_file:RegisterFile|registers[31][17],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][17], reg_file:RegisterFile|registers[29][17],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][17], reg_file:RegisterFile|registers[31][16],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][16], reg_file:RegisterFile|registers[29][16],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][16], reg_file:RegisterFile|registers[31][15],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][15], reg_file:RegisterFile|registers[29][15],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][15], reg_file:RegisterFile|registers[31][14],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][14], reg_file:RegisterFile|registers[29][14],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][14], reg_file:RegisterFile|registers[31][13],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][13], reg_file:RegisterFile|registers[29][13],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][13], reg_file:RegisterFile|registers[31][12],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][12], reg_file:RegisterFile|registers[29][12],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][12], reg_file:RegisterFile|registers[31][11],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][11], reg_file:RegisterFile|registers[29][11],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][11], reg_file:RegisterFile|registers[31][10],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][10], reg_file:RegisterFile|registers[29][10],           ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][10], reg_file:RegisterFile|registers[31][9],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][9], reg_file:RegisterFile|registers[29][9],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][9], reg_file:RegisterFile|registers[31][8],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][8], reg_file:RegisterFile|registers[29][8],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][8], reg_file:RegisterFile|registers[31][7],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][7], reg_file:RegisterFile|registers[29][7],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][7], reg_file:RegisterFile|registers[31][6],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][6], reg_file:RegisterFile|registers[29][6],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][6], reg_file:RegisterFile|registers[31][5],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][5], reg_file:RegisterFile|registers[29][5],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][5], reg_file:RegisterFile|registers[31][4],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][4], reg_file:RegisterFile|registers[29][4],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][4], reg_file:RegisterFile|registers[31][2],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][2], reg_file:RegisterFile|registers[29][2],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][2], reg_file:RegisterFile|registers[31][1],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[30][1], reg_file:RegisterFile|registers[29][1],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[28][1]                                                      ;
+; inst_rom:InstructionMemory|out[6]  ; Stuck at GND              ; CurrentInstructionID[30], UseLUI_EM, UnsignedEM, UseLUI_WB, LUIShiftWB[31], LUIShiftWB[30], ;
+;                                    ; due to stuck port data_in ; LUIShiftWB[29], LUIShiftWB[22], LUIShiftWB[21], LUIShiftWB[20], LUIShiftWB[19],             ;
+;                                    ;                           ; LUIShiftWB[18], LUIShiftWB[17], LUIShiftWB[16], reg_file:RegisterFile|registers[0][31],     ;
+;                                    ;                           ; reg_file:RegisterFile|registers[0][30], reg_file:RegisterFile|registers[0][29],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[0][22], reg_file:RegisterFile|registers[0][21],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[0][20], reg_file:RegisterFile|registers[0][19],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[0][18], reg_file:RegisterFile|registers[0][17],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[0][16], ForceWriteToR31MuxOutEM[0],                         ;
+;                                    ;                           ; ForceWriteToR31MuxOutWB[0], SizeInEM[0], reg_file:RegisterFile|registers[8][31],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][31], reg_file:RegisterFile|registers[8][30],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][30], reg_file:RegisterFile|registers[8][29],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][29], reg_file:RegisterFile|registers[8][22],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][22], reg_file:RegisterFile|registers[8][21],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][21], reg_file:RegisterFile|registers[8][20],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][20], reg_file:RegisterFile|registers[8][19],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][19], reg_file:RegisterFile|registers[8][18],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][18], reg_file:RegisterFile|registers[8][17],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][17], reg_file:RegisterFile|registers[8][16],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][16], reg_file:RegisterFile|registers[16][31],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][31], reg_file:RegisterFile|registers[16][30],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][30], reg_file:RegisterFile|registers[16][29],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][29], reg_file:RegisterFile|registers[16][22],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][22], reg_file:RegisterFile|registers[16][21],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][21], reg_file:RegisterFile|registers[16][20],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][20], reg_file:RegisterFile|registers[16][19],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][19], reg_file:RegisterFile|registers[16][18],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][18], reg_file:RegisterFile|registers[16][17],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][17], reg_file:RegisterFile|registers[16][16],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][16], SizeInEM[1]                                         ;
+; inst_rom:InstructionMemory|out[31] ; Stuck at GND              ; CurrentInstructionID[7], LUIShiftEM[23], LUIShiftWB[23],                                    ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][23], reg_file:RegisterFile|registers[8][23],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][23], reg_file:RegisterFile|registers[16][23],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][23]                                                      ;
+; inst_rom:InstructionMemory|out[16] ; Stuck at GND              ; CurrentInstructionID[8], LUIShiftEM[24], LUIShiftWB[24],                                    ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][24], reg_file:RegisterFile|registers[8][24],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][24], reg_file:RegisterFile|registers[16][24],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][24]                                                      ;
+; inst_rom:InstructionMemory|out[17] ; Stuck at GND              ; CurrentInstructionID[9], LUIShiftEM[25], LUIShiftWB[25],                                    ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][25], reg_file:RegisterFile|registers[8][25],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][25], reg_file:RegisterFile|registers[16][25],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][25]                                                      ;
+; inst_rom:InstructionMemory|out[18] ; Stuck at GND              ; CurrentInstructionID[10], LUIShiftEM[26], LUIShiftWB[26],                                   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][26], reg_file:RegisterFile|registers[8][26],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][26], reg_file:RegisterFile|registers[16][26],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][26]                                                      ;
+; inst_rom:InstructionMemory|out[19] ; Stuck at GND              ; CurrentInstructionID[11], LUIShiftEM[27], LUIShiftWB[27],                                   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][27], reg_file:RegisterFile|registers[8][27],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][27], reg_file:RegisterFile|registers[16][27],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][27]                                                      ;
+; inst_rom:InstructionMemory|out[20] ; Stuck at GND              ; CurrentInstructionID[12], LUIShiftEM[28], LUIShiftWB[28],                                   ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[0][28], reg_file:RegisterFile|registers[8][28],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[2][28], reg_file:RegisterFile|registers[16][28],            ;
+;                                    ;                           ; reg_file:RegisterFile|registers[4][28]                                                      ;
+; LUIShiftEM[0]                      ; Stuck at GND              ; LUIShiftWB[0], reg_file:RegisterFile|registers[0][0],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][0], reg_file:RegisterFile|registers[2][0],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][0], reg_file:RegisterFile|registers[4][0]               ;
+; LUIShiftEM[1]                      ; Stuck at GND              ; LUIShiftWB[1], reg_file:RegisterFile|registers[0][1],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][1], reg_file:RegisterFile|registers[2][1],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][1], reg_file:RegisterFile|registers[4][1]               ;
+; LUIShiftEM[2]                      ; Stuck at GND              ; LUIShiftWB[2], reg_file:RegisterFile|registers[0][2],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][2], reg_file:RegisterFile|registers[2][2],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][2], reg_file:RegisterFile|registers[4][2]               ;
+; LUIShiftEM[3]                      ; Stuck at GND              ; LUIShiftWB[3], reg_file:RegisterFile|registers[0][3],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][3], reg_file:RegisterFile|registers[2][3],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][3], reg_file:RegisterFile|registers[4][3]               ;
+; LUIShiftEM[4]                      ; Stuck at GND              ; LUIShiftWB[4], reg_file:RegisterFile|registers[0][4],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][4], reg_file:RegisterFile|registers[2][4],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][4], reg_file:RegisterFile|registers[4][4]               ;
+; LUIShiftEM[5]                      ; Stuck at GND              ; LUIShiftWB[5], reg_file:RegisterFile|registers[0][5],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][5], reg_file:RegisterFile|registers[2][5],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][5], reg_file:RegisterFile|registers[4][5]               ;
+; LUIShiftEM[6]                      ; Stuck at GND              ; LUIShiftWB[6], reg_file:RegisterFile|registers[0][6],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][6], reg_file:RegisterFile|registers[2][6],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][6], reg_file:RegisterFile|registers[4][6]               ;
+; LUIShiftEM[7]                      ; Stuck at GND              ; LUIShiftWB[7], reg_file:RegisterFile|registers[0][7],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][7], reg_file:RegisterFile|registers[2][7],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][7], reg_file:RegisterFile|registers[4][7]               ;
+; LUIShiftEM[8]                      ; Stuck at GND              ; LUIShiftWB[8], reg_file:RegisterFile|registers[0][8],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][8], reg_file:RegisterFile|registers[2][8],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][8], reg_file:RegisterFile|registers[4][8]               ;
+; LUIShiftEM[9]                      ; Stuck at GND              ; LUIShiftWB[9], reg_file:RegisterFile|registers[0][9],                                       ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][9], reg_file:RegisterFile|registers[2][9],               ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][9], reg_file:RegisterFile|registers[4][9]               ;
+; LUIShiftEM[10]                     ; Stuck at GND              ; LUIShiftWB[10], reg_file:RegisterFile|registers[0][10],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][10], reg_file:RegisterFile|registers[2][10],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][10], reg_file:RegisterFile|registers[4][10]             ;
+; LUIShiftEM[11]                     ; Stuck at GND              ; LUIShiftWB[11], reg_file:RegisterFile|registers[0][11],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][11], reg_file:RegisterFile|registers[2][11],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][11], reg_file:RegisterFile|registers[4][11]             ;
+; LUIShiftEM[12]                     ; Stuck at GND              ; LUIShiftWB[12], reg_file:RegisterFile|registers[0][12],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][12], reg_file:RegisterFile|registers[2][12],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][12], reg_file:RegisterFile|registers[4][12]             ;
+; LUIShiftEM[13]                     ; Stuck at GND              ; LUIShiftWB[13], reg_file:RegisterFile|registers[0][13],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][13], reg_file:RegisterFile|registers[2][13],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][13], reg_file:RegisterFile|registers[4][13]             ;
+; LUIShiftEM[14]                     ; Stuck at GND              ; LUIShiftWB[14], reg_file:RegisterFile|registers[0][14],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][14], reg_file:RegisterFile|registers[2][14],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][14], reg_file:RegisterFile|registers[4][14]             ;
+; LUIShiftEM[15]                     ; Stuck at GND              ; LUIShiftWB[15], reg_file:RegisterFile|registers[0][15],                                     ;
+;                                    ; due to stuck port data_in ; reg_file:RegisterFile|registers[8][15], reg_file:RegisterFile|registers[2][15],             ;
+;                                    ;                           ; reg_file:RegisterFile|registers[16][15], reg_file:RegisterFile|registers[4][15]             ;
+; inst_rom:InstructionMemory|out[10] ; Stuck at GND              ; CurrentInstructionID[18], JumpAddressEM[20]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
+; inst_rom:InstructionMemory|out[12] ; Stuck at GND              ; CurrentInstructionID[20], JumpAddressEM[22]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
+; inst_rom:InstructionMemory|out[13] ; Stuck at GND              ; CurrentInstructionID[21], JumpAddressEM[23]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
+; inst_rom:InstructionMemory|out[14] ; Stuck at GND              ; CurrentInstructionID[22], JumpAddressEM[24]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
+; inst_rom:InstructionMemory|out[4]  ; Stuck at GND              ; CurrentInstructionID[28]                                                                    ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
+; inst_rom:InstructionMemory|out[0]  ; Stuck at GND              ; CurrentInstructionID[24]                                                                    ;
+;                                    ; due to stuck port data_in ;                                                                                             ;
++------------------------------------+---------------------------+---------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1581,9 +1548,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 346   ;
-; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 10    ;
+; Total registers                              ; 485   ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 50    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 74    ;
@@ -1598,10 +1565,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------+----------------------------------------------------------+------+
 ; data_memory:DataMemory|async_memory:data_seg|rd[0..7]    ; data_memory:DataMemory|async_memory:data_seg|mem0_rtl_0  ; RAM  ;
 ; data_memory:DataMemory|async_memory:stack_seg|rd[0..7]   ; data_memory:DataMemory|async_memory:stack_seg|mem0_rtl_0 ; RAM  ;
-; data_memory:DataMemory|async_memory:stack_seg|rd[16..23] ; data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0 ; RAM  ;
-; data_memory:DataMemory|async_memory:data_seg|rd[16..23]  ; data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0  ; RAM  ;
 ; data_memory:DataMemory|async_memory:stack_seg|rd[8..15]  ; data_memory:DataMemory|async_memory:stack_seg|mem1_rtl_0 ; RAM  ;
 ; data_memory:DataMemory|async_memory:data_seg|rd[8..15]   ; data_memory:DataMemory|async_memory:data_seg|mem1_rtl_0  ; RAM  ;
+; data_memory:DataMemory|async_memory:stack_seg|rd[16..23] ; data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0 ; RAM  ;
+; data_memory:DataMemory|async_memory:data_seg|rd[16..23]  ; data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0  ; RAM  ;
 ; data_memory:DataMemory|async_memory:stack_seg|rd[24..31] ; data_memory:DataMemory|async_memory:stack_seg|mem3_rtl_0 ; RAM  ;
 ; data_memory:DataMemory|async_memory:data_seg|rd[24..31]  ; data_memory:DataMemory|async_memory:data_seg|mem3_rtl_0  ; RAM  ;
 +----------------------------------------------------------+----------------------------------------------------------+------+
@@ -1612,34 +1579,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_2_out[5]                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_1_out[19]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_2_out[20]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_1_out[31]                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |processor|ForceWriteToR31MuxOutEM[2]                              ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[3]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |processor|WriteRegFromPC_EM                                       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |processor|ALUFunctionEM[4]                                        ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[20][19]                 ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[16][9]                  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[10][4]                  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[8][8]                   ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[4][16]                  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[2][10]                  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[0][3]                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |processor|PC[1]                                                   ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |processor|PC[12]                                                  ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |processor|PC[17]                                                  ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |processor|MemoryWE_EM                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Mux0      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:data_seg|mem1       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|mem1      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|control:Controller|ForceWriteToR31                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Selector6 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |processor|mux:PCFromRegisterMux|out[11]                           ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |processor|mux:PCFromRegisterMux|out[2]                            ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 124 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[5]                                        ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 51 LEs               ; 17 LEs                 ; No         ; |processor|mux:RegFileWriteMux|out[29]                             ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |processor|mux:RegFileWriteMux|out[14]                             ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; No         ; |processor|mux:RegFileWriteMux|out[3]                              ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[4]       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |processor|ALUFunctionEM[2]                                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |processor|PC[1]                                                   ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |processor|PC[13]                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |processor|ALUFunctionEM[3]                                        ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[20][0]                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[16][0]                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[10][0]                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[8][9]                   ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[4][17]                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[2][11]                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|reg_file:RegisterFile|registers[0][8]                   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |processor|ALUResultWB[14]                                         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |processor|MemoryShifterOutWB[10]                                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |processor|RegWriteEnableEM                                        ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |processor|MemoryShifterOutWB[3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |processor|mux:RegFileWriteMux|out[12]                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Mux2      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |processor|mux:PCFromRegisterMux|out[10]                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:data_seg|mem2       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|mem2      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|control:Controller|RegDst                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Selector2 ;
+; 7:1                ; 27 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[25]                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
@@ -1662,24 +1628,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                          ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_6ii1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                         ;
-+---------------------------------+--------------------+------+------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
-+---------------------------------+--------------------+------+------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
 ; Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_m5d1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                          ;
@@ -1690,6 +1638,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +--------------------------------------------------------------------------------------------------------------------------+
 ; Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_5ii1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                         ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_m5d1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                          ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_6ii1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                         ;
 +---------------------------------+--------------------+------+------------------------------------------------------------+
@@ -2002,128 +1968,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
-+------------------------------------+----------------------+----------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                     ;
-+------------------------------------+----------------------+----------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                  ;
-; WIDTH_A                            ; 8                    ; Untyped                                                  ;
-; WIDTHAD_A                          ; 10                   ; Untyped                                                  ;
-; NUMWORDS_A                         ; 1024                 ; Untyped                                                  ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
-; WIDTH_B                            ; 8                    ; Untyped                                                  ;
-; WIDTHAD_B                          ; 10                   ; Untyped                                                  ;
-; NUMWORDS_B                         ; 1024                 ; Untyped                                                  ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                  ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                  ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                  ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                  ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                  ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                                  ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                  ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                  ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                  ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                  ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                  ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                  ;
-; CBXI_PARAMETER                     ; altsyncram_m5d1      ; Untyped                                                  ;
-+------------------------------------+----------------------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0 ;
-+------------------------------------+-------------------------------------------------+------------------------------+
-; Parameter Name                     ; Value                                           ; Type                         ;
-+------------------------------------+-------------------------------------------------+------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                      ;
-; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY                   ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY                 ;
-; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE                 ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE               ;
-; WIDTH_BYTEENA                      ; 1                                               ; Untyped                      ;
-; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped                      ;
-; WIDTH_A                            ; 8                                               ; Untyped                      ;
-; WIDTHAD_A                          ; 10                                              ; Untyped                      ;
-; NUMWORDS_A                         ; 1024                                            ; Untyped                      ;
-; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                      ;
-; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                      ;
-; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                      ;
-; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                      ;
-; INDATA_ACLR_A                      ; NONE                                            ; Untyped                      ;
-; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                      ;
-; WIDTH_B                            ; 8                                               ; Untyped                      ;
-; WIDTHAD_B                          ; 10                                              ; Untyped                      ;
-; NUMWORDS_B                         ; 1024                                            ; Untyped                      ;
-; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                      ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                      ;
-; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped                      ;
-; ADDRESS_REG_B                      ; CLOCK1                                          ; Untyped                      ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                      ;
-; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                      ;
-; INDATA_ACLR_B                      ; NONE                                            ; Untyped                      ;
-; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                      ;
-; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                      ;
-; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                      ;
-; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                      ;
-; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                      ;
-; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                      ;
-; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                      ;
-; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                      ;
-; BYTE_SIZE                          ; 8                                               ; Untyped                      ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ; Untyped                      ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                      ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                      ;
-; INIT_FILE                          ; db/processor.ram2_async_memory_3ca116a3.hdl.mif ; Untyped                      ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                      ;
-; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                      ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                      ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                      ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                      ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                      ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                      ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                      ;
-; ENABLE_ECC                         ; FALSE                                           ; Untyped                      ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                      ;
-; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                      ;
-; DEVICE_FAMILY                      ; Cyclone IV E                                    ; Untyped                      ;
-; CBXI_PARAMETER                     ; altsyncram_6ii1                                 ; Untyped                      ;
-+------------------------------------+-------------------------------------------------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0 ;
 +------------------------------------+----------------------+----------------------------------------------------------+
 ; Parameter Name                     ; Value                ; Type                                                     ;
@@ -2241,6 +2085,128 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                      ;
 ; DEVICE_FAMILY                      ; Cyclone IV E                                    ; Untyped                      ;
 ; CBXI_PARAMETER                     ; altsyncram_5ii1                                 ; Untyped                      ;
++------------------------------------+-------------------------------------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                     ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                  ;
+; WIDTH_A                            ; 8                    ; Untyped                                                  ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                                  ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_B                            ; 8                    ; Untyped                                                  ;
+; WIDTHAD_B                          ; 10                   ; Untyped                                                  ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                  ;
+; CBXI_PARAMETER                     ; altsyncram_m5d1      ; Untyped                                                  ;
++------------------------------------+----------------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0 ;
++------------------------------------+-------------------------------------------------+------------------------------+
+; Parameter Name                     ; Value                                           ; Type                         ;
++------------------------------------+-------------------------------------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped                      ;
+; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped                      ;
+; WIDTH_A                            ; 8                                               ; Untyped                      ;
+; WIDTHAD_A                          ; 10                                              ; Untyped                      ;
+; NUMWORDS_A                         ; 1024                                            ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                      ;
+; WIDTH_B                            ; 8                                               ; Untyped                      ;
+; WIDTHAD_B                          ; 10                                              ; Untyped                      ;
+; NUMWORDS_B                         ; 1024                                            ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1                                          ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                      ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                      ;
+; BYTE_SIZE                          ; 8                                               ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                      ;
+; INIT_FILE                          ; db/processor.ram2_async_memory_3ca116a3.hdl.mif ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                    ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_6ii1                                 ; Untyped                      ;
 +------------------------------------+-------------------------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2395,28 +2361,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
-; Entity Instance                           ; data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
-;     -- WIDTH_A                            ; 8                                                                   ;
-;     -- NUMWORDS_A                         ; 1024                                                                ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
-;     -- WIDTH_B                            ; 8                                                                   ;
-;     -- NUMWORDS_B                         ; 1024                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                              ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
-; Entity Instance                           ; data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0  ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
-;     -- WIDTH_A                            ; 8                                                                   ;
-;     -- NUMWORDS_A                         ; 1024                                                                ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
-;     -- WIDTH_B                            ; 8                                                                   ;
-;     -- NUMWORDS_B                         ; 1024                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                              ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
 ; Entity Instance                           ; data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem1_rtl_0 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
 ;     -- WIDTH_A                            ; 8                                                                   ;
@@ -2429,6 +2373,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
 ; Entity Instance                           ; data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0  ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
+;     -- WIDTH_A                            ; 8                                                                   ;
+;     -- NUMWORDS_A                         ; 1024                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
+;     -- WIDTH_B                            ; 8                                                                   ;
+;     -- NUMWORDS_B                         ; 1024                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
+; Entity Instance                           ; data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
+;     -- WIDTH_A                            ; 8                                                                   ;
+;     -- NUMWORDS_A                         ; 1024                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
+;     -- WIDTH_B                            ; 8                                                                   ;
+;     -- NUMWORDS_B                         ; 1024                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
+; Entity Instance                           ; data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0  ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
 ;     -- WIDTH_A                            ; 8                                                                   ;
 ;     -- NUMWORDS_A                         ; 1024                                                                ;
@@ -2479,26 +2445,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 346                         ;
-;     ENA               ; 74                          ;
-;     SCLR              ; 15                          ;
-;     SCLR SLD          ; 5                           ;
-;     SLD               ; 5                           ;
-;     plain             ; 247                         ;
-; cycloneiii_lcell_comb ; 729                         ;
+; cycloneiii_ff         ; 485                         ;
+;     ENA               ; 72                          ;
+;     ENA SCLR          ; 2                           ;
+;     SCLR              ; 10                          ;
+;     SCLR SLD          ; 10                          ;
+;     SLD               ; 41                          ;
+;     plain             ; 350                         ;
+; cycloneiii_lcell_comb ; 723                         ;
 ;     arith             ; 181                         ;
 ;         2 data inputs ; 65                          ;
 ;         3 data inputs ; 116                         ;
-;     normal            ; 548                         ;
+;     normal            ; 542                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 101                         ;
-;         3 data inputs ; 108                         ;
-;         4 data inputs ; 336                         ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 105                         ;
+;         4 data inputs ; 335                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.80                       ;
-; Average LUT depth     ; 6.69                        ;
+; Max LUT depth         ; 11.80                       ;
+; Average LUT depth     ; 4.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2517,7 +2484,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Thu Jul 25 19:57:51 2019
+    Info: Processing started: Thu Jul 25 20:19:09 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
@@ -2545,7 +2512,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
 Info (12021): Found 1 design units, including 1 entities, in source file control.v
     Info (12023): Found entity 1: control
 Info (12127): Elaborating entity "processor" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at processor.v(62): object "MemoryToRegEM" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processor.v(63): object "MemoryToRegEM" assigned a value but never read
 Info (12128): Elaborating entity "mux" for hierarchy "mux:BranchOrJumpMux"
 Info (12128): Elaborating entity "inst_rom" for hierarchy "inst_rom:InstructionMemory"
 Warning (10850): Verilog HDL warning at inst_rom.v(31): number of words (28) in memory file does not match the number of elements in the address range [0:1023]
@@ -2569,10 +2536,10 @@ Info (12128): Elaborating entity "serial_buffer" for hierarchy "data_memory:Data
 Info (12128): Elaborating entity "DataShifter" for hierarchy "DataShifter:MemoryShifter"
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem0_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:stack_seg|mem0_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:stack_seg|mem1_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem1_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:stack_seg|mem3_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "data_memory:DataMemory|async_memory:data_seg|mem3_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
@@ -2610,37 +2577,6 @@ Info (19000): Inferred 8 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 8
-        Info (286033): Parameter WIDTHAD_A set to 10
-        Info (286033): Parameter NUMWORDS_A set to 1024
-        Info (286033): Parameter WIDTH_B set to 8
-        Info (286033): Parameter WIDTHAD_B set to 10
-        Info (286033): Parameter NUMWORDS_B set to 1024
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 8
-        Info (286033): Parameter WIDTHAD_A set to 10
-        Info (286033): Parameter NUMWORDS_A set to 1024
-        Info (286033): Parameter WIDTH_B set to 8
-        Info (286033): Parameter WIDTHAD_B set to 10
-        Info (286033): Parameter NUMWORDS_B set to 1024
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/processor.ram2_async_memory_3ca116a3.hdl.mif
     Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:stack_seg|mem1_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 8
@@ -2672,6 +2608,37 @@ Info (19000): Inferred 8 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/processor.ram1_async_memory_3ca116a3.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:stack_seg|mem2_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:data_seg|mem2_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/processor.ram2_async_memory_3ca116a3.hdl.mif
     Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:DataMemory|async_memory:stack_seg|mem3_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 8
@@ -2740,25 +2707,6 @@ Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:sta
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m5d1.tdf
     Info (12023): Found entity 1: altsyncram_m5d1
-Info (12130): Elaborated megafunction instantiation "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0"
-Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "8"
-    Info (12134): Parameter "WIDTHAD_A" = "10"
-    Info (12134): Parameter "NUMWORDS_A" = "1024"
-    Info (12134): Parameter "WIDTH_B" = "8"
-    Info (12134): Parameter "WIDTHAD_B" = "10"
-    Info (12134): Parameter "NUMWORDS_B" = "1024"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/processor.ram2_async_memory_3ca116a3.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6ii1.tdf
-    Info (12023): Found entity 1: altsyncram_6ii1
 Info (12130): Elaborated megafunction instantiation "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0"
 Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem1_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2778,6 +2726,25 @@ Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:dat
     Info (12134): Parameter "INIT_FILE" = "db/processor.ram1_async_memory_3ca116a3.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5ii1.tdf
     Info (12023): Found entity 1: altsyncram_5ii1
+Info (12130): Elaborated megafunction instantiation "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem2_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/processor.ram2_async_memory_3ca116a3.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6ii1.tdf
+    Info (12023): Found entity 1: altsyncram_6ii1
 Info (12130): Elaborated megafunction instantiation "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0"
 Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2800,18 +2767,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "serial_rden_out" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 930 registers lost all their fanouts during netlist optimizations.
+Info (17049): 938 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1032 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1095 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 946 logic cells
+    Info (21061): Implemented 1009 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Thu Jul 25 19:58:06 2019
+    Info: Peak virtual memory: 4840 megabytes
+    Info: Processing ended: Thu Jul 25 20:19:24 2019
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Total CPU time (on all processors): 00:00:31
 
 
