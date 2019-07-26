@@ -45,14 +45,14 @@ reg [5:0] ALUFunctionEM;
 wire [31:0] ALUMuxOut;
 wire [31:0] NumberExt;
 wire [4:0] InstructMuxOut;
-wire [31:0] ReadData1;
-wire [31:0] ReadData2;
+
 wire [31:0] DataMuxOut;
 wire [31:0] ALUResult;
 wire ALUBranchOut;
 wire ALUJumpOut;
 wire [31:0] DataMemoryOut;
 
+// Control Signals
 wire MemoryRE;
 reg MemoryRE_EM;
 wire MemoryWE;
@@ -62,48 +62,69 @@ wire MemoryToReg;
 reg MemoryToRegEM;
 reg MemoryToRegWB;
 
-wire [31:0] BranchAddress;
-wire [31:0] BranchOrJumpOut;
-wire [31:0] JumpAddress;
+wire UseLUI;
+reg UseLUI_EM;
+reg UseLUI_WB;
 
 wire Jump;	// created in the ID
 reg JumpEM;
-
-wire [31:0] NextPCMuxOut;
 
 wire PCFromReg;
 reg PCFromRegEM;
 reg PCFromRegWB;
 
-wire [31:0] PCFromRegisterMuxOut;
-
 wire WriteRegFromPC;
 reg WriteRegFromPC_EM;
 reg WriteRegFromPC_WB;
 
-wire [31:0] RegFileWriteMuxOut;
 wire ForceWriteToR31;
-wire [4:0] ForceWriteToR31MuxOut;
-wire [1:0] SizeIn;
+
+wire ImmediateFunction;
 wire Unsigned;
+reg UnsignedEM;
+
+wire [1:0] SizeIn;
+reg [1:0] SizeInEM;
+
+
+// Processor wires/regs
+wire [31:0] BranchAddress;		// EM DONE
+
+wire [31:0] JumpAddress;		// EM DONE
+reg [31:0] JumpAddressEM;
+
+wire [4:0] ForceWriteToR31MuxOut; // WB DONE
+reg [4:0] ForceWriteToR31MuxOutEM;
+reg [4:0] ForceWriteToR31MuxOutWB;
+
+wire [31:0] ReadData1; // EM DONE
+reg [31:0] ReadData1EM;
+wire [31:0] ReadData2; // EM DONE
+reg [31:0] ReadData2EM;
+
+wire [31:0] ImmediateFunctionTypeMuxOut; // EM DONE
+reg  [31:0] ImmediateFunctionTypeMuxOutEM;
+
+reg  [31:0] LUIShift; // WB DONE
+reg  [31:0] LUIShiftEM;
+reg  [31:0] LUIShiftWB;
+
+wire [31:0] BranchOrJumpOut;
+wire [31:0] NextPCMuxOut;
+wire [31:0] PCFromRegisterMuxOut;
+wire [31:0] RegFileWriteMuxOut;
 wire [31:0] MemoryShifterOut;
 wire [31:0] ZeroExtendedNumber;
-reg  [31:0] LUIShift;
-wire ImmediateFunction;
-wire [31:0] ImmediateFunctionTypeMuxOut;
-wire UseLUI;
 wire [31:0] ALUorLUIMuxOut;
 
- 
-
 // PC adder.
-// IF
+// IF DONE
 always @(*) begin
 	NextPC = PC + `PC_INCREMENT;
 end
 
 // Update the PC value.
-// IF
+// IF DONE
 always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
@@ -113,15 +134,15 @@ always @(posedge clock) begin
 	end
 end
 
-// EM
+// EM DONE
 assign BranchAddress = (NumberExt << 2) + NextPCEM;
 
-// ID
+// ID DONE
 assign JumpAddress = {NextPCID[31:28], CurrentInstructionID[25:0] << 2};
 
 // EM
 mux #(32) BranchOrJumpMux (
-	.A(JumpAddress),
+	.A(JumpAddressEM),
 	.B(BranchAddress),
 	.PickA(JumpEM),
 	.out(BranchOrJumpOut)
@@ -156,7 +177,7 @@ inst_rom #(
 );
 
 // Controller---------------------------------------------
-// ID
+// ID DONE
 control Controller(
 	.Clock(clock),
 	.Reset(reset),
@@ -172,14 +193,14 @@ control Controller(
 	.Jump(Jump), // EM DONE
 	.PCFromReg(PCFromReg), // WB DONE determines if PC uses reg instead of branch and jump.
 	.WriteRegFromPC(WriteRegFromPC), // WB DONE
-	.ForceWriteToR31(ForceWriteToR31), // ID
-	.SizeOut(SizeIn),
-	.Unsigned(Unsigned),
-	.ImmediateFunction(ImmediateFunction),
-	.UseLUI(UseLUI)
+	.ForceWriteToR31(ForceWriteToR31), // ID DONE
+	.SizeOut(SizeIn),	// EM DONE
+	.Unsigned(Unsigned), // EM DONE
+	.ImmediateFunction(ImmediateFunction), // ID DONE
+	.UseLUI(UseLUI) // WB DONE
 );
 
-// ID output piped to WB
+// ID output piped to WB DONE
 // think of as one mux
 mux #(5) InstructMux (
 	.B(CurrentInstructionID[20:16]),
@@ -201,48 +222,44 @@ reg_file RegisterFile (
 	.clock(clock),
 	.reset(reset),
 	
-	// ID
+	// ID DONE
 	.read_reg_1(CurrentInstructionID[25:21]),
 	.read_reg_2(CurrentInstructionID[20:16]),
-	.read_data_1(ReadData1),
+	.read_data_1(ReadData1), // 
 	.read_data_2(ReadData2),
 	
 	// WB
-	.write_reg(ForceWriteToR31MuxOut),	 	
+	.write_reg(ForceWriteToR31MuxOutWB),	// done 	
 	.write_data(RegFileWriteMuxOut),	
 	.write_enable(RegWriteEnableWB)		
 );
 
-// ID
+// Instruction block ----------------------- DONE
+// ID DONE
 sign_extend SignExt(
 	.number(CurrentInstructionID[15:0]),
 	.numberExt(NumberExt)
 );
 
-// ID
+// ID DONE
 zero_extend ZeroExt(
 	.number(CurrentInstructionID[15:0]),
 	.numberExt(ZeroExtendedNumber)
 );
 
-// ID RESULT PIPED TO EM
+// ID DONE RESULT PIPED TO EM 
 mux #(32) ImmediateFunctionTypeMux (
 	.A(ZeroExtendedNumber),
 	.B(NumberExt),
 	.PickA(ImmediateFunction),
-	.out(ImmediateFunctionTypeMuxOut)
+	.out(ImmediateFunctionTypeMuxOut) // piped to EM
 );
-
-// ID
-// LUIShift
-always @(*) begin
-	LUIShift = {CurrentInstructionID[15:0], 16'h0000};
-end
+//-----------------------------------------
 
 // EM
 mux #(32) ALUMux  (
-	.A(ImmediateFunctionTypeMuxOut),
-	.B(ReadData2),
+	.A(ImmediateFunctionTypeMuxOutEM), // done
+	.B(ReadData2EM),
 	.PickA(ALUSrcEM),
 	.out(ALUMuxOut)
 );
@@ -250,7 +267,7 @@ mux #(32) ALUMux  (
 // EM
 alu ALU(
 	.Func_in(ALUFunctionEM), 
-	.A_in(ReadData1), 
+	.A_in(ReadData1EM), 
 	.B_in(ALUMuxOut),
 	.O_out(ALUResult),
 	.Branch_out(ALUBranchOut), 
@@ -263,10 +280,10 @@ data_memory DataMemory (
 	.reset(reset),
 
 	.addr_in(ALUResult),
-	.writedata_in(ReadData2),
+	.writedata_in(ReadData2EM),
 	.re_in(MemoryRE_EM),
 	.we_in(MemoryWE_EM),
-	.size_in(SizeIn),
+	.size_in(SizeInEM),
 	.readdata_out(DataMemoryOut),
 	
 	.serial_in(serial_in),
@@ -279,19 +296,25 @@ data_memory DataMemory (
 
 // EM  OUTPUT PIPIED TO WB
 DataShifter MemoryShifter (
-	.SizeIn(SizeIn),
+	.SizeIn(SizeInEM),
 	.Data(DataMemoryOut),
 	.BytePicker(ALUResult[1:0]),
-	.Unsigned(Unsigned),
+	.Unsigned(UnsignedEM),
 	.MemoryShifterOut(MemoryShifterOut)
 );
 
+// ID DONE
+// LUIShift
+always @(*) begin
+	LUIShift = {CurrentInstructionID[15:0], 16'h0000};
+end
+
 // WB
-// Fold Into One Mux 
+// Fold Into One Mux ------
 mux #(32) ALUorLUIMux (
-	.A(LUIShift),
+	.A(LUIShiftWB),
 	.B(ALUResult),
-	.PickA(UseLUI),
+	.PickA(UseLUI_WB),
 	.out(ALUorLUIMuxOut)
 );
 mux #(32) DataMux  (
@@ -315,20 +338,30 @@ always @(posedge clock) begin
 end
 
 // ID -> EM
-always @(*) begin
-	NextPCEM = NextPCID;
+always @(posedge clock) begin
+	NextPCEM <= NextPCID;
 	
 	// Control signals.
-	RegWriteEnableEM = RegWriteEnable;
-	ALUSrcEM = ALUSrc;
-	ALUFunctionEM = ALUFunction;
-	MemoryRE_EM = MemoryRE;
-	MemoryWE_EM = MemoryWE;
-	MemoryToRegEM = MemoryToReg;
-	JumpEM = Jump;
-	PCFromRegEM = PCFromReg;
-	WriteRegFromPC_EM = WriteRegFromPC;
-	ForceWriteToR31_EM = ForceWriteToR31;
+	RegWriteEnableEM <= RegWriteEnable;
+	ALUSrcEM <= ALUSrc;
+	ALUFunctionEM <= ALUFunction;
+	MemoryRE_EM <= MemoryRE;
+	MemoryWE_EM <= MemoryWE;
+	MemoryToRegEM <= MemoryToReg;
+	JumpEM <= Jump;
+	PCFromRegEM <= PCFromReg;
+	WriteRegFromPC_EM <= WriteRegFromPC;
+	SizeInEM <= SizeIn;
+	UnsignedEM <= Unsigned;
+	UseLUI_EM <= UseLUI;
+	
+	// processor wires
+	JumpAddressEM <= JumpAddress;
+	ForceWriteToR31MuxOutEM <= ForceWriteToR31MuxOut;
+	ReadData1EM <= ReadData1;
+	ReadData2EM <= ReadData2;
+	ImmediateFunctionTypeMuxOutEM <= ImmediateFunctionTypeMuxOut;
+	LUIShiftEM <= LUIShift;
 end
 
 // EM -> WB
@@ -338,14 +371,12 @@ always @(*) begin
 	MemoryToRegWB = MemoryToReg;
 	PCFromRegWB = PCFromRegEM;
 	WriteRegFromPC_WB = WriteRegFromPC_EM;
-	ForceWriteToR31_WB = ForceWriteToR31_EM;
+	UseLUI_WB = UseLUI_EM;
+	ForceWriteToR31MuxOutWB = ForceWriteToR31MuxOutEM;
+	LUIShiftWB = LUIShiftEM;
 end
 
 endmodule
-
-
-
-
 
 module DataShifter (
 	input [1:0] SizeIn,
