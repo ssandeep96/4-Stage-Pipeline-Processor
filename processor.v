@@ -50,6 +50,7 @@ reg [5:0] ALUFunctionEM;
 
 wire [31:0] ALUMuxOut; // EM DONE
 wire [31:0] NumberExt;
+reg  [31:0] NumberExtEM;
 wire [4:0] InstructMuxOut;
 
 wire [31:0] DataMuxOut;
@@ -92,6 +93,7 @@ reg [1:0] SizeInEM;
 
 // Processor wires/regs
 wire [31:0] BranchAddress;		// EM DONE
+
 
 wire [31:0] JumpAddress;		// EM DONE
 reg [31:0] JumpAddressEM;
@@ -141,6 +143,7 @@ wire [31:0] DataForwardMuxOut;
 
 // Control Hazard
 wire Stall;
+wire StallPC;
 wire [31:0] NoOpInjectMuxOut;
 // PC adder.
 // IF DONE
@@ -150,6 +153,7 @@ end
 
 // Update the PC value.
 // IF DONE
+/*
 always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
@@ -157,10 +161,20 @@ always @(posedge clock) begin
 		PC <= PCFromRegisterMuxOut;
 	end
 end
+*/
+
+always @(posedge clock) begin
+	if (reset)
+		PC <= `PC_RESET;
+	else if (StallPC == 1'b0) begin
+		PC <= PCFromRegisterMuxOut;
+	end
+end
 
 
 // EM DONE
-assign BranchAddress = (NumberExt << 2) + NextPCEM;
+assign BranchAddress = (NumberExtEM << 2) + NextPCEM;
+//assign BranchAddress = (NumberExt << 2) + NextPCEM;
 
 // ID DONE
 assign JumpAddress = {NextPCID[31:28], CurrentInstructionID[25:0] << 2};
@@ -173,25 +187,6 @@ mux #(32) BranchOrJumpMux (
 	.out(BranchOrJumpOut)
 );
 
-
-// WB
-mux #(32) NextPCMux (
-	.A(BranchOrJumpOutWB),
-	.B(NextPC), // THIS remains un-pipelined.
-	.PickA(ALUBranchOutWB || ALUJumpOutWB),
-	.out(NextPCMuxOut)
-);
-
-// WB
-mux #(32) PCFromRegisterMux (
-	.A(ALUResultWB),
-	.B(NextPCMuxOut),
-	.PickA(PCFromRegWB),
-	.out(PCFromRegisterMuxOut)
-);
-
-
-/*
 // EM
 mux #(32) NextPCMux (
 	.A(BranchOrJumpOut),
@@ -207,7 +202,28 @@ mux #(32) PCFromRegisterMux (
 	.PickA(PCFromRegEM),
 	.out(PCFromRegisterMuxOut)
 );
+
+/*
+// WB
+mux #(32) NextPCMux (
+	.A(BranchOrJumpOutWB),
+	.B(NextPC), // THIS remains un-pipelined.
+	.PickA(ALUBranchOutWB || ALUJumpOutWB),
+	.out(NextPCMuxOut)
+);
+
+// WB
+mux #(32) PCFromRegisterMux (
+	.A(ALUResultWB),
+	.B(NextPCMuxOut),
+	.PickA(PCFromRegWB),
+	.out(PCFromRegisterMuxOut)
+);
 */
+
+
+
+
 
 // IF DONE
 inst_rom #(
@@ -432,6 +448,8 @@ always @(posedge clock) begin
 	NextPCEM <= NextPCID;
 	PC_EM <= PC_ID;
 	
+	NumberExtEM <= NumberExt;
+	
 	CurrentInstructionEM <= CurrentInstructionID;
 	// Control signals.
 	RegWriteEnableEM <= RegWriteEnable;
@@ -439,7 +457,9 @@ always @(posedge clock) begin
 	ALUFunctionEM <= ALUFunction;
 	MemoryRE_EM <= MemoryRE;
 	MemoryWE_EM <= MemoryWE;
+	
 	MemoryToRegEM <= MemoryToReg;
+	
 	JumpEM <= Jump;
 	PCFromRegEM <= PCFromReg;
 	WriteRegFromPC_EM <= WriteRegFromPC;
@@ -463,8 +483,11 @@ always @(posedge clock) begin
 	CurrentInstructionWB <= CurrentInstructionEM;
 	
 	RegWriteEnableWB <= RegWriteEnableEM;
-	MemoryToRegWB <= MemoryToReg;
+	
+	MemoryToRegWB <= MemoryToRegEM; // THIS LINE WAS WRONG
+	
 	PCFromRegWB <= PCFromRegEM;
+	
 	WriteRegFromPC_WB <= WriteRegFromPC_EM;
 	UseLUI_WB <= UseLUI_EM;
 	ForceWriteToR31MuxOutWB <= ForceWriteToR31MuxOutEM;
@@ -495,7 +518,8 @@ ForwardingUnit ForwardingUnit (
 ControlHazardUnit ControlHazardUnit (
 	.InstructionInID(CurrentInstructionID),
 	.InstructionInEM(CurrentInstructionEM),
-	.Stall(Stall)
+	.Stall(Stall),
+	.StallPC(StallPC)
 	); 	
 	
 endmodule
@@ -554,16 +578,18 @@ always @(*) begin
 end
 endmodule
 
-
+/*
 module ControlHazardUnit (
 	input [31:0] InstructionInID,
 	input [31:0] InstructionInEM,
 	input [31:0] InstructionInWB,
-	output reg Stall // Injects NoOp, and haults the PC.
+	output reg Stall, // Injects NoOp, and haults the PC.
+	output reg StallPC
 	);
 always @(*) begin
 	
 	Stall = 1'b0;
+	StallPC = 1'b0;
 
 	if ((InstructionInID[31:26] == 6'b0 && InstructionInID[5:1] == 5'b00100) || (InstructionInEM[31:26] == 6'b0 && InstructionInEM[5:1] == 5'b00100) ) begin
 		Stall = 1'b1;
@@ -580,7 +606,44 @@ always @(*) begin
 	end
 	
 end
+
+endmodule
+*/
+module ControlHazardUnit (
+	input [31:0] InstructionInID,
+	input [31:0] InstructionInEM,
+	input [31:0] InstructionInWB,
+	output reg Stall, // Injects NoOp, and haults the PC.
+	output reg StallPC
+	);
+always @(*) begin
 	
+	Stall = 1'b0;
+	StallPC = 1'b0;
+
+	if ((InstructionInID[31:26] == 6'b0 && InstructionInID[5:1] == 5'b00100) || (InstructionInEM[31:26] == 6'b0 && InstructionInEM[5:1] == 5'b00100) ) begin
+		Stall = 1'b1;
+	end
+	
+	// Branches
+	else if((InstructionInID[31:29] == 3'b000 && InstructionInID[28:26] != 3'b000) || (InstructionInEM[31:29] == 3'b000 && InstructionInEM[28:26] != 3'b000) ) begin
+		Stall = 1'b1;
+	end
+	
+	// Jumps J JAL
+	else if (InstructionInID[31:27] == 5'b00001 || InstructionInEM[31:27] == 5'b00001) begin
+		Stall = 1'b1;
+	end
+	
+	if ((InstructionInID[31:26] == 6'b0 && InstructionInID[5:1] == 5'b00100))
+		StallPC = 1'b1;
+	else if((InstructionInID[31:29] == 3'b000 && InstructionInID[28:26] != 3'b000))
+		StallPC = 1'b1;
+	else if (InstructionInID[31:27] == 5'b00001)
+		StallPC = 1'b1;
+		
+end
+
 endmodule
 
 module DataShifter (

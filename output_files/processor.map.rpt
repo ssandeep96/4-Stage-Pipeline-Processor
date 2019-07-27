@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Fri Jul 26 21:06:53 2019
+Sat Jul 27 15:20:59 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -88,15 +88,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 26 21:06:53 2019      ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 27 15:20:59 2019      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; processor                                  ;
 ; Top-level Entity Name              ; processor                                  ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 4,167                                      ;
-;     Total combinational functions  ; 3,984                                      ;
-;     Dedicated logic registers      ; 497                                        ;
-; Total registers                    ; 497                                        ;
+; Total logic elements               ; 4,190                                      ;
+;     Total combinational functions  ; 4,007                                      ;
+;     Dedicated logic registers      ; 463                                        ;
+; Total registers                    ; 463                                        ;
 ; Total pins                         ; 22                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 65,536                                     ;
@@ -242,20 +242,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 4,167       ;
+; Estimated Total logic elements              ; 4,190       ;
 ;                                             ;             ;
-; Total combinational functions               ; 3984        ;
+; Total combinational functions               ; 4007        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 3415        ;
-;     -- 3 input functions                    ; 429         ;
-;     -- <=2 input functions                  ; 140         ;
+;     -- 4 input functions                    ; 3414        ;
+;     -- 3 input functions                    ; 412         ;
+;     -- <=2 input functions                  ; 181         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3803        ;
+;     -- normal mode                          ; 3826        ;
 ;     -- arithmetic mode                      ; 181         ;
 ;                                             ;             ;
-; Total registers                             ; 497         ;
-;     -- Dedicated logic registers            ; 497         ;
+; Total registers                             ; 463         ;
+;     -- Dedicated logic registers            ; 463         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 22          ;
@@ -264,9 +264,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 1071        ;
-; Total fan-out                               ; 17287       ;
-; Average fan-out                             ; 3.77        ;
+; Maximum fan-out                             ; 1075        ;
+; Total fan-out                               ; 17167       ;
+; Average fan-out                             ; 3.75        ;
 +---------------------------------------------+-------------+
 
 
@@ -275,12 +275,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 3984 (157)        ; 497 (395)    ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
-;    |ControlHazardUnit:ControlHazardUnit|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ControlHazardUnit:ControlHazardUnit                                                                ; work         ;
-;    |DataShifter:MemoryShifter|               ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|DataShifter:MemoryShifter                                                                          ; work         ;
+; |processor                                   ; 4007 (170)        ; 463 (361)    ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                                    ; work         ;
+;    |ControlHazardUnit:ControlHazardUnit|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ControlHazardUnit:ControlHazardUnit                                                                ; work         ;
+;    |DataShifter:MemoryShifter|               ; 58 (58)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|DataShifter:MemoryShifter                                                                          ; work         ;
 ;    |ForwardingUnit:ForwardingUnit|           ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ForwardingUnit:ForwardingUnit                                                                      ; work         ;
-;    |alu:ALU|                                 ; 279 (279)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
-;    |control:Controller|                      ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:Controller                                                                                 ; work         ;
+;    |alu:ALU|                                 ; 269 (269)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:ALU                                                                                            ; work         ;
+;    |control:Controller|                      ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:Controller                                                                                 ; work         ;
 ;    |data_memory:DataMemory|                  ; 130 (42)          ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory                                                                             ; work         ;
 ;       |async_memory:data_seg|                ; 6 (6)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg                                                       ; work         ;
 ;          |altsyncram:mem0_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:data_seg|altsyncram:mem0_rtl_0                                 ; work         ;
@@ -301,16 +301,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |altsyncram:mem3_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0                                ; work         ;
 ;             |altsyncram_m5d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_m5d1:auto_generated ; work         ;
 ;       |serial_buffer:ser|                    ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:DataMemory|serial_buffer:ser                                                           ; work         ;
-;    |inst_rom:InstructionMemory|              ; 884 (884)         ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
-;    |mux:ALUMux|                              ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ALUMux                                                                                         ; work         ;
-;    |mux:BranchOrJumpMux|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:BranchOrJumpMux                                                                                ; work         ;
+;    |inst_rom:InstructionMemory|              ; 896 (896)         ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:InstructionMemory                                                                         ; work         ;
+;    |mux:ALUMux|                              ; 58 (58)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ALUMux                                                                                         ; work         ;
 ;    |mux:ForceWriteToR31Mux|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ForceWriteToR31Mux                                                                             ; work         ;
 ;    |mux:ForwardAMux|                         ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ForwardAMux                                                                                    ; work         ;
 ;    |mux:ForwardBMux|                         ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ForwardBMux                                                                                    ; work         ;
+;    |mux:ImmediateFunctionTypeMux|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:ImmediateFunctionTypeMux                                                                       ; work         ;
 ;    |mux:NoOpInjectMux|                       ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:NoOpInjectMux                                                                                  ; work         ;
-;    |mux:PCFromRegisterMux|                   ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:PCFromRegisterMux                                                                              ; work         ;
+;    |mux:PCFromRegisterMux|                   ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:PCFromRegisterMux                                                                              ; work         ;
 ;    |mux:RegFileWriteMux|                     ; 67 (67)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux:RegFileWriteMux                                                                                ; work         ;
-;    |reg_file:RegisterFile|                   ; 2199 (2199)       ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
+;    |reg_file:RegisterFile|                   ; 2203 (2203)       ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|reg_file:RegisterFile                                                                              ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -446,71 +446,87 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------------------------------------+------------------------------------------------+
 ; Register name                                    ; Reason for Removal                             ;
 +--------------------------------------------------+------------------------------------------------+
+; JumpAddressEM[0,1,30,31]                         ; Stuck at GND due to stuck port data_in         ;
 ; LUIShiftEM[0..15]                                ; Stuck at GND due to stuck port data_in         ;
 ; LUIShiftWB[0..15]                                ; Stuck at GND due to stuck port data_in         ;
-; JumpAddressEM[0,1,30,31]                         ; Stuck at GND due to stuck port data_in         ;
 ; data_memory:DataMemory|serial_buffer:ser|read_en ; Stuck at GND due to stuck port data_in         ;
-; JumpAddressEM[17]                                ; Merged with ImmediateFunctionTypeMuxOutEM[15]  ;
-; LUIShiftEM[31]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[15]  ;
-; JumpAddressEM[16]                                ; Merged with ImmediateFunctionTypeMuxOutEM[14]  ;
-; LUIShiftEM[30]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[14]  ;
-; JumpAddressEM[15]                                ; Merged with ImmediateFunctionTypeMuxOutEM[13]  ;
-; LUIShiftEM[29]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[13]  ;
-; JumpAddressEM[14]                                ; Merged with ImmediateFunctionTypeMuxOutEM[12]  ;
-; LUIShiftEM[28]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[12]  ;
-; JumpAddressEM[13]                                ; Merged with ImmediateFunctionTypeMuxOutEM[11]  ;
-; LUIShiftEM[27]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[11]  ;
-; JumpAddressEM[12]                                ; Merged with ImmediateFunctionTypeMuxOutEM[10]  ;
-; LUIShiftEM[26]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[10]  ;
-; JumpAddressEM[11]                                ; Merged with ImmediateFunctionTypeMuxOutEM[9]   ;
-; LUIShiftEM[25]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[9]   ;
-; JumpAddressEM[10]                                ; Merged with ImmediateFunctionTypeMuxOutEM[8]   ;
-; LUIShiftEM[24]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[8]   ;
-; JumpAddressEM[9]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[7]   ;
-; LUIShiftEM[23]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[7]   ;
-; JumpAddressEM[8]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[6]   ;
-; LUIShiftEM[22]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[6]   ;
-; CurrentInstructionEM[5]                          ; Merged with ImmediateFunctionTypeMuxOutEM[5]   ;
-; JumpAddressEM[7]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[5]   ;
-; LUIShiftEM[21]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[5]   ;
-; CurrentInstructionEM[4]                          ; Merged with ImmediateFunctionTypeMuxOutEM[4]   ;
-; JumpAddressEM[6]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[4]   ;
-; LUIShiftEM[20]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[4]   ;
-; CurrentInstructionEM[3]                          ; Merged with ImmediateFunctionTypeMuxOutEM[3]   ;
-; JumpAddressEM[5]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[3]   ;
-; LUIShiftEM[19]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[3]   ;
-; CurrentInstructionEM[2]                          ; Merged with ImmediateFunctionTypeMuxOutEM[2]   ;
-; JumpAddressEM[4]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[2]   ;
-; LUIShiftEM[18]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[2]   ;
-; CurrentInstructionEM[1]                          ; Merged with ImmediateFunctionTypeMuxOutEM[1]   ;
-; JumpAddressEM[3]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[1]   ;
-; LUIShiftEM[17]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[1]   ;
-; JumpAddressEM[2]                                 ; Merged with ImmediateFunctionTypeMuxOutEM[0]   ;
-; LUIShiftEM[16]                                   ; Merged with ImmediateFunctionTypeMuxOutEM[0]   ;
-; CurrentInstructionEM[16]                         ; Merged with JumpAddressEM[18]                  ;
-; CurrentInstructionEM[17]                         ; Merged with JumpAddressEM[19]                  ;
-; CurrentInstructionEM[18]                         ; Merged with JumpAddressEM[20]                  ;
-; CurrentInstructionEM[19]                         ; Merged with JumpAddressEM[21]                  ;
-; CurrentInstructionEM[20]                         ; Merged with JumpAddressEM[22]                  ;
-; CurrentInstructionEM[21]                         ; Merged with JumpAddressEM[23]                  ;
-; CurrentInstructionEM[22]                         ; Merged with JumpAddressEM[24]                  ;
-; CurrentInstructionEM[23]                         ; Merged with JumpAddressEM[25]                  ;
-; NextPCEM[28]                                     ; Merged with JumpAddressEM[26]                  ;
-; NextPCEM[29]                                     ; Merged with JumpAddressEM[27]                  ;
-; NextPCEM[30]                                     ; Merged with JumpAddressEM[28]                  ;
+; JumpAddressEM[7]                                 ; Merged with CurrentInstructionEM[5]            ;
+; LUIShiftEM[21]                                   ; Merged with CurrentInstructionEM[5]            ;
+; NumberExtEM[5]                                   ; Merged with CurrentInstructionEM[5]            ;
+; ImmediateFunctionTypeMuxOutEM[5]                 ; Merged with CurrentInstructionEM[5]            ;
+; JumpAddressEM[6]                                 ; Merged with CurrentInstructionEM[4]            ;
+; LUIShiftEM[20]                                   ; Merged with CurrentInstructionEM[4]            ;
+; NumberExtEM[4]                                   ; Merged with CurrentInstructionEM[4]            ;
+; ImmediateFunctionTypeMuxOutEM[4]                 ; Merged with CurrentInstructionEM[4]            ;
+; JumpAddressEM[5]                                 ; Merged with CurrentInstructionEM[3]            ;
+; LUIShiftEM[19]                                   ; Merged with CurrentInstructionEM[3]            ;
+; NumberExtEM[3]                                   ; Merged with CurrentInstructionEM[3]            ;
+; ImmediateFunctionTypeMuxOutEM[3]                 ; Merged with CurrentInstructionEM[3]            ;
+; JumpAddressEM[4]                                 ; Merged with CurrentInstructionEM[2]            ;
+; LUIShiftEM[18]                                   ; Merged with CurrentInstructionEM[2]            ;
+; NumberExtEM[2]                                   ; Merged with CurrentInstructionEM[2]            ;
+; ImmediateFunctionTypeMuxOutEM[2]                 ; Merged with CurrentInstructionEM[2]            ;
+; JumpAddressEM[3]                                 ; Merged with CurrentInstructionEM[1]            ;
+; LUIShiftEM[17]                                   ; Merged with CurrentInstructionEM[1]            ;
+; NumberExtEM[1]                                   ; Merged with CurrentInstructionEM[1]            ;
+; ImmediateFunctionTypeMuxOutEM[1]                 ; Merged with CurrentInstructionEM[1]            ;
 ; NextPCEM[31]                                     ; Merged with JumpAddressEM[29]                  ;
+; NextPCEM[30]                                     ; Merged with JumpAddressEM[28]                  ;
+; NextPCEM[29]                                     ; Merged with JumpAddressEM[27]                  ;
+; NextPCEM[28]                                     ; Merged with JumpAddressEM[26]                  ;
+; CurrentInstructionEM[23]                         ; Merged with JumpAddressEM[25]                  ;
+; CurrentInstructionEM[22]                         ; Merged with JumpAddressEM[24]                  ;
+; CurrentInstructionEM[21]                         ; Merged with JumpAddressEM[23]                  ;
+; CurrentInstructionEM[20]                         ; Merged with JumpAddressEM[22]                  ;
+; CurrentInstructionEM[19]                         ; Merged with JumpAddressEM[21]                  ;
+; CurrentInstructionEM[18]                         ; Merged with JumpAddressEM[20]                  ;
+; CurrentInstructionEM[17]                         ; Merged with JumpAddressEM[19]                  ;
+; CurrentInstructionEM[16]                         ; Merged with JumpAddressEM[18]                  ;
+; LUIShiftEM[31]                                   ; Merged with JumpAddressEM[17]                  ;
+; NumberExtEM[15..29]                              ; Merged with JumpAddressEM[17]                  ;
+; ImmediateFunctionTypeMuxOutEM[15]                ; Merged with JumpAddressEM[17]                  ;
+; LUIShiftEM[30]                                   ; Merged with JumpAddressEM[16]                  ;
+; NumberExtEM[14]                                  ; Merged with JumpAddressEM[16]                  ;
+; ImmediateFunctionTypeMuxOutEM[14]                ; Merged with JumpAddressEM[16]                  ;
+; LUIShiftEM[29]                                   ; Merged with JumpAddressEM[15]                  ;
+; NumberExtEM[13]                                  ; Merged with JumpAddressEM[15]                  ;
+; ImmediateFunctionTypeMuxOutEM[13]                ; Merged with JumpAddressEM[15]                  ;
+; LUIShiftEM[28]                                   ; Merged with JumpAddressEM[14]                  ;
+; NumberExtEM[12]                                  ; Merged with JumpAddressEM[14]                  ;
+; ImmediateFunctionTypeMuxOutEM[12]                ; Merged with JumpAddressEM[14]                  ;
+; LUIShiftEM[27]                                   ; Merged with JumpAddressEM[13]                  ;
+; NumberExtEM[11]                                  ; Merged with JumpAddressEM[13]                  ;
+; ImmediateFunctionTypeMuxOutEM[11]                ; Merged with JumpAddressEM[13]                  ;
+; LUIShiftEM[26]                                   ; Merged with JumpAddressEM[12]                  ;
+; NumberExtEM[10]                                  ; Merged with JumpAddressEM[12]                  ;
+; ImmediateFunctionTypeMuxOutEM[10]                ; Merged with JumpAddressEM[12]                  ;
+; LUIShiftEM[25]                                   ; Merged with JumpAddressEM[11]                  ;
+; NumberExtEM[9]                                   ; Merged with JumpAddressEM[11]                  ;
+; ImmediateFunctionTypeMuxOutEM[9]                 ; Merged with JumpAddressEM[11]                  ;
+; LUIShiftEM[24]                                   ; Merged with JumpAddressEM[10]                  ;
+; NumberExtEM[8]                                   ; Merged with JumpAddressEM[10]                  ;
+; ImmediateFunctionTypeMuxOutEM[8]                 ; Merged with JumpAddressEM[10]                  ;
+; LUIShiftEM[23]                                   ; Merged with JumpAddressEM[9]                   ;
+; NumberExtEM[7]                                   ; Merged with JumpAddressEM[9]                   ;
+; ImmediateFunctionTypeMuxOutEM[7]                 ; Merged with JumpAddressEM[9]                   ;
+; LUIShiftEM[22]                                   ; Merged with JumpAddressEM[8]                   ;
+; NumberExtEM[6]                                   ; Merged with JumpAddressEM[8]                   ;
+; ImmediateFunctionTypeMuxOutEM[6]                 ; Merged with JumpAddressEM[8]                   ;
+; LUIShiftEM[16]                                   ; Merged with JumpAddressEM[2]                   ;
+; NumberExtEM[0]                                   ; Merged with JumpAddressEM[2]                   ;
+; ImmediateFunctionTypeMuxOutEM[0]                 ; Merged with JumpAddressEM[2]                   ;
 ; ImmediateFunctionTypeMuxOutEM[17..31]            ; Merged with ImmediateFunctionTypeMuxOutEM[16]  ;
 ; inst_rom:InstructionMemory|out[6]                ; Stuck at GND due to stuck port data_in         ;
 ; CurrentInstructionID[30]                         ; Stuck at GND due to stuck port data_in         ;
 ; CurrentInstructionEM[30]                         ; Stuck at GND due to stuck port data_in         ;
 ; CurrentInstructionEM[25]                         ; Merged with CurrentInstructionEM[24]           ;
 ; LUIShiftWB[26]                                   ; Merged with LUIShiftWB[25]                     ;
-; ImmediateFunctionTypeMuxOutEM[9]                 ; Merged with ImmediateFunctionTypeMuxOutEM[10]  ;
+; JumpAddressEM[12]                                ; Merged with JumpAddressEM[11]                  ;
 ; CurrentInstructionID[25]                         ; Merged with CurrentInstructionID[24]           ;
 ; CurrentInstructionID[9]                          ; Merged with CurrentInstructionID[10]           ;
 ; inst_rom:InstructionMemory|out[1]                ; Merged with inst_rom:InstructionMemory|out[0]  ;
 ; inst_rom:InstructionMemory|out[18]               ; Merged with inst_rom:InstructionMemory|out[17] ;
-; Total Number of Removed Registers = 111          ;                                                ;
+; Total Number of Removed Registers = 141          ;                                                ;
 +--------------------------------------------------+------------------------------------------------+
 
 
@@ -520,6 +536,8 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Register name                     ; Reason for Removal        ; Registers Removed due to This Register             ;
 +-----------------------------------+---------------------------+----------------------------------------------------+
 ; inst_rom:InstructionMemory|out[6] ; Stuck at GND              ; CurrentInstructionID[30], CurrentInstructionEM[30] ;
+;                                   ; due to stuck port data_in ;                                                    ;
+; LUIShiftEM[0]                     ; Stuck at GND              ; LUIShiftWB[0]                                      ;
 ;                                   ; due to stuck port data_in ;                                                    ;
 ; LUIShiftEM[15]                    ; Stuck at GND              ; LUIShiftWB[15]                                     ;
 ;                                   ; due to stuck port data_in ;                                                    ;
@@ -551,8 +569,6 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ;                                   ; due to stuck port data_in ;                                                    ;
 ; LUIShiftEM[1]                     ; Stuck at GND              ; LUIShiftWB[1]                                      ;
 ;                                   ; due to stuck port data_in ;                                                    ;
-; LUIShiftEM[0]                     ; Stuck at GND              ; LUIShiftWB[0]                                      ;
-;                                   ; due to stuck port data_in ;                                                    ;
 +-----------------------------------+---------------------------+----------------------------------------------------+
 
 
@@ -561,9 +577,9 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 497   ;
-; Number of registers using Synchronous Clear  ; 47    ;
-; Number of registers using Synchronous Load   ; 65    ;
+; Total registers                              ; 463   ;
+; Number of registers using Synchronous Clear  ; 46    ;
+; Number of registers using Synchronous Load   ; 25    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 40    ;
@@ -593,26 +609,26 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |processor|ForceWriteToR31MuxOutEM[3]                              ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |processor|PC[10]                                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[0]       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |processor|PC[8]                                                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:DataMemory|serial_buffer:ser|sbyte[1]       ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |processor|ALUFunctionEM[4]                                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |processor|PC[0]                                                   ;
-; 5:1                ; 20 bits   ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; Yes        ; |processor|PC[28]                                                  ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |processor|ALUResultWB[15]                                         ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |processor|MemoryShifterOutWB[7]                                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_2_out[31]                     ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_1_out[23]                     ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |processor|MemoryWE_EM                                             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |processor|MemoryShifterOutWB[10]                                  ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_2_out[16]                     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processor|reg_file:RegisterFile|reg_1_out[29]                     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |processor|PC[0]                                                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |processor|PC[30]                                                  ;
+; 6:1                ; 18 bits   ; 72 LEs        ; 54 LEs               ; 18 LEs                 ; Yes        ; |processor|PC[19]                                                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |processor|ALUSrcEM                                                ;
 ; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |processor|MemoryShifterOutWB[1]                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Mux0      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:data_seg|mem1       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|mem2      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |processor|mux:PCFromRegisterMux|out[6]                            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processor|mux:RegFileWriteMux|out[5]                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Mux2      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:data_seg|mem3       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|mem1      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processor|mux:RegFileWriteMux|out[3]                              ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processor|mux:RegFileWriteMux|out[24]                             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Selector7 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processor|data_memory:DataMemory|async_memory:stack_seg|Selector5 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|control:Controller|ForceWriteToR31                      ;
-; 7:1                ; 27 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[6]                                        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |processor|mux:PCFromRegisterMux|out[4]                            ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 124 LEs              ; 0 LEs                  ; No         ; |processor|alu:ALU|O_out[10]                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
@@ -1510,29 +1526,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 497                         ;
+; cycloneiii_ff         ; 463                         ;
 ;     ENA               ; 18                          ;
-;     ENA SCLR          ; 2                           ;
-;     ENA SCLR SLD      ; 10                          ;
+;     ENA SCLR          ; 12                          ;
 ;     ENA SLD           ; 10                          ;
-;     SCLR              ; 29                          ;
+;     SCLR              ; 28                          ;
 ;     SCLR SLD          ; 6                           ;
-;     SLD               ; 39                          ;
-;     plain             ; 383                         ;
-; cycloneiii_lcell_comb ; 3984                        ;
+;     SLD               ; 9                           ;
+;     plain             ; 380                         ;
+; cycloneiii_lcell_comb ; 4008                        ;
 ;     arith             ; 181                         ;
 ;         2 data inputs ; 59                          ;
 ;         3 data inputs ; 122                         ;
-;     normal            ; 3803                        ;
+;     normal            ; 3827                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 78                          ;
-;         3 data inputs ; 307                         ;
-;         4 data inputs ; 3415                        ;
+;         2 data inputs ; 120                         ;
+;         3 data inputs ; 290                         ;
+;         4 data inputs ; 3414                        ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 20.90                       ;
-; Average LUT depth     ; 7.25                        ;
+; Max LUT depth         ; 19.90                       ;
+; Average LUT depth     ; 9.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1541,7 +1556,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -1551,7 +1566,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Fri Jul 26 21:06:25 2019
+    Info: Processing started: Sat Jul 27 15:20:30 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
@@ -1583,7 +1598,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
 Info (12127): Elaborating entity "processor" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at processor.v(27): object "PC_WB" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at processor.v(37): object "CurrentInstructionWB" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at processor.v(66): object "MemoryToRegEM" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processor.v(79): object "PCFromRegWB" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processor.v(118): object "BranchOrJumpOutWB" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processor.v(124): object "ALUBranchOutWB" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processor.v(126): object "ALUJumpOutWB" assigned a value but never read
 Info (12128): Elaborating entity "mux" for hierarchy "mux:BranchOrJumpMux"
 Info (12128): Elaborating entity "inst_rom" for hierarchy "inst_rom:InstructionMemory"
 Warning (10850): Verilog HDL warning at inst_rom.v(31): number of words (396) in memory file does not match the number of elements in the address range [0:1023]
@@ -2899,15 +2917,15 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4316 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4342 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 4230 logic cells
+    Info (21061): Implemented 4256 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
-    Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Fri Jul 26 21:06:53 2019
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:43
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4851 megabytes
+    Info: Processing ended: Sat Jul 27 15:20:59 2019
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:46
 
 

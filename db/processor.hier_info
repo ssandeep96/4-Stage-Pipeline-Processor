@@ -11,16 +11,16 @@ serial_in[6] => serial_in[6].IN1
 serial_in[7] => serial_in[7].IN1
 serial_valid_in => serial_valid_in.IN1
 serial_ready_in => serial_ready_in.IN1
-serial_out[0] <= data_memory:DataMemory.serial_out
-serial_out[1] <= data_memory:DataMemory.serial_out
-serial_out[2] <= data_memory:DataMemory.serial_out
-serial_out[3] <= data_memory:DataMemory.serial_out
-serial_out[4] <= data_memory:DataMemory.serial_out
-serial_out[5] <= data_memory:DataMemory.serial_out
-serial_out[6] <= data_memory:DataMemory.serial_out
-serial_out[7] <= data_memory:DataMemory.serial_out
-serial_rden_out <= data_memory:DataMemory.serial_rden_out
-serial_wren_out <= data_memory:DataMemory.serial_wren_out
+serial_out[0] << data_memory:DataMemory.serial_out
+serial_out[1] << data_memory:DataMemory.serial_out
+serial_out[2] << data_memory:DataMemory.serial_out
+serial_out[3] << data_memory:DataMemory.serial_out
+serial_out[4] << data_memory:DataMemory.serial_out
+serial_out[5] << data_memory:DataMemory.serial_out
+serial_out[6] << data_memory:DataMemory.serial_out
+serial_out[7] << data_memory:DataMemory.serial_out
+serial_rden_out << data_memory:DataMemory.serial_rden_out
+serial_wren_out << data_memory:DataMemory.serial_wren_out
 
 
 |processor|mux:BranchOrJumpMux
@@ -6675,5 +6675,6 @@ InstructionInWB[29] => ~NO_FANOUT~
 InstructionInWB[30] => ~NO_FANOUT~
 InstructionInWB[31] => ~NO_FANOUT~
 Stall <= Stall.DB_MAX_OUTPUT_PORT_TYPE
+StallPC <= StallPC.DB_MAX_OUTPUT_PORT_TYPE
 
 
