@@ -54,9 +54,6 @@ wire [4:0] InstructMuxOut;
 
 wire [31:0] DataMuxOut;
 
-
-
-
 wire [31:0] DataMemoryOut;
 
 // Control Signals
@@ -92,7 +89,6 @@ reg UnsignedEM;
 
 wire [1:0] SizeIn;
 reg [1:0] SizeInEM;
-
 
 // Processor wires/regs
 wire [31:0] BranchAddress;		// EM DONE
@@ -142,6 +138,10 @@ wire ForwardB;
 wire [31:0] ForwardAMuxOut;
 wire [31:0] ForwardBMuxOut;
 wire [31:0] DataForwardMuxOut;
+
+// Control Hazard
+wire Stall;
+wire [31:0] NoOpInjectMuxOut;
 // PC adder.
 // IF DONE
 always @(*) begin
@@ -153,11 +153,11 @@ end
 always @(posedge clock) begin
 	if (reset)
 		PC <= `PC_RESET;
-	else begin
+	else if (Stall == 1'b0) begin
 		PC <= PCFromRegisterMuxOut;
-		//PC <= 32'b0;
 	end
 end
+
 
 // EM DONE
 assign BranchAddress = (NumberExt << 2) + NextPCEM;
@@ -172,6 +172,7 @@ mux #(32) BranchOrJumpMux (
 	.PickA(JumpEM),
 	.out(BranchOrJumpOut)
 );
+
 
 // WB
 mux #(32) NextPCMux (
@@ -189,17 +190,44 @@ mux #(32) PCFromRegisterMux (
 	.out(PCFromRegisterMuxOut)
 );
 
+
+/*
+// EM
+mux #(32) NextPCMux (
+	.A(BranchOrJumpOut),
+	.B(NextPC), // THIS remains un-pipelined.
+	.PickA(ALUBranchOut || ALUJumpOut),
+	.out(NextPCMuxOut)
+);
+
+// EM
+mux #(32) PCFromRegisterMux (
+	.A(ALUResult),
+	.B(NextPCMuxOut),
+	.PickA(PCFromRegEM),
+	.out(PCFromRegisterMuxOut)
+);
+*/
+
 // IF DONE
 inst_rom #(
 	.ADDR_WIDTH(10),
-	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
-	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
+	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
 	.addr_in(PCFromRegisterMuxOut), //input - from PC (program counter)
 	.data_out(CurrentInstruction)
 );
+
+mux #(32) NoOpInjectMux(
+	.A(32'b0),
+	.B(CurrentInstruction),
+	.PickA(Stall),
+	.out(NoOpInjectMuxOut)
+	);
+
 
 // Controller---------------------------------------------
 // ID DONE
@@ -393,7 +421,8 @@ mux #(32) RegFileWriteMux(
 //---PIPELINE---
 // IF -> ID DONE
 always @(posedge clock) begin
-	CurrentInstructionID <= CurrentInstruction;
+	//CurrentInstructionID <= CurrentInstruction;
+	CurrentInstructionID <= NoOpInjectMuxOut;
 	NextPCID <= NextPC;
 	PC_ID <= PC;
 end
@@ -463,6 +492,12 @@ ForwardingUnit ForwardingUnit (
 	.ForwardB(ForwardB)
 	);
 
+ControlHazardUnit ControlHazardUnit (
+	.InstructionInID(CurrentInstructionID),
+	.InstructionInEM(CurrentInstructionEM),
+	.Stall(Stall)
+	); 	
+	
 endmodule
 
 
@@ -517,6 +552,35 @@ always @(*) begin
 	end
 
 end
+endmodule
+
+
+module ControlHazardUnit (
+	input [31:0] InstructionInID,
+	input [31:0] InstructionInEM,
+	input [31:0] InstructionInWB,
+	output reg Stall // Injects NoOp, and haults the PC.
+	);
+always @(*) begin
+	
+	Stall = 1'b0;
+
+	if ((InstructionInID[31:26] == 6'b0 && InstructionInID[5:1] == 5'b00100) || (InstructionInEM[31:26] == 6'b0 && InstructionInEM[5:1] == 5'b00100) ) begin
+		Stall = 1'b1;
+	end
+	
+	// Branches
+	else if((InstructionInID[31:29] == 3'b000 && InstructionInID[28:26] != 3'b000) || (InstructionInEM[31:29] == 3'b000 && InstructionInEM[28:26] != 3'b000) ) begin
+		Stall = 1'b1;
+	end
+	
+	// Jumps J JAL
+	else if (InstructionInID[31:27] == 5'b00001 || InstructionInEM[31:27] == 5'b00001) begin
+		Stall = 1'b1;
+	end
+	
+end
+	
 endmodule
 
 module DataShifter (
