@@ -22,6 +22,10 @@ module processor(
 // TODO: set up the processor here.
 
 reg [31:0] PC;
+reg [31:0] PC_ID;
+reg [31:0] PC_EM;
+reg [31:0] PC_WB;
+
 reg [31:0] NextPC;
 reg [31:0] NextPCID;
 reg [31:0] NextPCEM;
@@ -29,6 +33,8 @@ reg [31:0] NextPCWB;
 
 wire [31:0] CurrentInstruction;
 reg [31:0] CurrentInstructionID;
+reg [31:0] CurrentInstructionEM; // For forwarding. Provides instruction #2.
+reg [31:0]	CurrentInstructionWB;
 
 wire RegDst;
 
@@ -130,6 +136,12 @@ wire [31:0] RegFileWriteMuxOut;
 wire [31:0] ZeroExtendedNumber;
 wire [31:0] ALUorLUIMuxOut;
 
+// Forwarding.
+wire ForwardA;
+wire ForwardB;
+wire [31:0] ForwardAMuxOut;
+wire [31:0] ForwardBMuxOut;
+wire [31:0] DataForwardMuxOut;
 // PC adder.
 // IF DONE
 always @(*) begin
@@ -214,7 +226,7 @@ control Controller(
 );
 
 // ID output piped to WB DONE
-// think of as one mux
+// Output of this mux sequence determines the register that is being writen to.
 mux #(5) InstructMux (
 	.B(CurrentInstructionID[20:16]),
 	.A(CurrentInstructionID[15:11]),
@@ -269,6 +281,7 @@ mux #(32) ImmediateFunctionTypeMux (
 );
 //-----------------------------------------
 
+/*
 // EM DONE!
 mux #(32) ALUMux  (
 	.A(ImmediateFunctionTypeMuxOutEM), // done
@@ -276,16 +289,46 @@ mux #(32) ALUMux  (
 	.PickA(ALUSrcEM),
 	.out(ALUMuxOut)
 );
+*/
+
+// EM DONE!
+mux #(32) ALUMux  (
+	.A(ImmediateFunctionTypeMuxOutEM), // done
+	.B(ForwardBMuxOut),
+	.PickA(ALUSrcEM),
+	.out(ALUMuxOut)
+);
+
+mux #(32) ForwardAMux (
+	.A(RegFileWriteMuxOut),
+	.B(ReadData1EM),
+	.PickA(ForwardA),
+	.out(ForwardAMuxOut)
+);
+
+mux #(32) ForwardBMux (
+	.A(RegFileWriteMuxOut),
+	.B(ReadData2EM),
+	.PickA(ForwardB),
+	.out(ForwardBMuxOut)
+);
 
 // EM DONE
 alu ALU(
 	.Func_in(ALUFunctionEM), 
-	.A_in(ReadData1EM), 
+	.A_in(ForwardAMuxOut), 
 	.B_in(ALUMuxOut),
 	
 	.O_out(ALUResult), // DONE
 	.Branch_out(ALUBranchOut), // DONE
 	.Jump_out(ALUJumpOut) // DONE
+);
+
+mux #(32) DataForwardMux (
+	.A(RegFileWriteMuxOut),
+	.B(ReadData2EM),
+	.PickA(ForwardB),
+	.out(DataForwardMuxOut)
 );
 
 // EM DONE
@@ -294,7 +337,7 @@ data_memory DataMemory (
 	.reset(reset),
 
 	.addr_in(ALUResult),
-	.writedata_in(ReadData2EM),
+	.writedata_in(DataForwardMuxOut),
 	.re_in(MemoryRE_EM),
 	.we_in(MemoryWE_EM),
 	.size_in(SizeInEM),
@@ -325,6 +368,7 @@ always @(*) begin
 end
 
 // WB
+// The output of this combined mux determines the data being written to the RegFile.
 // Fold Into One Mux ------
 mux #(32) ALUorLUIMux (
 	.A(LUIShiftWB),
@@ -351,12 +395,15 @@ mux #(32) RegFileWriteMux(
 always @(posedge clock) begin
 	CurrentInstructionID <= CurrentInstruction;
 	NextPCID <= NextPC;
+	PC_ID <= PC;
 end
 
 // ID -> EM DONE
 always @(posedge clock) begin
 	NextPCEM <= NextPCID;
+	PC_EM <= PC_ID;
 	
+	CurrentInstructionEM <= CurrentInstructionID;
 	// Control signals.
 	RegWriteEnableEM <= RegWriteEnable;
 	ALUSrcEM <= ALUSrc;
@@ -383,6 +430,9 @@ end
 // EM -> WB
 always @(posedge clock) begin
 	NextPCWB <= NextPCEM;
+	PC_WB <= PC_EM;
+	CurrentInstructionWB <= CurrentInstructionEM;
+	
 	RegWriteEnableWB <= RegWriteEnableEM;
 	MemoryToRegWB <= MemoryToReg;
 	PCFromRegWB <= PCFromRegEM;
@@ -396,6 +446,22 @@ always @(posedge clock) begin
 	ALUJumpOutWB <= ALUJumpOut;
 	MemoryShifterOutWB <= MemoryShifterOut;
 end
+
+// Forwards outputs of EM (values in the WB stage)
+// into the start of the EM stage.
+// Forwarding Unit
+ForwardingUnit ForwardingUnit (
+	// WB Instruction 1
+	.RegWriteEnableInst1(RegWriteEnableWB),
+	.DestinationRegInst1(ForceWriteToR31MuxOutWB),
+	
+	// Start of EM
+	.Instruction2(CurrentInstructionEM),
+	
+	// Used at start of EM.
+	.ForwardA(ForwardA),
+	.ForwardB(ForwardB)
+	);
 
 endmodule
 
@@ -414,16 +480,43 @@ module ForwardingUnit (
 	input RegWriteEnableInst1, // From controler.
 	input [4:0] DestinationRegInst1, // FROM MUX
 	input [31:0] Instruction2,
-	output ForwardA, // Controls muxA
-	output ForwardB // Controls muxB
+	output reg ForwardA, // Controls muxA
+	output reg ForwardB // Controls muxB
 	);
 
-	// Determine the parameters of #2 instruction.
+always @(*) begin
 	
-	// Check if destination of #1 is equal to the paramter of #2.
+	ForwardA = 1'b0;
+	ForwardB = 1'b0;
 	
-	// Forward data appropriately.
+	// Forwarding only takes place if instruction #1 writes to reg.
+	if(RegWriteEnableInst1) begin
 	
+		// Determine the parameters of instruction #2.
+		
+		// no parameters J and JAL
+		if (Instruction2[31:26] == 6'b000010 || Instruction2[31:26] == 6'b000011) begin
+			// Do nothing.
+		end
+		
+		// Assuming everyone has rs as a parameter.
+		// Check if destination of #1 is equal to the paramter of #2.
+		else if(Instruction2[25:21] == DestinationRegInst1) begin
+			ForwardA = 1'b1;
+			ForwardB = 1'b0;
+		end
+		
+		// check if #2 has rt as a parameter.
+		else if (Instruction2[31:26] == 6'b000000 || Instruction2[31:27] ==  5'b00010 ||  Instruction2[31:29] == 3'b101) begin
+			// Check if destination of #1 is equal to the paramter of #2.
+			if (Instruction2[20:16] == DestinationRegInst1) begin
+				ForwardA = 1'b0;
+				ForwardB = 1'b1;
+			end
+		end
+	end
+
+end
 endmodule
 
 module DataShifter (

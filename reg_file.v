@@ -27,7 +27,8 @@ assign read_data_2 = reg_2_out;
 
 // Write only occurs on positve edge of clock, if write_enable is true.
 // also reset is handled in this block.
-always @(posedge clock) begin
+//always @(posedge clock) begin
+always @(*) begin
 	
 	// Reset all the register values to 0.
 	if (reset) begin
