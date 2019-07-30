@@ -11,16 +11,16 @@ serial_in[6] => serial_in[6].IN1
 serial_in[7] => serial_in[7].IN1
 serial_valid_in => serial_valid_in.IN1
 serial_ready_in => serial_ready_in.IN1
-serial_out[0] << data_memory:DataMemory.serial_out
-serial_out[1] << data_memory:DataMemory.serial_out
-serial_out[2] << data_memory:DataMemory.serial_out
-serial_out[3] << data_memory:DataMemory.serial_out
-serial_out[4] << data_memory:DataMemory.serial_out
-serial_out[5] << data_memory:DataMemory.serial_out
-serial_out[6] << data_memory:DataMemory.serial_out
-serial_out[7] << data_memory:DataMemory.serial_out
-serial_rden_out << data_memory:DataMemory.serial_rden_out
-serial_wren_out << data_memory:DataMemory.serial_wren_out
+serial_out[0] <= data_memory:DataMemory.serial_out
+serial_out[1] <= data_memory:DataMemory.serial_out
+serial_out[2] <= data_memory:DataMemory.serial_out
+serial_out[3] <= data_memory:DataMemory.serial_out
+serial_out[4] <= data_memory:DataMemory.serial_out
+serial_out[5] <= data_memory:DataMemory.serial_out
+serial_out[6] <= data_memory:DataMemory.serial_out
+serial_out[7] <= data_memory:DataMemory.serial_out
+serial_rden_out <= data_memory:DataMemory.serial_rden_out
+serial_wren_out <= data_memory:DataMemory.serial_wren_out
 
 
 |processor|mux:BranchOrJumpMux
@@ -6642,38 +6642,6 @@ InstructionInEM[30] => Equal9.IN2
 InstructionInEM[31] => Equal2.IN0
 InstructionInEM[31] => Equal6.IN0
 InstructionInEM[31] => Equal9.IN1
-InstructionInWB[0] => ~NO_FANOUT~
-InstructionInWB[1] => ~NO_FANOUT~
-InstructionInWB[2] => ~NO_FANOUT~
-InstructionInWB[3] => ~NO_FANOUT~
-InstructionInWB[4] => ~NO_FANOUT~
-InstructionInWB[5] => ~NO_FANOUT~
-InstructionInWB[6] => ~NO_FANOUT~
-InstructionInWB[7] => ~NO_FANOUT~
-InstructionInWB[8] => ~NO_FANOUT~
-InstructionInWB[9] => ~NO_FANOUT~
-InstructionInWB[10] => ~NO_FANOUT~
-InstructionInWB[11] => ~NO_FANOUT~
-InstructionInWB[12] => ~NO_FANOUT~
-InstructionInWB[13] => ~NO_FANOUT~
-InstructionInWB[14] => ~NO_FANOUT~
-InstructionInWB[15] => ~NO_FANOUT~
-InstructionInWB[16] => ~NO_FANOUT~
-InstructionInWB[17] => ~NO_FANOUT~
-InstructionInWB[18] => ~NO_FANOUT~
-InstructionInWB[19] => ~NO_FANOUT~
-InstructionInWB[20] => ~NO_FANOUT~
-InstructionInWB[21] => ~NO_FANOUT~
-InstructionInWB[22] => ~NO_FANOUT~
-InstructionInWB[23] => ~NO_FANOUT~
-InstructionInWB[24] => ~NO_FANOUT~
-InstructionInWB[25] => ~NO_FANOUT~
-InstructionInWB[26] => ~NO_FANOUT~
-InstructionInWB[27] => ~NO_FANOUT~
-InstructionInWB[28] => ~NO_FANOUT~
-InstructionInWB[29] => ~NO_FANOUT~
-InstructionInWB[30] => ~NO_FANOUT~
-InstructionInWB[31] => ~NO_FANOUT~
 Stall <= Stall.DB_MAX_OUTPUT_PORT_TYPE
 StallPC <= StallPC.DB_MAX_OUTPUT_PORT_TYPE
 

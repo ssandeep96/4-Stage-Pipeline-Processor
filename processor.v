@@ -230,6 +230,8 @@ inst_rom #(
 	.ADDR_WIDTH(10),
 	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/nbhelloworld/nbhelloworld.inst_rom.memh")) 
 	.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/fib/fib.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/hello_world/hello_world.inst_rom.memh")) 
+	//.INIT_PROGRAM("D:/Documents/School/CSE_141L/Lab_2/gcd/gcd.inst_rom.memh")) 
 	InstructionMemory (
 	.clock(clock),
 	.reset(reset),
@@ -612,7 +614,7 @@ endmodule
 module ControlHazardUnit (
 	input [31:0] InstructionInID,
 	input [31:0] InstructionInEM,
-	input [31:0] InstructionInWB,
+//	input [31:0] InstructionInWB,
 	output reg Stall, // Injects NoOp, and haults the PC.
 	output reg StallPC
 	);

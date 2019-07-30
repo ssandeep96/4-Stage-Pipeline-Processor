@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Sat Jul 27 15:20:59 2019
+Mon Jul 29 20:22:41 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -56,12 +56,11 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  48. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:stack_seg|altsyncram:mem3_rtl_0
  49. Parameter Settings for Inferred Entity Instance: data_memory:DataMemory|async_memory:data_seg|altsyncram:mem3_rtl_0
  50. altsyncram Parameter Settings by Entity Instance
- 51. Port Connectivity Checks: "ControlHazardUnit:ControlHazardUnit"
- 52. Port Connectivity Checks: "mux:ForceWriteToR31Mux"
- 53. Port Connectivity Checks: "mux:NoOpInjectMux"
- 54. Post-Synthesis Netlist Statistics for Top Partition
- 55. Elapsed Time Per Partition
- 56. Analysis & Synthesis Messages
+ 51. Port Connectivity Checks: "mux:ForceWriteToR31Mux"
+ 52. Port Connectivity Checks: "mux:NoOpInjectMux"
+ 53. Post-Synthesis Netlist Statistics for Top Partition
+ 54. Elapsed Time Per Partition
+ 55. Analysis & Synthesis Messages
 
 
 
@@ -88,7 +87,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 27 15:20:59 2019      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 29 20:22:41 2019      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; processor                                  ;
 ; Top-level Entity Name              ; processor                                  ;
@@ -1493,15 +1492,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ControlHazardUnit:ControlHazardUnit"                                                                                                                   ;
-+-----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type  ; Severity ; Details                                                                                                                                      ;
-+-----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; InstructionInWB ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------+
 ; Port Connectivity Checks: "mux:ForceWriteToR31Mux" ;
 +------+-------+----------+--------------------------+
@@ -1556,7 +1546,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:17     ;
+; Top            ; 00:00:16     ;
 +----------------+--------------+
 
 
@@ -1566,7 +1556,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sat Jul 27 15:20:30 2019
+    Info: Processing started: Mon Jul 29 20:22:13 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
@@ -2911,7 +2901,6 @@ Info (12133): Instantiated megafunction "data_memory:DataMemory|async_memory:dat
     Info (12134): Parameter "INIT_FILE" = "db/processor.ram3_async_memory_6d956600.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ofi1.tdf
     Info (12023): Found entity 1: altsyncram_ofi1
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "serial_rden_out" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
@@ -2922,10 +2911,10 @@ Info (21057): Implemented 4342 device resources after synthesis - the final reso
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 4256 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Sat Jul 27 15:20:59 2019
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:46
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Mon Jul 29 20:22:41 2019
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:45
 
 

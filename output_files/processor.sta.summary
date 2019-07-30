@@ -3,75 +3,75 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -12.465
-TNS   : -2534.442
+Slack : -10.611
+TNS   : -1724.806
 
-Type  : Slow 1200mV 85C Model Setup 'ForceWriteToR31MuxOutWB[0]'
-Slack : -4.224
-TNS   : -3008.789
+Type  : Slow 1200mV 85C Model Setup 'ForceWriteToR31MuxOutWB[1]'
+Slack : -3.977
+TNS   : -250.691
 
-Type  : Slow 1200mV 85C Model Hold 'ForceWriteToR31MuxOutWB[0]'
-Slack : -0.029
-TNS   : -0.041
+Type  : Slow 1200mV 85C Model Hold 'ForceWriteToR31MuxOutWB[1]'
+Slack : 0.255
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.371
+Slack : 0.372
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -535.568
+TNS   : -461.568
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[0]'
-Slack : 0.204
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[1]'
+Slack : 0.413
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -11.045
-TNS   : -2228.759
+Slack : -9.415
+TNS   : -1514.356
 
-Type  : Slow 1200mV 0C Model Setup 'ForceWriteToR31MuxOutWB[0]'
-Slack : -3.787
-TNS   : -2659.536
+Type  : Slow 1200mV 0C Model Setup 'ForceWriteToR31MuxOutWB[1]'
+Slack : -3.563
+TNS   : -221.664
 
-Type  : Slow 1200mV 0C Model Hold 'ForceWriteToR31MuxOutWB[0]'
-Slack : 0.017
+Type  : Slow 1200mV 0C Model Hold 'ForceWriteToR31MuxOutWB[1]'
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock'
-Slack : 0.337
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -535.568
+TNS   : -461.568
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[0]'
-Slack : 0.322
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[1]'
+Slack : 0.419
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -6.888
-TNS   : -1328.019
+Slack : -5.706
+TNS   : -869.334
 
-Type  : Fast 1200mV 0C Model Setup 'ForceWriteToR31MuxOutWB[0]'
-Slack : -2.259
-TNS   : -1430.480
+Type  : Fast 1200mV 0C Model Setup 'ForceWriteToR31MuxOutWB[1]'
+Slack : -2.056
+TNS   : -105.719
 
-Type  : Fast 1200mV 0C Model Hold 'ForceWriteToR31MuxOutWB[0]'
-Slack : -0.156
-TNS   : -0.754
+Type  : Fast 1200mV 0C Model Hold 'ForceWriteToR31MuxOutWB[1]'
+Slack : -0.019
+TNS   : -0.019
 
 Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.193
+Slack : 0.169
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -534.964
+TNS   : -454.104
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[0]'
-Slack : 0.126
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ForceWriteToR31MuxOutWB[1]'
+Slack : 0.355
 TNS   : 0.000
 
 ------------------------------------------------------------

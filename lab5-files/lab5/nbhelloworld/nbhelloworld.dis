@@ -1,0 +1,34 @@
+
+nbhelloworld:     file format elf32-tradlittlemips
+
+Disassembly of section IROM:
+
+00400000 <__start>:
+  400000:	200a4000 	addi	t2,zero,16384
+  400004:	000aa022 	neg	s4,t2
+  400008:	028aa022 	sub	s4,s4,t2
+  40000c:	028aa022 	sub	s4,s4,t2
+  400010:	028aa022 	sub	s4,s4,t2
+  400014:	200a0048 	addi	t2,zero,72
+  400018:	ae8a000c 	sw	t2,12(s4)
+  40001c:	200a0065 	addi	t2,zero,101
+  400020:	ae8a000c 	sw	t2,12(s4)
+  400024:	200a006c 	addi	t2,zero,108
+  400028:	ae8a000c 	sw	t2,12(s4)
+  40002c:	200a006c 	addi	t2,zero,108
+  400030:	ae8a000c 	sw	t2,12(s4)
+  400034:	200a006f 	addi	t2,zero,111
+  400038:	ae8a000c 	sw	t2,12(s4)
+  40003c:	200a0020 	addi	t2,zero,32
+  400040:	ae8a000c 	sw	t2,12(s4)
+  400044:	200a0057 	addi	t2,zero,87
+  400048:	ae8a000c 	sw	t2,12(s4)
+  40004c:	200a006f 	addi	t2,zero,111
+  400050:	ae8a000c 	sw	t2,12(s4)
+  400054:	200a0072 	addi	t2,zero,114
+  400058:	ae8a000c 	sw	t2,12(s4)
+  40005c:	200a006c 	addi	t2,zero,108
+  400060:	ae8a000c 	sw	t2,12(s4)
+  400064:	200a0064 	addi	t2,zero,100
+  400068:	ae8a000c 	sw	t2,12(s4)
+  40006c:	00000000 	nop

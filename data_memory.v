@@ -55,6 +55,20 @@ parameter INIT_PROGRAM1 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram1.
 parameter INIT_PROGRAM2 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram2.memh";
 parameter INIT_PROGRAM3 = "D:/Documents/School/CSE_141L/Lab_2/fib/fib.data_ram3.memh";
 
+
+/*
+parameter INIT_PROGRAM0 = "D:/Documents/School/CSE_141L/Lab_2/hello_world/hello_world.data_ram0.memh";
+parameter INIT_PROGRAM1 = "D:/Documents/School/CSE_141L/Lab_2/hello_world/hello_world.data_ram1.memh";
+parameter INIT_PROGRAM2 = "D:/Documents/School/CSE_141L/Lab_2/hello_world/hello_world.data_ram2.memh";
+parameter INIT_PROGRAM3 = "D:/Documents/School/CSE_141L/Lab_2/hello_world/hello_world.data_ram3.memh";
+*/
+
+/*
+parameter INIT_PROGRAM0 = "D:/Documents/School/CSE_141L/Lab_2/gcd/gcd.data_ram0.memh";
+parameter INIT_PROGRAM1 = "D:/Documents/School/CSE_141L/Lab_2/gcd/gcd.data_ram1.memh";
+parameter INIT_PROGRAM2 = "D:/Documents/School/CSE_141L/Lab_2/gcd/gcd.data_ram2.memh";
+parameter INIT_PROGRAM3 = "D:/Documents/School/CSE_141L/Lab_2/gcd/gcd.data_ram3.memh";
+*/
 	wire	[31:0]	data_readdata_serial;
 	wire	[31:0]	data_readdata_data;
 	wire	[31:0]	data_readdata_stack;
